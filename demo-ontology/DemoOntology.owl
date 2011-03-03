@@ -254,6 +254,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;Aci_Castello">
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
         <hasName rdf:datatype="&rdfs;Literal">Aci Castello</hasName>
+        <hasPopulation2010 rdf:resource="&DemoOntology;PopulationAci_castello2010"/>
     </owl:NamedIndividual>
     
 
