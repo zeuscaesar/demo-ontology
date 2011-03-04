@@ -312,3 +312,11 @@ a:hover {
 #footer a {
 	color: #FFFFFF;
 }
+
+span.G
+{
+    background-color: #FF0000;
+    margin-bottom: 1px;
+    border-right: Solid 1px #000000;
+    border-bottom: Solid 1px #000000;
+}
