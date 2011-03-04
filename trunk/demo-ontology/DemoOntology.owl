@@ -273,6 +273,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;Brolo">
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
         <hasName rdf:datatype="&rdfs;Literal">Brolo</hasName>
+        <hasPopulation2010 rdf:resource="&DemoOntology;PopulationBrolo2010"/>
     </owl:NamedIndividual>
     
 
@@ -323,6 +324,18 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <areDivorced rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,1,2,3,1,2,4,3,2,4,8,3,5,9,9,11,7,11,8,3,7,4,10,6,12,4,4,5,5,3,4,11,7,4,4,5,2,7,2,4,2,1,3,2,2,1,2,0,4,0,1,2,1,1,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0</areDivorced>
         <areMarried rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,3,9,17,20,21,25,40,45,52,58,79,75,79,86,99,90,102,98,105,113,99,123,112,122,125,134,134,112,120,121,107,116,104,121,95,97,91,99,95,101,99,94,71,72,72,71,68,60,48,53,54,40,36,31,38,33,28,29,19,16,13,10,10,10,1,4,5,3,2,1,2,1,0,1,0,0,0,0,0</areMarried>
         <areUnmarried rdf:datatype="&rdfs;Literal">88,104,93,82,91,92,85,75,77,65,77,82,89,81,74,92,83,83,107,96,101,111,92,103,95,89,84,88,94,59,44,71,44,49,51,37,49,45,36,38,33,31,29,33,29,25,20,19,20,14,22,13,15,17,15,13,11,9,11,11,8,8,10,8,5,9,11,6,7,5,9,6,6,7,6,7,5,10,6,6,5,7,5,3,6,1,7,4,5,3,3,1,0,1,0,1,0,0,0,1,1</areUnmarried>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#FemaleBrolo2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;FemaleBrolo2010">
+        <rdf:type rdf:resource="&DemoOntology;PopulationBySex"/>
+        <areWidowed rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,2,1,0,0,1,1,2,2,1,1,1,3,1,2,3,6,2,5,9,6,7,4,7,3,5,5,2,4,5,4,9,11,9,5,7,10,6,10,12,10,14,9,12,16,15,13,14,12,9,5,2,2,2,4,4,5,0,1,0,0,1,0</areWidowed>
+        <areDivorced rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,1,1,2,2,1,2,1,2,4,0,0,1,3,3,2,3,1,3,2,0,1,2,1,2,0,4,1,2,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</areDivorced>
+        <areMarried rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,4,7,9,13,20,18,12,19,23,18,35,36,30,45,39,32,29,56,35,35,47,44,35,42,28,53,38,34,34,34,42,27,34,33,33,17,21,31,26,21,23,17,15,23,22,19,13,12,13,16,18,7,8,10,12,10,9,7,10,3,7,5,0,2,0,2,2,0,2,0,1,0,0,0,0,0,0,0</areMarried>
+        <areUnmarried rdf:datatype="&rdfs;Literal">34,35,32,28,29,31,30,22,26,29,24,30,32,26,18,29,35,29,37,35,37,32,22,30,41,38,12,26,27,22,24,11,19,20,13,6,7,11,6,7,5,8,5,5,11,7,7,1,7,1,7,5,3,4,4,3,1,8,3,2,0,1,2,2,2,4,2,3,2,1,0,0,2,1,1,1,2,0,2,2,2,4,0,1,0,1,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0</areUnmarried>
     </owl:NamedIndividual>
     
 
@@ -384,6 +397,18 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     
 
 
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MaleBrolo2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;MaleBrolo2010">
+        <rdf:type rdf:resource="&DemoOntology;PopulationBySex"/>
+        <areWidowed rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,1,1,0,0,1,1,1,0,1,1,0,2,0,1,0,2,1,1,2,2,3,1,0,3,5,2,1,2,6,8,1,0,1,3,1,2,3,0,3,1,0,0,0,0,1,0,0,0,0,0</areWidowed>
+        <areDivorced rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,0,0,2,0,2,2,0,3,1,0,1,1,2,0,0,0,1,0,0,0,1,0,1,0,1,0,0,0,1,0,0,0,1,0,0,0,0,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</areDivorced>
+        <areMarried rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,4,4,4,6,8,18,20,19,22,20,19,29,27,30,28,34,35,33,42,36,31,26,37,52,34,22,41,35,33,25,45,31,26,40,27,35,31,32,23,16,30,21,22,21,32,26,16,16,24,14,19,12,8,10,16,10,12,10,8,8,5,2,5,1,3,1,0,0,2,2,0,0,0,0,0,0</areMarried>
+        <areUnmarried rdf:datatype="&rdfs;Literal">28,34,25,31,24,24,21,19,28,24,33,32,17,29,31,36,32,27,44,48,43,49,44,40,35,31,44,23,32,28,31,28,13,21,24,16,13,9,18,14,10,5,12,12,5,6,7,3,6,3,4,5,5,10,4,1,3,2,2,2,4,2,3,0,1,0,0,3,1,1,1,1,0,4,1,0,2,0,1,1,0,0,0,0,0,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0</areUnmarried>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#Messina -->
 
     <owl:NamedIndividual rdf:about="&DemoOntology;Messina"/>
@@ -421,6 +446,17 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
         <hasPopulationFemale rdf:resource="&DemoOntology;FemaleAcicastello2010"/>
         <hasPopulationMale rdf:resource="&DemoOntology;MaleAcicastello2010"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#PopulationBrolo2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;PopulationBrolo2010">
+        <rdf:type rdf:resource="&DemoOntology;PopulationByYear"/>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
+        <hasPopulationFemale rdf:resource="&DemoOntology;FemaleBrolo2010"/>
+        <hasPopulationMale rdf:resource="&DemoOntology;MaleBrolo2010"/>
     </owl:NamedIndividual>
     
 
