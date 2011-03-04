@@ -6,7 +6,7 @@ $Unmarried=$_GET["Unmarried"];
 $Divorced=$_GET["Divorced"];
 $Widowed=$_GET["Widowed"];
 //echo $s;
-echo '<div>'.$s.'  '.$s2.' Married:'.$Married.' Unmarried'.$Unmarried.' Divorced'.$Divorced.' Widowed '.$Widowed.'</div>'
+echo '<div>'.$s.'  '.$s2.' Married:'.$Married.' Unmarried:'.$Unmarried.' Divorced:'.$Divorced.' Widowed:'.$Widowed.'</div>'
 
 /* 
  * To change this template, choose Tools | Templates
