@@ -17,8 +17,8 @@ Released   : 20081210
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Demography Ontology</title>
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
-<script type="text/javascript" src="/js-code/js.js"></script>
-<script type="text/javascript" src="/js-code/js-graph.js"></script>
+<script type="text/javascript" src="js-code/js.js"></script>
+<script type="text/javascript" src="js-code/js-graph.js"></script>
 
 </head>
 <body>
