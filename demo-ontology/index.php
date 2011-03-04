@@ -17,6 +17,9 @@ Released   : 20081210
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Demography Ontology</title>
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="/js-code/js.js"></script>
+<script type="text/javascript" src="/js-code/js-graph.js"></script>
+
 </head>
 <body>
 <div id="wrapper">
@@ -55,8 +58,8 @@ Released   : 20081210
                                 <p class="meta" >Posted by <a href="#">Someone</a> on March 10, 2008
 					&nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">Full article</a></p>
 				<div class="entry">
-					<p>This is <strong>Long Beach</strong>, a free, fully standards-compliant CSS template designed byFreeCssTemplates<a href="http://www.nodethirtythree.com/"></a> for <a href="http://www.freecsstemplates.org/">Free CSS Templates</a>. This free template is released under a <a href="http://creativecommons.org/licenses/by/2.5/">Creative Commons Attributions 2.5</a> license, so you’re pretty much free to do whatever you want with it (even use it commercially) provided you keep the links in the footer intact. Aside from that, have fun with it :)</p>
-					<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem.</p>
+                                    
+                                    
                                         <p id='titolo'></p>
                                 </div>
 			</div>
@@ -225,66 +228,6 @@ Marital Status:
 <!-- end #footer -->
 </div>
 </body>
-<script language="javascript">
-var xmlHttp
 
-function loadTowns(str) {
-   xmlHttp=GetXmlHttpObject()
-   if (xmlHttp==null) {
-      alert ("Browser does not support HTTP Request")
-      return
-   }
-   var url="townloader.php"
-
-   url=url+"?prov="+str
-   url=url+"&sid="+Math.random()
-   xmlHttp.onreadystatechange=stateChanged
-   xmlHttp.open("GET",url,true)
-   xmlHttp.send(null)
-}
-
-function stateChanged() {
-   if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
-      document.getElementById("town").innerHTML=xmlHttp.responseText
-   }
-}
-function divChanged() {
-   if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
-      document.getElementById("titolo").innerHTML=xmlHttp.responseText
-   }
-}
-function GetXmlHttpObject() {
-   var xmlHttp=null;
-   try {
-      // Firefox, Opera 8.0+, Safari
-      xmlHttp=new XMLHttpRequest();
-   } catch (e) {
-      //Internet Explorer
-      try {
-         xmlHttp=new ActiveXObject("Msxml2.XMLHTTP");
-      } catch (e) {
-         xmlHttp=new ActiveXObject("Microsoft.XMLHTTP");
-      }
-   }
-   return xmlHttp;
-}
-function prova(){
-    var s=document.forms['frm'].elements['town'].options[document.forms['frm'].elements['town'].options.selectedIndex].value;
-    //alert(s);
-    document.getElementById('titolo').innerHTML=s;
-    xmlHttp=GetXmlHttpObject()
-   if (xmlHttp==null) {
-      alert ("Browser does not support HTTP Request")
-      return
-   }
-   var url="structquery.php"
-
-   url=url+"?s="+s;
-   //url=url+"&sid="+Math.random()
-   xmlHttp.onreadystatechange=divChanged
-   xmlHttp.open("GET",url,true)
-   xmlHttp.send(null)
-}
-</script>
 </html>
 
