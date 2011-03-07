@@ -8,7 +8,7 @@ function grafico(data)
         //document.write("</span>");
         var h=data[i];
         var w=2.9;
-        document.write("<img src='blank.gif' alt='"+i+" anni -> "+h+" abitanti' title='"+i+" anni -> "+h+" abitanti' class='barra2' style='height: " + h + "px; width: " + w + "px;'img>"+i+"<img/>");
+        document.write("<img src='blank.gif' alt='"+i+" anni -> "+h+" abitanti' title='"+i+" anni -> "+h+" abitanti' class='barra2' style='height: " + h + "px; width: " + w + "px;'/>");
 
 
         
