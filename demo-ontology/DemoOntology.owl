@@ -129,6 +129,15 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     
 
 
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#isLocated -->
+
+    <owl:DatatypeProperty rdf:about="&DemoOntology;isLocated">
+        <rdfs:domain rdf:resource="&DemoOntology;GeographicArea"/>
+        <rdfs:range rdf:resource="&rdfs;Literal"/>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#livingInTheYear -->
 
     <owl:DatatypeProperty rdf:about="&DemoOntology;livingInTheYear">
@@ -212,6 +221,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;Aci_Castello">
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
+        <extends rdf:datatype="&rdfs;Literal">8,65</extends>
         <hasName rdf:datatype="&rdfs;Literal">Aci Castello</hasName>
         <hasPopulation rdf:resource="&DemoOntology;AciCastelloMW2010"/>
     </owl:NamedIndividual>
@@ -222,6 +232,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;Acireale">
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
+        <extends rdf:datatype="&rdfs;Literal">39,96</extends>
         <hasName rdf:datatype="&rdfs;Literal">Acireale</hasName>
     </owl:NamedIndividual>
     
@@ -240,6 +251,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;CT">
         <rdf:type rdf:resource="&DemoOntology;Province"/>
+        <extends rdf:datatype="&rdfs;Literal">3552,20</extends>
         <hasName rdf:datatype="&rdfs;Literal">Catania</hasName>
         <hasMunicipality rdf:resource="&DemoOntology;Aci_Castello"/>
         <hasMunicipality rdf:resource="&DemoOntology;Acireale"/>
@@ -271,18 +283,6 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
         <hasName rdf:datatype="&rdfs;Literal">Falcone</hasName>
     </owl:NamedIndividual>
-    
-
-
-    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#FemaleAcicastello2010 -->
-
-    <owl:NamedIndividual rdf:about="&DemoOntology;FemaleAcicastello2010"/>
-    
-
-
-    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#FemaleBrolo2010 -->
-
-    <owl:NamedIndividual rdf:about="&DemoOntology;FemaleBrolo2010"/>
     
 
 
@@ -330,18 +330,6 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     
 
 
-    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MaleAcicastello2010 -->
-
-    <owl:NamedIndividual rdf:about="&DemoOntology;MaleAcicastello2010"/>
-    
-
-
-    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MaleBrolo2010 -->
-
-    <owl:NamedIndividual rdf:about="&DemoOntology;MaleBrolo2010"/>
-    
-
-
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#Messina -->
 
     <owl:NamedIndividual rdf:about="&DemoOntology;Messina"/>
@@ -358,6 +346,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;Mineo">
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
+        <extends rdf:datatype="&rdfs;Literal">244,52</extends>
         <hasName rdf:datatype="&rdfs;Literal">Mineo</hasName>
     </owl:NamedIndividual>
     
@@ -368,22 +357,6 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;Oliveri">
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
         <hasName rdf:datatype="&rdfs;Literal">Oliveri</hasName>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#PopulationAci_castello2010 -->
-
-    <owl:NamedIndividual rdf:about="&DemoOntology;PopulationAci_castello2010">
-        <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#PopulationBrolo2010 -->
-
-    <owl:NamedIndividual rdf:about="&DemoOntology;PopulationBrolo2010">
-        <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
     </owl:NamedIndividual>
     
 
