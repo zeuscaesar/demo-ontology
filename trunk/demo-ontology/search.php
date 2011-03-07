@@ -32,7 +32,7 @@
 	<div id="menu">
 		<ul>
 			<li><a href="index.html">Home</a></li>
-			<li><a href="serch.php">Simple Serch</a></li>
+			<li><a href="search.php">Simple Search</a></li>
 			<li><a href="#">Geo Serch</a></li>
 			<li><a href="#">Free Query</a></li>
 			<li><a href="#">About</a></li>
