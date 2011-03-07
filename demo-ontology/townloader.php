@@ -14,9 +14,12 @@ include_once ('query.php');
                 ?prov DemoOntology:hasName "'.$prov.'"^^rdfs:Literal.
                 ?prov DemoOntology:hasMunicipality ?mun.
                 ?mun DemoOntology:hasPopulation ?pop.
-                ?pop DemoOntology:livingInTheYear "'.$year.'"^^rdfs:Literal.
+                
                 ?mun DemoOntology:hasName ?name.
                 ');
+                if($year!='0'){
+                  $query= concatRDF($query,'?pop DemoOntology:livingInTheYear "'.$year.'"^^rdfs:Literal.');
+                }
                 $query= closeRDF($query);
                 echo $query;
                 $requestString = $sesame_url.'/repositories/demography'.$query;
