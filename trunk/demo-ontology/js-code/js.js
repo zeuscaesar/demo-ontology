@@ -1,4 +1,5 @@
 var xmlHttp
+
 function loadProv(str) {
    xmlHttp=GetXmlHttpObject()
    if (xmlHttp==null) {
