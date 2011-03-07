@@ -135,15 +135,12 @@ Released   : 20081210
 <form name="frm" method="post"> <!--action='submit.php'>-->
 
 <pre>
-Year:           <select name="year" id="year">
+Year:           <select name="year" id="year" onChange="loadProv(this.value)">
                     <option value="0">-- Selection --</option>
-              </select>
-Province:       <select name="prov" onChange="loadTowns(this.value)">
-               <option value="0">-- Selection --</option>
-                     <?php
+                    <?php
                         include_once ( 'HTTP/Request.php' );
                         $sesame_url = "http://localhost:8080/openrdf-sesame";
-                        $query = "?queryLn=SPARQL&query=PREFIX%20rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns%23>%0APREFIX%20DemoOntology:<http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl%23>%0Aselect%20%3Fy%0Awhere{%0A%3Fx%20rdf:type%20DemoOntology:Province.%0A%3Fx%20DemoOntology:hasName%20%3Fy}";
+                        $query ='?queryLn=SPARQL&query=PREFIX%20DemoOntology:<http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl%23>%0Aselect%20distinct%20%3Fx%0Awhere{%0A%3Fy%20DemoOntology:livingInTheYear%20%3Fx%0A}';
                         $requestString = $sesame_url.'/repositories/demography'.$query;
                         $req =& new HTTP_Request($requestString);
                         //echo $requestString;
@@ -165,8 +162,10 @@ Province:       <select name="prov" onChange="loadTowns(this.value)">
                             echo '<option value="'.$value.'">'.$value.'</option>';
                             }
                            }
-                                              
-                       ?>                    
+                       ?>
+              </select>
+Province:       <select name="prov" id="prov" onChange="loadTowns(this.value)">
+               <option value="0">-- Selection --</option>                    
             </select>
 Municipality:   <select name="town" id="town">
                     <option value="0">-- Selection --</option>
