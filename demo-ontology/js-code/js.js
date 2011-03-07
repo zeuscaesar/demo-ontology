@@ -36,7 +36,7 @@ function stateChanged() {
 }
 function divChanged() {
    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
-      document.getElementById("titolo").innerHTML=xmlHttp.responseText
+      document.getElementById("divdata").innerHTML=xmlHttp.responseText
    }
 }
 function yearChanged() {
@@ -71,7 +71,9 @@ function prova(){
 
       //alert(s2);
     //document.getElementById('titolo').innerHTML=s;
-     //document.getElementById('titolo').innerHTML=s2;
+    //document.getElementById('divdata').innerHTML="pippo";
+    document.getElementById('pdiv').innerHTML="pippo";
+
     xmlHttp=GetXmlHttpObject()
    if (xmlHttp==null) {
       alert ("Browser does not support HTTP Request")
