@@ -439,9 +439,10 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;AcirealeFD2009">
         <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,1,1,6,2,7,4,5,5,9,6,8,14,14,10,10,18,12,8,10,17,11,7,15,20,9,10,15,14,9,12,5,5,5,3,5,7,7,4,6,7,0,1,2,4,2,4,5,2,1,0,1,1,2,2,0,0,1,0,1,0,0,0,0,0,0,0,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
-        <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Divorced</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#AcirealeFD2010 -->
@@ -449,9 +450,10 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;AcirealeFD2010">
         <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,4,1,2,6,1,6,4,5,9,11,9,8,16,15,9,11,19,13,9,10,18,11,8,15,19,8,12,14,15,9,12,5,5,5,2,5,7,7,4,6,7,0,2,2,5,2,4,5,2,1,0,1,1,1,2,0,0,1,0,1,0,0,0,0,0,0,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
-        <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Divorced</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#AcirealeFM2009 -->
@@ -462,6 +464,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#AcirealeFM2010 -->
@@ -472,26 +475,29 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#AcirealeFU2009 -->
 
     <owl:NamedIndividual rdf:about="&DemoOntology;AcirealeFU2009">
-        <numbers rdf:datatype="&rdfs;Literal">239,205,231,238,239,258,254,259,268,269,258,270,274,279,327,343,328,299,333,322,334,344,298,268,289,267,255,231,190,187,157,143,139,119,95,98,91,81,104,75,70,61,61,63,61,38,60,44,39,47,41,43,38,42,30,21,24,31,24,29,19,24,27,17,16,12,15,21,26,18,16,26,25,13,24,28,22,28,25,30,24,24,25,24,17,8,15,15,9,8,4,2,3,6,5,0,0,3,1,2,1</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
+        <numbers rdf:datatype="&rdfs;Literal">239,205,231,238,239,258,254,259,268,269,258,270,274,279,327,343,328,299,333,322,334,344,298,268,289,267,255,231,190,187,157,143,139,119,95,98,91,81,104,75,70,61,61,63,61,38,60,44,39,47,41,43,38,42,30,21,24,31,24,29,19,24,27,17,16,12,15,21,26,18,16,26,25,13,24,28,22,28,25,30,24,24,25,24,17,8,15,15,9,8,4,2,3,6,5,0,0,3,1,2,1</numbers>
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#AcirealeFU2010 -->
 
     <owl:NamedIndividual rdf:about="&DemoOntology;AcirealeFU2010">
-        <numbers rdf:datatype="&rdfs;Literal">214,240,201,233,234,241,254,254,256,264,270,261,267,278,276,332,338,329,295,329,319,336,333,282,260,273,251,239,211,169,164,143,126,128,120,89,95,89,78,95,70,71,62,59,64,60,37,57,47,43,50,40,43,39,38,32,20,26,30,22,28,20,25,27,17,15,13,14,21,26,17,16,25,25,15,24,28,20,28,22,28,22,23,23,23,17,7,13,11,8,6,2,2,2,6,5,1,0,3,0,2</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
+        <numbers rdf:datatype="&rdfs;Literal">214,240,201,233,234,241,254,254,256,264,270,261,267,278,276,332,338,329,295,329,319,336,333,282,260,273,251,239,211,169,164,143,126,128,120,89,95,89,78,95,70,71,62,59,64,60,37,57,47,43,50,40,43,39,38,32,20,26,30,22,28,20,25,27,17,15,13,14,21,26,17,16,25,25,15,24,28,20,28,22,28,22,23,23,23,17,7,13,11,8,6,2,2,2,6,5,1,0,3,0,2</numbers>
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#AcirealeFW2009 -->
@@ -502,6 +508,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#AcirealeFW2010 -->
@@ -512,6 +519,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#AcirealeMD2009 -->
@@ -519,9 +527,10 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;AcirealeMD2009">
         <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,0,0,5,2,3,2,2,8,8,3,6,4,6,2,12,3,6,8,8,5,5,8,6,6,3,9,6,11,6,8,0,3,3,6,3,6,1,4,1,2,3,1,0,1,0,0,0,0,2,1,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
-        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Divorced</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#AcirealeMD2010 -->
@@ -529,9 +538,10 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;AcirealeMD2010">
         <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,3,1,0,5,1,3,2,3,7,7,4,5,6,6,5,15,4,7,9,10,6,4,8,7,6,3,9,6,10,6,8,0,3,4,5,3,7,2,4,0,2,3,1,0,1,0,0,0,0,2,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
-        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Divorced</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#AcirealeMM2009 -->
@@ -553,26 +563,29 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#AcirealeMU2009 -->
 
     <owl:NamedIndividual rdf:about="&DemoOntology;AcirealeMU2009">
-        <numbers rdf:datatype="&rdfs;Literal">216,252,254,268,247,252,256,242,289,289,281,275,300,300,287,338,343,327,332,340,326,323,349,365,316,321,312,292,265,243,255,219,211,187,169,157,137,125,118,99,109,88,94,82,74,68,58,55,39,46,39,45,36,34,29,24,28,24,27,23,28,19,10,18,21,10,11,12,12,12,12,13,18,12,20,7,14,8,11,6,7,5,7,10,1,7,1,1,2,0,1,1,1,0,1,0,0,1,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
+        <numbers rdf:datatype="&rdfs;Literal">216,252,254,268,247,252,256,242,289,289,281,275,300,300,287,338,343,327,332,340,326,323,349,365,316,321,312,292,265,243,255,219,211,187,169,157,137,125,118,99,109,88,94,82,74,68,58,55,39,46,39,45,36,34,29,24,28,24,27,23,28,19,10,18,21,10,11,12,12,12,12,13,18,12,20,7,14,8,11,6,7,5,7,10,1,7,1,1,2,0,1,1,1,0,1,0,0,1,0,0,0</numbers>
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#AcirealeMU2010 -->
 
     <owl:NamedIndividual rdf:about="&DemoOntology;AcirealeMU2010">
-        <numbers rdf:datatype="&rdfs;Literal">224,224,253,256,268,253,251,263,241,287,289,282,274,302,298,286,341,348,329,332,338,328,318,348,355,311,312,300,274,244,225,234,202,195,166,154,144,126,117,117,95,103,89,94,86,74,63,57,57,40,43,38,45,36,34,29,25,28,23,26,24,26,18,10,17,20,11,11,11,12,10,12,12,18,11,19,7,13,7,11,6,6,6,7,10,1,7,1,2,2,0,1,0,1,0,1,0,0,1,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
+        <numbers rdf:datatype="&rdfs;Literal">224,224,253,256,268,253,251,263,241,287,289,282,274,302,298,286,341,348,329,332,338,328,318,348,355,311,312,300,274,244,225,234,202,195,166,154,144,126,117,117,95,103,89,94,86,74,63,57,57,40,43,38,45,36,34,29,25,28,23,26,24,26,18,10,17,20,11,11,11,12,10,12,12,18,11,19,7,13,7,11,6,6,6,7,10,1,7,1,2,2,0,1,0,1,0,1,0,0,1,0,0</numbers>
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#AcirealeMW2009 -->
@@ -583,6 +596,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#AcirealeMW2010 -->
@@ -593,6 +607,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#Brolo -->
@@ -696,6 +711,151 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
         <extends rdf:datatype="&rdfs;Literal">244,52</extends>
         <hasName rdf:datatype="&rdfs;Literal">Mineo</hasName>
+        <hasPopulation rdf:resource="&DemoOntology;MineoFD2009"/>
+        <hasPopulation rdf:resource="&DemoOntology;MineoFD2010"/>
+        <hasPopulation rdf:resource="&DemoOntology;MineoFM2009"/>
+        <hasPopulation rdf:resource="&DemoOntology;MineoFM2010"/>
+        <hasPopulation rdf:resource="&DemoOntology;MineoFU2009"/>
+        <hasPopulation rdf:resource="&DemoOntology;MineoFU2010"/>
+        <hasPopulation rdf:resource="&DemoOntology;MineoFW2009"/>
+        <hasPopulation rdf:resource="&DemoOntology;MineoFW2010"/>
+        <hasPopulation rdf:resource="&DemoOntology;MineoMD2009"/>
+        <hasPopulation rdf:resource="&DemoOntology;MineoMD2010"/>
+        <hasPopulation rdf:resource="&DemoOntology;MineoMM2009"/>
+        <hasPopulation rdf:resource="&DemoOntology;MineoMM2010"/>
+        <hasPopulation rdf:resource="&DemoOntology;MineoMU2009"/>
+        <hasPopulation rdf:resource="&DemoOntology;MineoMU2010"/>
+        <hasPopulation rdf:resource="&DemoOntology;MineoMW2009"/>
+        <hasPopulation rdf:resource="&DemoOntology;MineoMW2010"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MineoFD2009 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;MineoFD2009"/>
+    
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MineoFD2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;MineoFD2010"/>
+    
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MineoFM2009 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;MineoFM2009"/>
+    
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MineoFM2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;MineoFM2010"/>
+    
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MineoFU2009 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;MineoFU2009"/>
+    
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MineoFU2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;MineoFU2010"/>
+    
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MineoFW2009 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;MineoFW2009"/>
+    
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MineoFW2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;MineoFW2010"/>
+    
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MineoMD2009 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;MineoMD2009"/>
+        <numbers rdf:datatype="&rdfs;Literal"></numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal"></livingInTheYear>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal"></hasMaritalStatus>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MineoMD2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;MineoMD2010"/>
+        <numbers rdf:datatype="&rdfs;Literal"></numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal"></livingInTheYear>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal"></hasMaritalStatus>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MineoMM2009 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;MineoMM2009"/>
+        <numbers rdf:datatype="&rdfs;Literal"></numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal"></livingInTheYear>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal"></hasMaritalStatus>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MineoMM2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;MineoMM2010"/>
+        <numbers rdf:datatype="&rdfs;Literal"></numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal"></livingInTheYear>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal"></hasMaritalStatus>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MineoMU2009 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;MineoMU2009"/>
+        <numbers rdf:datatype="&rdfs;Literal"></numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal"></livingInTheYear>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal"></hasMaritalStatus>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MineoMU2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;MineoMU2010"/>
+        <numbers rdf:datatype="&rdfs;Literal"></numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal"></livingInTheYear>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal"></hasMaritalStatus>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MineoMW2009 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;MineoMW2009"/>
+        <numbers rdf:datatype="&rdfs;Literal"></numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal"></livingInTheYear>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal"></hasMaritalStatus>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#MineoMW2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;MineoMW2010">
+        <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,1,0,1,0,1,0,1,3,0,0,0,3,3,0,2,1,3,1,0,2,6,3,5,5,1,5,5,5,1,6,1,3,4,5,3,1,0,1,0,0,1,0,0,0,0,0</numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
     </owl:NamedIndividual>
     
 
