@@ -47,7 +47,8 @@ if($prov!='0'){
                 ?pop DemoOntology:numbers ?num.');
      }
 }
-if($prov=='0' && $year=='0'){
+if($prov=='0'){
+    if($year=='0'){
     $query=openRDF(
                 'select distinct ?num
                 where{
@@ -55,7 +56,18 @@ if($prov=='0' && $year=='0'){
                 ?prov DemoOntology:hasMunicipality ?mun.
                 ?mun rdf:type DemoOntology:Municipality.
                 ?mun DemoOntology:hasPopulation ?pop.
-                ?pop DemoOntology:numbers ?num.');
+                ?pop DemoOntology:numbers ?num.');}
+    if($year!='0'){
+    $query=openRDF(
+                'select distinct ?num
+                where{
+                ?prov rdf:type DemoOntology:Province.
+                ?prov DemoOntology:hasMunicipality ?mun.
+                ?mun rdf:type DemoOntology:Municipality.
+                ?mun DemoOntology:hasPopulation ?pop.
+                ?pop DemoOntology:livingInTheYear "'.$year.'"^^rdfs:Literal.
+                ?pop DemoOntology:numbers ?num.');}
+
 }
 
 
