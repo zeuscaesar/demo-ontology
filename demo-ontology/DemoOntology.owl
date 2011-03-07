@@ -260,15 +260,6 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     
 
 
-    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#Caltagirone -->
-
-    <owl:NamedIndividual rdf:about="&DemoOntology;Caltagirone">
-        <rdf:type rdf:resource="&DemoOntology;Municipality"/>
-        <hasName rdf:datatype="&rdfs;Literal">Caltagirone</hasName>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#Catania -->
 
     <owl:NamedIndividual rdf:about="&DemoOntology;Catania">
