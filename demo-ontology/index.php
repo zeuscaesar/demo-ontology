@@ -92,57 +92,11 @@ Released   : 20081210
 			<ul>
 				<li>
                                 
-                                          <?php
-//                                            include_once ( 'HTTP/Request.php' );
-//                                            $sesame_url = "http://localhost:8080/openrdf-sesame";
-
-                                            /*
-                                            SELECT ?z WHERE { ?x ?y ?z. }
-                                            */
-                                            //$query = "?query=select%20?z%20WHERE%20%7B%20?x%20?y%20?z.%20%7D";
-
-                                            /*
-                                            $query = "?query=select%20?z%20WHERE%20{%20?x%20?y%20?z.}";
-                                            $requestString = $sesame_url.'/repositories/12'.$query;
-                                            */
-                                            //$query = "?query=PREFIX%20Ontology12989921859012:<http://www.semanticweb.org/ontologies/2011/2/Ontology1298992185901.owl#>%20PREFIX%20rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns#>%20SELECT%20?provincia%20WHERE{?provincia%20rdf:type%20Ontology12989921859012:Province.}";
-                                            //$query = "?query=select%20?x%20WHERE%20{%20?x%20?y%20?<http://www.semanticweb.org/ontologies/2011/2/Ontology1298992185901.owl#>Province.}";
-                                            //$query = "?query=%0APREFIX%20Ontology12989921859012:<http://www.semanticweb.org/ontologies/2011/2/Ontology1298992185901.owl%23>%0ASELECT%20%3Fprovincia%0AWHERE{%0A%3Fprovincia%20%3Fx%20Ontology12989921859012:Province.}";
-                                            //$query = "?queryLn=SPARQL&query=PREFIX%20rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns%23>%0APREFIX%20Ontology12989921859012:<http://www.semanticweb.org/ontologies/2011/2/Ontology1298992185901.owl%23>%0ASELECT%20%3Fprovincia%0AWHERE{%3Fx%20rdf:type%20Ontology12989921859012:Province.%3Fx%20Ontology12989921859012:nameIs%20%3Fprovincia.}";
-//                                            $query ='?queryLn=SPARQL&query=PREFIX%20Ontology12989921859012:%3Chttp://www.semanticweb.org/ontologies/2011/2/Ontology1298992185901.owl%23%3E%0APREFIX%20xsd:%3Chttp://www.w3.org/2001/XMLSchema%23%3E%0ASELECT%20%3Fy%0AWHERE{%0A%3Fx%20Ontology12989921859012:nameIs%20%22Catania%22^^xsd:string.%0A%3Fx%20Ontology12989921859012:hasMunicipality%20%3Fy.%0A}&limit=100&infer=true';
-//                                            $requestString = $sesame_url.'/repositories/demography'.$query;
-//                                            $req =& new HTTP_Request($requestString);
-//                                            //echo $requestString;
-//                                            $req->setMethod(HTTP_REQUEST_METHOD_GET);
-//                                            $req->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
-//                                            $req->sendRequest();
-//                                            $response_code = $req->getResponseCode();
-//                                            if($response_code!=200)
-//                                                    echo "Errore di codice ".$response_code;
-//                                            else
-//                                                {
-//                                                $response_body = $req->getResponseBody();
-                                                //echo "Risposta ricevuta correttamente<br/><br>";
-//                                                echo $response_body."<br/><br/>";
-//                                                $xml=simplexml_load_string($response_body);
-//                                                $address = new SimpleXMLElement($response_body);
-                                                //foreach($xml->results->result as $item){
-                                                //echo $item->binding->literal;
-                                                //}
-                                               //}
-
-                                //            GET /openrdf-sesame/repositories/mem-rdf?query=select%20%3Cfoo:bar%3E&queryLn=serql HTTP/1.1
-                                //            Host: localhost
-                                //            Accept: application/sparql-results+xml, */*;q=0.5
-                                        ?>
-                                         
-
-
 <form name="frm" method="post"> <!--action='submit.php'>-->
-
 <pre>
 Year:           <select name="year" id="year" onChange="loadProv(this.value)">
-                    <option value="0">-- Selection --</option>
+                    <option value="sel">-- Selection --</option>
+                    <option value="0">--All Year--</option>
                     <?php
                         include_once ( 'HTTP/Request.php' );
                         $sesame_url = "http://localhost:8080/openrdf-sesame";
@@ -171,14 +125,14 @@ Year:           <select name="year" id="year" onChange="loadProv(this.value)">
                        ?>
               </select>
 Province:       <select name="prov" id="prov" onChange="loadTowns(this.value)">
-               <option value="0">-- Selection --</option>                    
+               <option value="0">--    All    --</option>
             </select>
 Municipality:   <select name="town" id="town">
-                    <option value="0">-- Selection --</option>
+                    <option value="0">--  All Town --</option>
               </select>
 Sex:            <select name="sex" id="sex">
-                    <option value="0">-- Selection --</option>
-                    <option value="All">All</option>
+                    
+                    <option value="Both">Both</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
               </select>
@@ -233,6 +187,4 @@ Marital Status:
 <!-- end #footer -->
 </div>
 </body>
-
 </html>
-
