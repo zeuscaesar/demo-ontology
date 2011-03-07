@@ -14,14 +14,51 @@ include_once ( 'HTTP/Request.php' );
 include_once ('query.php');
 $sesame_url = "http://localhost:8080/openrdf-sesame";
 //$query='?queryLn=SPARQL&query=PREFIX%20rdfs:<http://www.w3.org/2000/01/rdf-schema%23>%0APREFIX%20rdf:<http://www.w3.org/1999/02/22-rdf-syntax-ns%23>%0APREFIX%20DemoOntology:<http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl%23>%0Aselect%20distinct%20%3Fnum%0Awhere{%0A%3Fmun%20rdf:type%20DemoOntology:Municipality.%0A%3Fname%20DemoOntology:hasName%20"'.$town.'"^^rdfs:Literal.%0A%3Fname%20DemoOntology:hasPopulation%20%3Fpop.%0A%3Fpop%20DemoOntology:livingInTheYear%20"'.$year.'"^^rdfs:Literal.%0A%3Fpop%20DemoOntology:numbers%20%3Fnum.';
-$query=openRDF(
-            'select distinct ?num
-            where{
-            ?mun rdf:type DemoOntology:Municipality.
-            ?name DemoOntology:hasName "'.$town.'"^^rdfs:Literal.
-            ?name DemoOntology:hasPopulation ?pop.
-            ?pop DemoOntology:livingInTheYear "'.$year.'"^^rdfs:Literal.
-            ?pop DemoOntology:numbers ?num.');
+if($prov!='0'){
+    if($town!='0' && $year!='0'){
+        $query=openRDF(
+                'select distinct ?num
+                where{
+                ?mun rdf:type DemoOntology:Municipality.
+                ?mun DemoOntology:hasName "'.$town.'"^^rdfs:Literal.
+                ?mun DemoOntology:hasPopulation ?pop.
+                ?pop DemoOntology:livingInTheYear "'.$year.'"^^rdfs:Literal.
+                ?pop DemoOntology:numbers ?num.');
+     }
+     if($town!='0' && $year=='0'){   
+        $query=openRDF(
+                'select distinct ?num
+                where{
+                ?mun rdf:type DemoOntology:Municipality.
+                ?mun DemoOntology:hasName "'.$town.'"^^rdfs:Literal.
+                ?mun DemoOntology:hasPopulation ?pop.
+                ?pop DemoOntology:numbers ?num.');
+     }
+
+     else{
+                $query=openRDF(
+                'select distinct ?num
+                where{
+                ?prov rdf:type DemoOntology:Province.
+                ?prov DemoOntology:hasName "'.$prov.'"^^rdfs:Literal.
+                ?prov DemoOntology:hasMunicipality ?mun.
+                ?mun DemoOntology:hasPopulation ?pop.
+                ?pop DemoOntology:livingInTheYear "'.$year.'"^^rdfs:Literal.
+                ?pop DemoOntology:numbers ?num.');
+     }
+}
+if($prov=='0' && $year=='0'){
+    $query=openRDF(
+                'select distinct ?num
+                where{
+                ?prov rdf:type DemoOntology:Province.
+                ?prov DemoOntology:hasMunicipality ?mun.
+                ?mun rdf:type DemoOntology:Municipality.
+                ?mun DemoOntology:hasPopulation ?pop.
+                ?pop DemoOntology:numbers ?num.');
+}
+
+
     if($sex==Male){
         $query=concatRDF($query,'
             {?pop DemoOntology:hasSex "Male"^^rdfs:Literal}
