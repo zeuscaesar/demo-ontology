@@ -313,7 +313,7 @@ a:hover {
 	color: #FFFFFF;
 }
 
-span.G
+.G
 {
     background-color: #FF0000;
     margin-bottom: 1px;
@@ -321,11 +321,16 @@ span.G
     border-bottom: Solid 1px #000000;
 }
 
-.barra1
+.barra
 {
     border-top: solid #FF8888;
     border-left: solid #FF8888;
     border-bottom: solid #AA0000;
     border-right: solid #AA0000;
+    background: #FF0000;
+}
+.barra2
+    {
+    border-left: solid #FF8888;
     background: #FF0000;
 }
