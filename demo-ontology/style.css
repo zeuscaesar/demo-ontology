@@ -320,3 +320,12 @@ span.G
     border-right: Solid 1px #000000;
     border-bottom: Solid 1px #000000;
 }
+
+.barra1
+{
+    border-top: solid #FF8888;
+    border-left: solid #FF8888;
+    border-bottom: solid #AA0000;
+    border-right: solid #AA0000;
+    background: #FF0000;
+}
