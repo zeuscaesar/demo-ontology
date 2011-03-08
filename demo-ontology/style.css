@@ -312,6 +312,10 @@ a:hover {
 #footer a {
 	color: #FFFFFF;
 }
+#number {
+    font-size: 0.7em;
+    word-spacing: 5.2em;
+}
 
 .G
 {
@@ -333,4 +337,38 @@ a:hover {
     {
     border-left: solid #FF8888;
     background: #FF0000;
+}
+.select {
+    width: 110px;
+    text-align:center;
+}
+#prov{
+    margin-left: 50px;
+}
+#year{
+    margin-left: 74px;
+}
+#town{
+    margin-left: 30px;
+}
+#sex{
+    margin-left: 79px;
+}
+#Married{
+    margin-left: 30px;
+}
+#Widowed{
+     margin-left: 40px;
+}
+#Unmarried{
+    margin-left: 20px;
+}
+#Divorced{
+    margin-left: 20px;
+}
+#try{
+    margin-left: 60px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    width: 100px;
 }
