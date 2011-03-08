@@ -43,19 +43,14 @@
 	<div id="page">
 		<div id="content">
 			<div class="post" >
-				<h1 class="title"><a href="#">Demography Ontology </a></h1>
+				<h2 class="title"><a href="#">Demography Ontology </a></h2>
                                 
                                 <p id="pdiv" class="meta" >Posted by <a href="#">Someone</a> on March 10, 2008
 					&nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">Full article</a></p>
-				<div id ="divdata" class="entry">
-                                    <!--<script type="text/javascript"  >
-                                    
-                                    var data=new Array(105,89,83,92,93,85,75,78,65,75,81,86,80,74,95,82,81,107,96,103,114,94,108,100,93,91,94,103,63,49,77,48,53,52,39,52,41,39,38,33,32,27,31,30,24,20,18,18,16,21,12,14,17,17,12,12,12,12,13,8,8,10,8,5,9,13,7,7,5,10,7,6,8,6,8,5,11,6,7,5,7,5,3,6,2,7,4,5,3,3,1,0,1,0,1,0,0,0,1,0,10);
-                                    
-                                    grafico(data);
-                                    </script>
-                                    <p id='titolo'></p>-->
+				<div id ="divdata" >
+                                  
                                 </div>
+                                 <p id='number'></p>
 			</div>
 			<div class="post">
 				<h2 class="title"><a href="#">Lorem ipsum sed aliquam</a></h2>
@@ -79,58 +74,58 @@
 		<div id="sidebar">
 			<ul>
 				<li>
-                                
-<form name="frm" method="post"> <!--action='submit.php'>-->
-<pre>
-Year:           <select name="year" id="year" onChange="loadProv(this.value)">
-                    <option value="sel">-- Selection --</option>
-                    <option value="0">--All Year--</option>
-                    <?php
-                        include_once ( 'HTTP/Request.php' );
-                        $sesame_url = "http://localhost:8080/openrdf-sesame";
-                        $query ='?queryLn=SPARQL&query=PREFIX%20DemoOntology:<http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl%23>%0Aselect%20distinct%20%3Fx%0Awhere{%0A%3Fy%20DemoOntology:livingInTheYear%20%3Fx%0A}';
-                        $requestString = $sesame_url.'/repositories/demography'.$query;
-                        $req =& new HTTP_Request($requestString);
-                        //echo $requestString;
-                        $req->setMethod(HTTP_REQUEST_METHOD_GET);
-                        $req->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
-                        $req->sendRequest();
-                        $response_code = $req->getResponseCode();
-                        if($response_code!=200)
-                                echo "Errore di codice ".$response_code;
-                        else
-                            {
-                            $response_body = $req->getResponseBody();
-                            //echo "Risposta ricevuta correttamente<br/><br>";
-                            //echo $response_body."<br/><br/>";
-                            $xml=simplexml_load_string($response_body);
-                            $address = new SimpleXMLElement($response_body);
-                            foreach($xml->results->result as $item){
-                            $value=$item->binding->literal;
-                            echo '<option value="'.$value.'">'.$value.'</option>';
-                            }
-                           }
-                       ?>
-              </select>
-Province:       <select name="prov" id="prov" onChange="loadTowns(this.value)">
-               <option value="0">--    All    --</option>
-            </select>
-Municipality:   <select name="town" id="town">
-                    <option value="0">--  All Town --</option>
-              </select>
-Sex:            <select name="sex" id="sex">
-                    
-                    <option value="Both">Both</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-              </select>
-Marital Status:
-<input  type="checkbox" name="Unmarried" id="Unmarried">Unmarried</input>    <input  type="checkbox" name="Married" id="Married">Married</input>
-<input  type="checkbox" name="Divorced" id="Divorced">Divorced</input>     <input  type="checkbox" name="Widowed" id="Widowed">Widowed</input>
-</pre>
-</form>
-<button onClick="prova()"> Invia </button>
-                                        
+                                    <label id="lb">
+                                        <form name="frm" method="post"> <!--action='submit.php'>-->
+
+                                        <span>Year: </span><select name="year" id="year" class="select" onChange="loadProv(this.value)">
+                                                <option value="sel">-- Selection --</option>
+                                                <option value="0">--All Year--</option>
+                                                <?php
+                                                    include_once ( 'HTTP/Request.php' );
+                                                    $sesame_url = "http://localhost:8080/openrdf-sesame";
+                                                    $query ='?queryLn=SPARQL&query=PREFIX%20DemoOntology:<http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl%23>%0Aselect%20distinct%20%3Fx%0Awhere{%0A%3Fy%20DemoOntology:livingInTheYear%20%3Fx%0A}';
+                                                    $requestString = $sesame_url.'/repositories/demography'.$query;
+                                                    $req =& new HTTP_Request($requestString);
+                                                    //echo $requestString;
+                                                    $req->setMethod(HTTP_REQUEST_METHOD_GET);
+                                                    $req->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
+                                                    $req->sendRequest();
+                                                    $response_code = $req->getResponseCode();
+                                                    if($response_code!=200)
+                                                            echo "Errore di codice ".$response_code;
+                                                    else
+                                                        {
+                                                        $response_body = $req->getResponseBody();
+                                                        //echo "Risposta ricevuta correttamente<br/><br>";
+                                                        //echo $response_body."<br/><br/>";
+                                                        $xml=simplexml_load_string($response_body);
+                                                        $address = new SimpleXMLElement($response_body);
+                                                        foreach($xml->results->result as $item){
+                                                        $value=$item->binding->literal;
+                                                        echo '<option value="'.$value.'">'.$value.'</option>';
+                                                        }
+                                                       }
+                                                   ?>
+                                          </select><br/>
+                                        <span>Province: </span><select name="prov" class="select" id="prov" onChange="loadTowns(this.value)">
+                                           <option value="0">--    All    --</option>
+                                        </select><br/>
+                                        <span>Municipality: </span><select name="town" class="select" id="town">
+                                                <option value="0">--  All Town --</option>
+                                          </select><br/>
+                                        <span>Sex: </span><select name="sex" class="select" id="sex">
+
+                                                <option value="Both">Both</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                          </select><br/>
+                                        <span>Marital Status: </span><br/>
+                                        <input  type="checkbox" name="Unmarried" id="Unmarried">Unmarried</input>    <input  type="checkbox" name="Married" id="Married">Married</input><br/>
+                                        <input  type="checkbox" name="Divorced" id="Divorced">Divorced</input>     <input  type="checkbox" name="Widowed" id="Widowed">Widowed</input><br/>
+
+                                        </form>
+                                        <button id="try" onClick="prova()"> Start Query </button>
+                                    </label>
 					<h2>Aliquam tempus</h2>
 					<p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper urna ornare, orci in consectetuer hendrerit.</p>
 				</li>

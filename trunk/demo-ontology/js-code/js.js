@@ -37,12 +37,23 @@ function stateChanged() {
 function divChanged() {
    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
      var output="";
+     var indice=150;
      var data=xmlHttp.responseText.split(',');
+     var data2=data;
+     var max=1;
+     
+      for(j = 0; j < data2.length; j++)
+    {
+        var q=data2[j];
+        if((q-max)>0){max=q;}
+    }
+    var norm=indice/max;
      for(i = 0; i < data.length; i++)
     {
         var h=data[i];
+        //if(max<h){max=h;}
         var w=3;
-        output=output+"<img src='blank.gif' alt='"+i+" anni -> "+h+" abitanti' title='"+i+" anni -> "+h+" abitanti' class='barra2' style='height: " + h + "px; width: " + w + "px;'/>";
+        output=output+"<img src='blank.gif' alt='"+i+" anni -> "+h+" abitanti' title='"+i+" anni -> "+h+" abitanti ->max="+max+"' class='barra2' style='height: " + (norm*h) + "px; width: " + w + "px;'/>";
     }
       document.getElementById("divdata").innerHTML=output;
    }
@@ -81,6 +92,7 @@ function prova(){
     //document.getElementById('titolo').innerHTML=s;
     //document.getElementById('divdata').innerHTML="pippo";
     document.getElementById('pdiv').innerHTML="pippo";
+    document.getElementById('number').innerHTML="0      10      20      30      40      50      60      70      80      90      100";
 
     xmlHttp=GetXmlHttpObject()
    if (xmlHttp==null) {
