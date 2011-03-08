@@ -36,7 +36,15 @@ function stateChanged() {
 }
 function divChanged() {
    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
-      document.getElementById("divdata").innerHTML=xmlHttp.responseText
+     var output="";
+     var data=xmlHttp.responseText.split(',');
+     for(i = 0; i < data.length; i++)
+    {
+        var h=data[i];
+        var w=3;
+        output=output+"<img src='blank.gif' alt='"+i+" anni -> "+h+" abitanti' title='"+i+" anni -> "+h+" abitanti' class='barra2' style='height: " + h + "px; width: " + w + "px;'/>";
+    }
+      document.getElementById("divdata").innerHTML=output;
    }
 }
 function yearChanged() {
@@ -80,7 +88,7 @@ function prova(){
       return
    }
    var url="structquery.php"
-
+   document.getElementById("divdata").innerHTML=xmlHttp.responseText
    url=url+"?year="+year+"&prov="+prov+"&town="+town+"&sex="+sex+"&Unmarried="+Unmarried+"&Married="+Married+"&Widowed="+Widowed+"&Divorced="+Divorced;
    //url=url+"&sid="+Math.random()
    xmlHttp.onreadystatechange=divChanged
