@@ -48,13 +48,13 @@
                                 <p id="pdiv" class="meta" >Posted by <a href="#">Someone</a> on March 10, 2008
 					&nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">Full article</a></p>
 				<div id ="divdata" class="entry">
-                                    <script type="text/javascript"  >
+                                    <!--<script type="text/javascript"  >
                                     
                                     var data=new Array(105,89,83,92,93,85,75,78,65,75,81,86,80,74,95,82,81,107,96,103,114,94,108,100,93,91,94,103,63,49,77,48,53,52,39,52,41,39,38,33,32,27,31,30,24,20,18,18,16,21,12,14,17,17,12,12,12,12,13,8,8,10,8,5,9,13,7,7,5,10,7,6,8,6,8,5,11,6,7,5,7,5,3,6,2,7,4,5,3,3,1,0,1,0,1,0,0,0,1,0,10);
                                     
                                     grafico(data);
                                     </script>
-                                    <p id='titolo'></p>
+                                    <p id='titolo'></p>-->
                                 </div>
 			</div>
 			<div class="post">
