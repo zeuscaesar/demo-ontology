@@ -48,7 +48,7 @@ function divChanged() {
         if((q-max)>0){max=q;}
     }
     var norm=indice/max;
-     for(i = 0; i < 100; i++)
+     for(i = 0; i < data.length; i++)
     {
         var h=data[i];
         //if(max<h){max=h;}
@@ -93,7 +93,7 @@ function prova(){
      var table= "<table border='0.5'><tr><td>prima cella</td><td>seconda cella</td></tr><tr><td>terza cella</td><td>quarta cella</td></tr></table>";
     //document.getElementById('titolo').innerHTML=s;
     //document.getElementById('divdata').innerHTML="pippo";
-    document.getElementById('pdiv').innerHTML=table;
+    document.getElementById('pdiv').innerHTML=Unmarried+";"+Married.valueOf()+";"+Widowed.toSource()+";"+Divorced.toString();
     document.getElementById('number').innerHTML="0      10      20      30      40      50      60      70      80      90      100";
 
     xmlHttp=GetXmlHttpObject()
