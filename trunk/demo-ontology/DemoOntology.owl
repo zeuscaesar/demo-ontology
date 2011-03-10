@@ -1712,9 +1712,10 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;OliveriFD2009">
         <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,2,1,0,1,1,0,0,0,1,0,0,1,0,1,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
-        <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Divorced</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#OliveriFD2010 -->
@@ -1722,9 +1723,10 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;OliveriFD2010">
         <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,2,1,0,1,1,0,0,0,1,0,0,1,0,1,0,0,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
-        <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Divorced</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#OliveriFM2009 -->
@@ -1735,6 +1737,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#OliveriFM2010 -->
@@ -1745,16 +1748,18 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#OliveriFU2009 -->
 
     <owl:NamedIndividual rdf:about="&DemoOntology;OliveriFU2009">
-        <numbers rdf:datatype="&rdfs;Literal">5,8,10,6,9,9,4,10,11,13,7,11,13,7,13,14,16,10,15,14,18,10,14,9,7,12,6,8,10,8,4,9,5,8,4,1,2,3,2,2,1,3,1,2,0,4,1,0,2,0,1,2,2,0,1,2,0,2,0,0,3,1,0,0,1,1,1,0,0,0,1,0,2,2,0,0,0,1,3,0,2,1,2,1,0,0,1,1,0,0,0,0,1,0,1,0,0,0,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
+        <numbers rdf:datatype="&rdfs;Literal">5,8,10,6,9,9,4,10,11,13,7,11,13,7,13,14,16,10,15,14,18,10,14,9,7,12,6,8,10,8,4,9,5,8,4,1,2,3,2,2,1,3,1,2,0,4,1,0,2,0,1,2,2,0,1,2,0,2,0,0,3,1,0,0,1,1,1,0,0,0,1,0,2,2,0,0,0,1,3,0,2,1,2,1,0,0,1,1,0,0,0,0,1,0,1,0,0,0,0,0,0</numbers>
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#OliveriFU2010 -->
@@ -1765,6 +1770,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#OliveriFW2009 -->
@@ -1775,6 +1781,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#OliveriFW2010 -->
@@ -1793,9 +1800,10 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;OliveriMD2009">
         <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,0,1,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,2,0,1,1,0,0,0,0,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
-        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Divorced</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#OliveriMD2010 -->
@@ -1803,9 +1811,10 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;OliveriMD2010">
         <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,0,0,1,0,0,0,0,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
-        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Divorced</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#OliveriMM2009 -->
@@ -1816,6 +1825,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#OliveriMM2010 -->
@@ -1826,26 +1836,29 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#OliveriMU2009 -->
 
     <owl:NamedIndividual rdf:about="&DemoOntology;OliveriMU2009">
-        <numbers rdf:datatype="&rdfs;Literal">5,11,13,8,14,12,11,12,12,13,10,8,4,8,11,16,9,13,14,9,8,8,13,7,19,10,9,12,15,9,7,12,6,11,6,7,3,8,2,2,4,4,5,2,1,3,3,2,1,0,0,2,0,1,0,1,1,0,0,1,0,0,1,2,0,0,0,2,2,0,0,0,0,0,0,1,2,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
+        <numbers rdf:datatype="&rdfs;Literal">5,11,13,8,14,12,11,12,12,13,10,8,4,8,11,16,9,13,14,9,8,8,13,7,19,10,9,12,15,9,7,12,6,11,6,7,3,8,2,2,4,4,5,2,1,3,3,2,1,0,0,2,0,1,0,1,1,0,0,1,0,0,1,2,0,0,0,2,2,0,0,0,0,0,0,1,2,0,1,0,0,0,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0</numbers>
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#OliveriMU2010 -->
 
     <owl:NamedIndividual rdf:about="&DemoOntology;OliveriMU2010">
-        <numbers rdf:datatype="&rdfs;Literal">9,5,11,13,7,14,12,11,11,11,12,10,6,4,8,11,15,10,13,15,10,7,8,12,8,17,11,9,10,14,8,6,11,5,12,7,6,2,7,2,2,4,4,5,2,1,3,3,3,1,0,0,2,0,1,0,1,1,0,0,1,0,0,1,2,0,0,0,2,2,0,0,0,0,0,0,1,2,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
+        <numbers rdf:datatype="&rdfs;Literal">9,5,11,13,7,14,12,11,11,11,12,10,6,4,8,11,15,10,13,15,10,7,8,12,8,17,11,9,10,14,8,6,11,5,12,7,6,2,7,2,2,4,4,5,2,1,3,3,3,1,0,0,2,0,1,0,1,1,0,0,1,0,0,1,2,0,0,0,2,2,0,0,0,0,0,0,1,2,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</numbers>
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#OliveriMW2009 -->
@@ -1856,6 +1869,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#OliveriMW2010 -->
@@ -1866,6 +1880,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#Rho -->
@@ -2076,8 +2091,185 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
         <extends rdf:datatype="&rdfs;Literal">17,44</extends>
         <hasName rdf:datatype="&rdfs;Literal">Segrate</hasName>
+        <hasPopulation rdf:resource="&DemoOntology;SegrateFD2009"/>
+        <hasPopulation rdf:resource="&DemoOntology;SegrateFD2010"/>
+        <hasPopulation rdf:resource="&DemoOntology;SegrateFM2009"/>
+        <hasPopulation rdf:resource="&DemoOntology;SegrateFM2010"/>
+        <hasPopulation rdf:resource="&DemoOntology;SegrateFU2009"/>
+        <hasPopulation rdf:resource="&DemoOntology;SegrateFU2010"/>
+        <hasPopulation rdf:resource="&DemoOntology;SegrateFW2009"/>
+        <hasPopulation rdf:resource="&DemoOntology;SegrateFW2010"/>
+        <hasPopulation rdf:resource="&DemoOntology;SegrateMD2009"/>
+        <hasPopulation rdf:resource="&DemoOntology;SegrateMD2010"/>
+        <hasPopulation rdf:resource="&DemoOntology;SegrateMM2009"/>
+        <hasPopulation rdf:resource="&DemoOntology;SegrateMM2010"/>
+        <hasPopulation rdf:resource="&DemoOntology;SegrateMU2009"/>
+        <hasPopulation rdf:resource="&DemoOntology;SegrateMU2010"/>
+        <hasPopulation rdf:resource="&DemoOntology;SegrateMW2009"/>
+        <hasPopulation rdf:resource="&DemoOntology;SegrateMW2010"/>
     </owl:NamedIndividual>
     
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#SegrateFD2009 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;SegrateFD2009">
+        <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,0,1,1,3,6,4,5,8,10,8,18,5,15,23,19,20,18,21,19,20,17,19,12,18,17,14,19,19,12,15,14,11,18,12,5,11,14,5,10,9,11,8,5,6,1,8,3,3,1,2,1,5,1,2,1,1,3,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0</numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Divorced</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#SegrateFD2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;SegrateFD2010">
+        <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,14,18,11,12,14,16,18,17,17,23,20,31,20,32,33,32,30,25,27,25,27,29,33,21,28,23,18,23,27,12,16,17,14,19,12,9,13,17,6,9,10,11,7,6,6,2,9,4,3,1,2,1,5,1,2,1,2,2,0,0,0,0,0,0,0,0,0,0,0,0,0,0</numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Divorced</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#SegrateFM2009 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;SegrateFM2009">
+        <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,3,9,12,9,13,27,26,46,64,66,68,78,125,149,158,204,196,191,201,214,254,219,235,259,215,220,236,196,195,184,208,168,188,169,200,196,174,189,179,204,230,243,158,182,172,167,215,185,172,171,138,109,95,98,91,75,73,50,43,31,26,22,19,17,16,11,8,2,4,1,1,0,0,1,0,0,0,0,0,0</numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#SegrateFM2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;SegrateFM2010">
+        <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,3,2,3,11,10,12,17,27,35,48,71,74,80,97,135,161,163,203,204,195,204,207,247,213,238,257,212,218,233,197,190,180,210,163,192,165,194,192,165,181,173,195,221,242,152,177,162,164,214,184,167,163,134,108,90,94,87,69,71,51,41,26,19,20,16,14,15,10,5,1,3,1,1,0,0,0,0,0,0,0,0</numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#SegrateFU2009 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;SegrateFU2009">
+        <numbers rdf:datatype="&rdfs;Literal">146,160,172,161,167,177,174,177,183,172,177,158,145,165,142,133,150,136,128,136,140,124,129,132,112,132,111,122,114,125,112,118,107,110,111,97,81,90,87,69,66,63,71,62,68,44,42,36,28,41,33,24,25,32,21,21,21,7,10,18,16,16,10,6,9,11,11,5,10,10,4,9,9,3,8,1,4,3,6,3,6,7,1,3,4,1,4,4,3,1,1,0,1,0,0,0,0,0,1,1,0</numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#SegrateFU2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;SegrateFU2010">
+        <numbers rdf:datatype="&rdfs;Literal">141,166,161,185,159,167,174,174,181,183,175,172,160,145,166,147,134,147,137,126,135,145,121,134,129,111,136,107,112,99,100,92,106,91,96,85,88,69,76,71,55,52,49,55,49,52,43,35,28,22,29,27,17,22,24,17,15,14,8,8,13,14,15,7,4,7,6,9,4,10,8,3,7,10,2,6,1,3,3,6,2,6,7,1,3,3,1,4,3,2,0,0,0,0,0,0,0,0,0,1,1</numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#SegrateFW2009 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;SegrateFW2009">
+        <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,0,1,0,0,4,3,3,3,2,2,5,5,7,5,13,8,10,7,13,14,17,19,25,36,28,29,32,32,52,49,46,59,50,47,54,67,70,70,68,55,60,72,60,56,49,62,48,66,48,29,48,21,18,19,11,16,17,16,8,6,2,4,4</numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#SegrateFW2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;SegrateFW2010">
+        <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,2,0,2,0,0,5,4,3,6,3,2,5,5,9,5,13,8,13,9,13,15,20,20,26,39,31,31,34,36,54,51,51,59,54,51,56,67,73,74,71,53,57,72,65,56,52,61,44,59,46,28,45,20,17,16,10,12,11,10,5,5,2,7</numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#SegrateMD2009 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;SegrateMD2009">
+        <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,2,2,3,2,6,3,3,8,8,11,8,15,10,13,9,6,13,11,15,12,12,15,13,7,5,10,9,7,5,6,2,6,9,3,1,2,0,8,8,2,2,2,1,2,3,1,1,1,2,0,0,0,2,0,1,0,0,0,0,0,0,0,0,0,0,0</numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Divorced</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#SegrateMD2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;SegrateMD2010">
+        <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,15,14,17,17,12,19,16,14,9,11,16,11,13,11,17,14,18,16,21,15,17,14,14,16,14,16,13,12,15,14,8,8,12,10,6,5,6,3,7,9,3,2,3,0,7,8,2,3,2,1,1,3,2,1,1,2,0,0,0,2,0,1,0,0,0,0,0,0,0,0,0,0</numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Divorced</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#SegrateMM2009 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;SegrateMM2009">
+        <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,4,3,9,17,24,27,31,53,62,73,98,121,130,148,157,175,198,204,219,214,223,218,219,197,191,191,162,215,171,187,164,169,149,145,187,192,178,208,198,182,166,173,214,173,219,214,204,182,166,134,107,135,103,107,85,83,72,57,46,31,37,30,22,25,9,5,3,4,1,3,1,0,1,0,1,0,0</numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#SegrateMM2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;SegrateMM2010">
+        <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,3,2,3,4,11,17,35,36,39,65,66,71,110,125,132,161,172,190,193,206,218,216,217,217,222,196,193,183,162,212,172,182,169,168,149,141,172,192,171,201,188,176,162,171,211,170,209,206,193,181,158,133,104,128,100,104,84,83,67,54,39,27,32,26,17,23,8,4,1,3,2,2,1,0,0,0,1,0</numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#SegrateMU2009 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;SegrateMU2009">
+        <numbers rdf:datatype="&rdfs;Literal">159,194,188,185,158,170,168,201,198,165,185,168,200,152,175,158,161,160,134,144,159,151,136,153,123,137,155,157,150,128,146,177,144,148,149,133,130,120,112,114,105,77,87,65,78,52,46,52,35,39,39,32,32,26,15,16,17,15,12,16,14,18,11,9,10,6,8,8,5,10,8,2,3,5,4,7,4,3,1,3,3,2,1,3,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0,0</numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#SegrateMU2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;SegrateMU2010">
+        <numbers rdf:datatype="&rdfs;Literal">168,169,201,185,185,160,177,176,191,201,166,189,172,197,162,172,161,164,165,128,144,163,153,142,155,122,129,148,138,127,111,124,154,117,122,129,110,117,104,88,107,97,71,79,63,77,47,39,42,31,39,31,29,26,25,11,15,16,15,12,13,14,17,11,10,11,6,8,7,6,10,8,2,2,1,3,5,4,3,1,3,2,2,1,3,0,0,0,2,0,0,0,0,0,0,0,0,0,0,0,0</numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#SegrateMW2009 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;SegrateMW2009">
+        <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,2,3,1,3,2,0,1,1,2,2,4,3,3,1,3,1,8,6,7,3,12,7,10,9,14,11,15,15,9,16,12,14,10,8,15,11,6,13,9,6,11,12,3,9,6,2,5,0,1,1,1,2,0,0,1,1,0</numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+    </owl:NamedIndividual>
+
+
+    <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#SegrateMW2010 -->
+
+    <owl:NamedIndividual rdf:about="&DemoOntology;SegrateMW2010">
+        <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,3,1,3,2,0,0,1,2,2,4,5,2,2,3,2,9,8,8,3,11,6,10,9,14,12,14,16,9,16,13,15,11,7,14,10,6,15,8,5,11,9,3,6,6,1,4,0,0,1,0,1,0,0,1,0</numbers>
+        <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
+        <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+    </owl:NamedIndividual>
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#Taormina -->
