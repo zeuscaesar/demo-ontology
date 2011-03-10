@@ -84,16 +84,16 @@ function prova(){
     var prov=document.forms['frm'].elements['prov'].options[document.forms['frm'].elements['prov'].options.selectedIndex].value;
     var town=document.forms['frm'].elements['town'].options[document.forms['frm'].elements['town'].options.selectedIndex].value;
     var sex=document.forms['frm'].elements['sex'].options[document.forms['frm'].elements['sex'].options.selectedIndex].value;
-    var Unmarried=document.forms['frm'].elements['Unmarried'].value;
-    var Married=document.forms['frm'].elements['Married'].value;
-    var Widowed=document.forms['frm'].elements['Widowed'].value;
-    var Divorced=document.forms['frm'].elements['Divorced'].value;
+    var Unmarried=document.forms['frm'].elements['Unmarried'].checked;
+    var Married=document.forms['frm'].elements['Married'].checked;
+    var Widowed=document.forms['frm'].elements['Widowed'].checked;
+    var Divorced=document.forms['frm'].elements['Divorced'].checked;
 
       //alert(s2);
      var table= "<table border='0.5'><tr><td>prima cella</td><td>seconda cella</td></tr><tr><td>terza cella</td><td>quarta cella</td></tr></table>";
     //document.getElementById('titolo').innerHTML=s;
     //document.getElementById('divdata').innerHTML="pippo";
-    document.getElementById('pdiv').innerHTML=Unmarried+";"+Married.valueOf()+";"+Widowed.toSource()+";"+Divorced.toString();
+    document.getElementById('pdiv').innerHTML=Unmarried+";"+Married+";"+Widowed+";"+Divorced;
     document.getElementById('number').innerHTML="0      10      20      30      40      50      60      70      80      90      100";
 
     xmlHttp=GetXmlHttpObject()
