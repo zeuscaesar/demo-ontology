@@ -88,13 +88,13 @@ if($prov=='0'){
             {?pop DemoOntology:hasSex "Female"^^rdfs:Literal}
             ');
     }
-    if($Unmarried==on){
+    if($Unmarried==on || $Unmarried==ON){
         $union=true;
         $query=concatRDF($query,'
             {?pop DemoOntology:hasMaritalStatus "Unmarried"^^rdfs:Literal}
             ');
     }
-    if($Married==on){
+    if($Married==on || $Married==ON){
         if($union==true){
          $query=concatRDF($query,'UNION'); 
         }
@@ -103,7 +103,7 @@ if($prov=='0'){
             {?pop DemoOntology:hasMaritalStatus "Married"^^rdfs:Literal}
             ');
     }
-    if($Divorced==on){
+    if($Divorced==on || $Divorced==ON){
         if($union==true){
          $query=concatRDF($query,'UNION');
         }
@@ -112,7 +112,7 @@ if($prov=='0'){
             {?pop DemoOntology:hasMaritalStatus "Divorced"^^rdfs:Literal}
             ');
     }
-    if($Widowed==on){
+    if($Widowed==on || $Widowed==ON){
         if($union==true){
          $query=concatRDF($query,'UNION');
         }
