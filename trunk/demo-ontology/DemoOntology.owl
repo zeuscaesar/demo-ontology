@@ -18,7 +18,7 @@
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
     <owl:Ontology rdf:about="http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl">
-        <owl:versionInfo>1.3</owl:versionInfo>
+        <owl:versionInfo>2.0</owl:versionInfo>
         <rdfs:comment xml:lang="en">Demo Ontology is an OWL Demographic Ontology. </rdfs:comment>
         <rdfs:isDefinedBy xml:lang="en">dott. Luciano De Franco (luciano.defranco@gmail.com)
 dott. Carlo Leonardi (carloleonardi83@gmail.com)
@@ -75,6 +75,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#hasPopulation -->
 
     <owl:ObjectProperty rdf:about="&DemoOntology;hasPopulation">
+        <rdfs:comment xml:lang="en">The municipality contains the populations.</rdfs:comment>
         <rdfs:domain rdf:resource="&DemoOntology;Municipality"/>
         <rdfs:range rdf:resource="&DemoOntology;Population"/>
     </owl:ObjectProperty>
@@ -95,6 +96,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#extends -->
 
     <owl:DatatypeProperty rdf:about="&DemoOntology;extends">
+        <rdfs:comment xml:lang="en">This property expresses the extent of a geographical area. Its value is expressed in square kilometers.</rdfs:comment>
         <rdfs:domain rdf:resource="&DemoOntology;GeographicArea"/>
         <rdfs:range rdf:resource="&rdfs;Literal"/>
     </owl:DatatypeProperty>
@@ -104,6 +106,11 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#hasMaritalStatus -->
 
     <owl:DatatypeProperty rdf:about="&DemoOntology;hasMaritalStatus">
+        <rdfs:comment xml:lang="en">This property expresses the marital status of a population. It may assume the following values:
+- Unmarried
+- Married
+- Divorced
+- Widowed</rdfs:comment>
         <rdfs:domain rdf:resource="&DemoOntology;Population"/>
         <rdfs:range rdf:resource="&rdfs;Literal"/>
     </owl:DatatypeProperty>
@@ -113,7 +120,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#hasName -->
 
     <owl:DatatypeProperty rdf:about="&DemoOntology;hasName">
-        <rdfs:comment xml:lang="en">Is the name of the geographical area.</rdfs:comment>
+        <rdfs:comment xml:lang="en">This property expresses the name of the geographical area.</rdfs:comment>
         <rdfs:domain rdf:resource="&DemoOntology;GeographicArea"/>
         <rdfs:range rdf:resource="&rdfs;Literal"/>
     </owl:DatatypeProperty>
@@ -123,6 +130,9 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#hasSex -->
 
     <owl:DatatypeProperty rdf:about="&DemoOntology;hasSex">
+        <rdfs:comment xml:lang="en">This property expresses the sex of a population. It may assume the following values:
+- Female
+- Male</rdfs:comment>
         <rdfs:domain rdf:resource="&DemoOntology;Population"/>
         <rdfs:range rdf:resource="&rdfs;Literal"/>
     </owl:DatatypeProperty>
@@ -132,6 +142,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#isLocated -->
 
     <owl:DatatypeProperty rdf:about="&DemoOntology;isLocated">
+        <rdfs:comment xml:lang="en">This property expresses the geographic coordinates of a geographical location. Its values are expressed as a pair of decimals: the first one represents the longitude (positive for East and negative for West), and the second one represents the latitude (positive for Nord and negative for South).</rdfs:comment>
         <rdfs:domain rdf:resource="&DemoOntology;GeographicArea"/>
         <rdfs:range rdf:resource="&rdfs;Literal"/>
     </owl:DatatypeProperty>
@@ -141,6 +152,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#livingInTheYear -->
 
     <owl:DatatypeProperty rdf:about="&DemoOntology;livingInTheYear">
+        <rdfs:comment xml:lang="en">This property expresses the year in which the population is living. Its values is expressed as four-digit number.</rdfs:comment>
         <rdfs:domain rdf:resource="&DemoOntology;Population"/>
         <rdfs:range rdf:resource="&rdfs;Literal"/>
     </owl:DatatypeProperty>
@@ -150,6 +162,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#numbers -->
 
     <owl:DatatypeProperty rdf:about="&DemoOntology;numbers">
+        <rdfs:comment xml:lang="en">This property expresses the number of the individuals composing the population, divided and ordered by age. Its value is expressed as a list of integers separated by commas.</rdfs:comment>
         <rdfs:domain rdf:resource="&DemoOntology;Population"/>
         <rdfs:range rdf:resource="&rdfs;Literal"/>
     </owl:DatatypeProperty>
@@ -169,7 +182,9 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#GeographicArea -->
 
-    <owl:Class rdf:about="&DemoOntology;GeographicArea"/>
+    <owl:Class rdf:about="&DemoOntology;GeographicArea">
+        <rdfs:comment xml:lang="en">This class represents an element in a territorial division.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -177,13 +192,16 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:Class rdf:about="&DemoOntology;Municipality">
         <rdfs:subClassOf rdf:resource="&DemoOntology;GeographicArea"/>
+        <rdfs:comment xml:lang="en">This class represents the territorial area of a municipality.</rdfs:comment>
     </owl:Class>
     
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#Population -->
 
-    <owl:Class rdf:about="&DemoOntology;Population"/>
+    <owl:Class rdf:about="&DemoOntology;Population">
+        <rdfs:comment xml:lang="en">This class represents the population living in a territorial area.</rdfs:comment>
+    </owl:Class>
     
 
 
@@ -191,6 +209,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:Class rdf:about="&DemoOntology;Province">
         <rdfs:subClassOf rdf:resource="&DemoOntology;GeographicArea"/>
+        <rdfs:comment xml:lang="en">This class represents the territorial area of a province.</rdfs:comment>
     </owl:Class>
     
 
@@ -2321,6 +2340,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Divorced</hasMaritalStatus>
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#TaorminaFD2010 -->
@@ -2331,6 +2351,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Divorced</hasMaritalStatus>
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#TaorminaFM2009 -->
@@ -2338,9 +2359,10 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;TaorminaFM2009">
         <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,2,1,2,7,6,6,5,8,16,32,29,36,31,44,42,48,46,59,59,58,56,59,73,64,90,67,63,79,70,66,50,73,75,71,51,88,76,49,57,50,50,59,57,39,46,41,32,47,44,34,36,44,43,20,27,30,20,24,26,16,10,13,8,9,4,6,5,5,3,0,2,1,0,0,1,0,0,0,1,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
-        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#TaorminaFM2010 -->
@@ -2348,29 +2370,32 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;TaorminaFM2010">
         <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,3,4,5,12,9,11,10,20,29,32,36,34,45,43,51,45,59,59,61,67,58,63,54,82,65,61,78,78,66,52,74,75,70,51,87,72,51,55,48,62,58,56,40,49,41,31,45,44,33,34,44,40,20,24,29,17,23,23,15,10,12,8,7,4,4,2,4,1,0,2,1,0,0,1,0,0,0,1,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
-        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#TaorminaFU2009 -->
 
     <owl:NamedIndividual rdf:about="&DemoOntology;TaorminaFU2009">
-        <numbers rdf:datatype="&rdfs;Literal">40,45,43,54,52,41,40,39,42,47,40,54,53,36,54,44,65,54,51,68,72,58,53,58,43,50,45,45,49,34,40,41,36,38,42,34,30,38,22,20,15,22,20,18,12,18,17,12,16,15,4,10,8,11,14,11,6,4,9,4,3,13,4,4,5,1,3,6,6,5,6,5,9,3,7,7,9,6,7,9,6,11,1,5,8,4,1,1,2,1,1,0,0,5,2,2,0,0,1,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
-        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
+        <numbers rdf:datatype="&rdfs;Literal">40,45,43,54,52,41,40,39,42,47,40,54,53,36,54,44,65,54,51,68,72,58,53,58,43,50,45,45,49,34,40,41,36,38,42,34,30,38,22,20,15,22,20,18,12,18,17,12,16,15,4,10,8,11,14,11,6,4,9,4,3,13,4,4,5,1,3,6,6,5,6,5,9,3,7,7,9,6,7,9,6,11,1,5,8,4,1,1,2,1,1,0,0,5,2,2,0,0,1,0,0</numbers>
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#TaorminaFU2010 -->
 
     <owl:NamedIndividual rdf:about="&DemoOntology;TaorminaFU2010">
-        <numbers rdf:datatype="&rdfs;Literal">37,42,43,45,58,53,43,42,37,41,48,41,53,51,36,54,43,65,55,48,67,73,56,51,56,42,49,43,43,47,27,39,41,36,37,39,33,30,38,20,24,16,22,19,19,13,18,17,13,16,15,4,10,8,11,13,11,6,4,8,4,3,12,4,3,5,1,3,6,5,5,6,5,9,3,7,7,9,4,7,8,6,11,1,5,7,2,1,1,2,1,1,0,0,4,2,2,0,0,1,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
-        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
+        <numbers rdf:datatype="&rdfs;Literal">37,42,43,45,58,53,43,42,37,41,48,41,53,51,36,54,43,65,55,48,67,73,56,51,56,42,49,43,43,47,27,39,41,36,37,39,33,30,38,20,24,16,22,19,19,13,18,17,13,16,15,4,10,8,11,13,11,6,4,8,4,3,12,4,3,5,1,3,6,5,5,6,5,9,3,7,7,9,4,7,8,6,11,1,5,7,2,1,1,2,1,1,0,0,4,2,2,0,0,1,0</numbers>
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#TaorminaFW2009 -->
@@ -2378,9 +2403,10 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;TaorminaFW2009">
         <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,0,0,0,0,1,1,4,2,4,5,1,1,1,3,3,2,3,4,3,7,6,5,8,2,8,8,11,12,8,8,16,18,15,13,24,14,23,22,22,30,25,23,15,21,29,34,19,24,28,24,15,22,16,22,8,5,10,8,6,1,1,1,2,0,3</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
-        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#TaorminaFW2010 -->
@@ -2388,9 +2414,10 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;TaorminaFW2010">
         <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,1,1,1,4,2,4,4,1,1,1,3,3,2,3,5,4,7,6,5,9,4,8,9,12,13,8,9,17,17,16,15,25,16,23,23,23,35,25,24,17,20,27,33,16,23,29,20,16,15,14,21,6,4,5,8,6,1,1,1,1,1</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
-        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
         <hasSex rdf:datatype="&rdfs;Literal">Female</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#TaorminaMD2009 -->
@@ -2401,6 +2428,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
         <hasMaritalStatus rdf:datatype="&rdfs;Literal">Divorced</hasMaritalStatus>
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#TaorminaMD2010 -->
@@ -2419,9 +2447,10 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;TaorminaMM2009">
         <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,2,3,6,5,5,10,9,23,10,24,22,32,42,50,46,47,48,53,73,64,64,87,61,72,62,69,67,57,73,55,71,62,64,55,65,68,66,59,51,46,47,46,34,46,34,38,48,38,41,57,37,37,35,29,31,37,30,19,25,17,15,17,14,13,5,4,5,3,1,3,1,0,1,0,0,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
-        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#TaorminaMM2010 -->
@@ -2429,29 +2458,32 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;TaorminaMM2010">
         <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,2,1,9,7,7,5,14,13,27,14,32,20,35,41,48,42,51,51,53,63,53,55,81,62,75,64,74,67,57,74,56,73,65,67,62,63,70,77,58,51,45,48,44,32,45,33,37,46,38,39,54,37,36,33,29,30,31,29,18,19,16,11,16,12,10,5,4,2,3,1,2,0,0,0,0,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
-        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Married</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#TaorminaMU2009 -->
 
     <owl:NamedIndividual rdf:about="&DemoOntology;TaorminaMU2009">
-        <numbers rdf:datatype="&rdfs;Literal">49,47,59,54,49,49,50,43,44,45,53,48,47,51,57,64,57,64,59,49,44,65,56,58,64,57,53,58,63,66,49,67,58,46,42,48,39,34,28,37,26,32,25,24,31,20,11,12,16,19,20,10,11,13,12,13,4,11,6,12,8,8,11,4,5,5,4,4,2,3,1,8,2,4,5,2,5,2,6,2,2,1,4,1,0,1,0,0,2,0,0,1,0,0,0,0,0,0,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
-        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
+        <numbers rdf:datatype="&rdfs;Literal">49,47,59,54,49,49,50,43,44,45,53,48,47,51,57,64,57,64,59,49,44,65,56,58,64,57,53,58,63,66,49,67,58,46,42,48,39,34,28,37,26,32,25,24,31,20,11,12,16,19,20,10,11,13,12,13,4,11,6,12,8,8,11,4,5,5,4,4,2,3,1,8,2,4,5,2,5,2,6,2,2,1,4,1,0,1,0,0,2,0,0,1,0,0,0,0,0,0,0,0,0</numbers>
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#TaorminaMU2010 -->
 
     <owl:NamedIndividual rdf:about="&DemoOntology;TaorminaMU2010">
-        <numbers rdf:datatype="&rdfs;Literal">45,50,48,56,52,51,49,48,48,44,45,53,48,46,50,56,62,56,65,59,50,43,65,59,61,62,59,50,59,57,61,47,60,52,48,38,47,36,28,30,35,25,32,24,24,30,18,11,12,15,19,20,10,11,13,14,13,6,12,8,13,7,8,11,4,5,5,3,3,2,4,1,8,2,4,5,2,4,2,6,2,2,1,4,0,0,1,0,0,2,0,0,1,0,0,0,0,0,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
-        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
+        <numbers rdf:datatype="&rdfs;Literal">45,50,48,56,52,51,49,48,48,44,45,53,48,46,50,56,62,56,65,59,50,43,65,59,61,62,59,50,59,57,61,47,60,52,48,38,47,36,28,30,35,25,32,24,24,30,18,11,12,15,19,20,10,11,13,14,13,6,12,8,13,7,8,11,4,5,5,3,3,2,4,1,8,2,4,5,2,4,2,6,2,2,1,4,0,0,1,0,0,2,0,0,1,0,0,0,0,0,0,0,0</numbers>
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Unmarried</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#TaorminaMW2009 -->
@@ -2459,9 +2491,10 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;TaorminaMW2009">
         <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,3,1,4,1,3,1,0,1,0,1,2,3,0,0,2,2,5,3,1,5,3,5,2,3,4,4,8,6,5,7,4,3,3,3,5,3,2,3,2,2,0,0,1,0,0,0,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2009</livingInTheYear>
-        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
     </owl:NamedIndividual>
+    
 
 
     <!-- http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl#TaorminaMW2010 -->
@@ -2469,8 +2502,8 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
     <owl:NamedIndividual rdf:about="&DemoOntology;TaorminaMW2010">
         <numbers rdf:datatype="&rdfs;Literal">0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,0,1,0,0,1,0,3,1,4,1,3,1,0,1,0,1,2,3,0,0,2,2,5,3,1,5,3,4,2,3,5,4,9,6,4,6,4,2,3,3,9,3,2,3,2,1,0,0,1,0,0,0,0,0</numbers>
         <livingInTheYear rdf:datatype="&rdfs;Literal">2010</livingInTheYear>
-        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
         <hasSex rdf:datatype="&rdfs;Literal">Male</hasSex>
+        <hasMaritalStatus rdf:datatype="&rdfs;Literal">Widowed</hasMaritalStatus>
     </owl:NamedIndividual>
 </rdf:RDF>
 

@@ -38,23 +38,62 @@ function divChanged() {
    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
      var output="";
      var indice=150;
-     var data=xmlHttp.responseText.split(',');
-     var data2=data;
+     //ricevuta la stringa di risposta contente i risultati della query separati dal carattere "|",
+     //la splitto e memorizzo i singoli risultati nella variabile var data
+     var data = xmlHttp.responseText.split('|');
+
+     //ricopio i risultati ottenuti all'interno di una variabile var vett,
+     //eliminando l'ultimo che in realtà a causa della costruzione della stringa di risposta
+     //corrisponde ad una stringa vuota
+     var vett = new Array();
+     for (i=0; i<data.length-1; i++)
+         vett[i] = data[i].split(',');
+
+     //prelevo il massimo tra tutti i valori contenuti nei vari risultati della query
+     //e lo salvo nella variabile var max
      var max=1;
-     
-      for(j = 0; j < data2.length; j++)
-    {
-        var q=data2[j];
-        if((q-max)>0){max=q;}
-    }
-    var norm=indice/max;
-     for(i = 0; i < data.length; i++)
-    {
-        var h=data[i];
-        //if(max<h){max=h;}
-        var w=3;
-        output=output+"<img src='blank.gif' alt='"+i+" anni -> "+h+" abitanti' title='"+i+" anni -> "+h+" abitanti ->max="+max+"' class='barra2' style='height: " + (norm*h) + "px; width: " + w + "px;'/>";
-    }
+     for(i=0; i<vett.length; i++)
+        for (j=0; j<vett[i].length; j++)
+            {
+            var q=vett[i][j];
+            if((q-max)>0){max=q;}
+            }
+
+     //calcolo il fattore di normalizzazione
+     var norm=indice/max;
+
+     //calcolo la somma della popolazione per anno di età
+     var sum = new Array();
+     for (j=0; j<vett[0].length; j++)
+         {
+         sum[j]=0;
+         for (i=0; i< vett.length; i++)
+            sum[j]+=parseInt(vett[i][j]);
+         }
+
+     //se il risultato della query comprende più categorie di popolazione,
+     //grafico prima le singole categorie
+     if (vett.length>1)
+         for(i = 0; i < vett.length; i++)
+              {
+              for(j = 0; j < vett[i].length; j++)
+                {
+                var h=vett[i][j];
+                //if(max<h){max=h;}
+                var w=3;
+                output=output+"<img src='blank.gif' alt='"+j+" anni -> "+h+" abitanti' title='"+j+" anni -> "+h+" abitanti' class='barra2' style='height: " + (norm*h) + "px; width: " + w + "px;'/>";
+                }
+              output += "<br/><hr/ class='graphseparator' style='border:dotted;size=1'<br/>";
+              }
+
+     //grafico la totalità della popolazione
+     for(i = 0; i < sum.length; i++)
+            {
+            h=sum[i];
+            //if(max<h){max=h;}
+            w=3;
+            output=output+"<img src='blank.gif' alt='"+i+" anni -> "+h+" abitanti' title='"+i+" anni -> "+h+" abitanti' class='barra2' style='height: " + (norm*h) + "px; width: " + w + "px;'/>";
+            }
 
       document.getElementById("divdata").innerHTML=output;
    }
