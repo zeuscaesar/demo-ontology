@@ -372,3 +372,19 @@ a:hover {
     margin-bottom: 10px;
     width: 100px;
 }
+table
+{
+border-collapse:collapse;
+}
+th{
+    background-color:red;
+    color:white;
+    text-align:center;
+    border: 1px solid black;
+}
+td
+{
+    border: 1px solid black;
+    text-align:center;
+    color:black;
+}

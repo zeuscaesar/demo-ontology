@@ -46,18 +46,22 @@ function divChanged() {
      //eliminando l'ultimo che in realtà a causa della costruzione della stringa di risposta
      //corrisponde ad una stringa vuota
      var vett = new Array();
+     var sosv=new Array();//sum on single vector
      for (i=0; i<data.length-1; i++)
          vett[i] = data[i].split(',');
-
      //prelevo il massimo tra tutti i valori contenuti nei vari risultati della query
      //e lo salvo nella variabile var max
      var max=1;
      for(i=0; i<vett.length; i++)
+        {
+        sosv[i]=0;
         for (j=0; j<vett[i].length; j++)
             {
-            var q=vett[i][j];
+            var q=parseInt(vett[i][j]);
+            sosv[i]+=q;
             if((q-max)>0){max=q;}
             }
+        }
 
      //calcolo il fattore di normalizzazione
      var norm=indice/max;
@@ -94,7 +98,54 @@ function divChanged() {
             w=3;
             output=output+"<img src='blank.gif' alt='"+i+" anni -> "+h+" abitanti' title='"+i+" anni -> "+h+" abitanti' class='barra2' style='height: " + (norm*h) + "px; width: " + w + "px;'/>";
             }
+    var year=document.forms['frm'].elements['year'].options[document.forms['frm'].elements['year'].options.selectedIndex].value;
+    var town=document.forms['frm'].elements['town'].options[document.forms['frm'].elements['town'].options.selectedIndex].value;
+    var sex=document.forms['frm'].elements['sex'].options[document.forms['frm'].elements['sex'].options.selectedIndex].value;
+    var Unmarried=document.forms['frm'].elements['Unmarried'].checked;
+    var Married=document.forms['frm'].elements['Married'].checked;
+    var Widowed=document.forms['frm'].elements['Widowed'].checked;
+    var Divorced=document.forms['frm'].elements['Divorced'].checked;
+    var prov=document.forms['frm'].elements['prov'].options[document.forms['frm'].elements['prov'].options.selectedIndex].value;
+    var stringsosv="";
 
+    var table= "<table id="+"result><tr>";
+    var counter=0;
+    if(Divorced){counter++;}
+    if(Married){counter++;}
+    if(Unmarried){counter++;}
+    if(Widowed){counter++;}
+    
+     table+="<th  colspan='1'  style='background-color:white;border: 0px'></th>";
+    if(sex!="Both"){
+        table+="<th  colspan="+(counter)+">"+sex+"</th></tr><tr><th>Age</th>"
+        if(Divorced){table+="<th>Divorced"+"</th>";}
+        if(Married){table+="<th>Married"+"</th>";}
+        if(Unmarried){table+="<th>Unmarried"+"</th>";}
+        if(Widowed){table+="<th>Widowed"+"</th>";}
+    }
+    else{
+        table+="<th  colspan="+counter+">Female</th><th  colspan="+counter+">Male</th></tr><tr>";
+        if(Divorced){table+="<th>Divorced"+"</th>";}
+        if(Married){table+="<th>Married"+"</th>";}
+        if(Unmarried){table+="<th>Unmarried"+"</th>";}
+        if(Widowed){table+="<th>Widowed"+"</th>";}
+        if(Divorced){table+="<th>Divorced"+"</th>";}
+        if(Married){table+="<th>Married"+"</th>";}
+        if(Unmarried){table+="<th>Unmarried"+"</th>";}
+        if(Widowed){table+="<th>Widowed"+"</th>";}
+    }
+    table+="<th>Total</th></tr><tr>";
+     var maxv=0;
+     for(i=0;i<sosv.length;i++){
+            maxv+=sosv[i];
+            table+="<td>"+sosv[i]+"</td>";
+    }
+    table+="<td>"+maxv+"</td>";
+    table+="</tr></table>";
+
+//<tr><td>prima cella</td><td>seconda cella</td></tr><tr><td>terza cella</td><td>quarta cella</td></tr></table>";
+  
+      document.getElementById("pdiv").innerHTML=table;
       document.getElementById("divdata").innerHTML=output;
    }
 }
@@ -132,7 +183,7 @@ function prova(){
      var table= "<table border='0.5'><tr><td>prima cella</td><td>seconda cella</td></tr><tr><td>terza cella</td><td>quarta cella</td></tr></table>";
     //document.getElementById('titolo').innerHTML=s;
     //document.getElementById('divdata').innerHTML="pippo";
-    document.getElementById('pdiv').innerHTML=table;
+    //document.getElementById('pdiv').innerHTML=table;
     document.getElementById('number').innerHTML="0      10      20      30      40      50      60      70      80      90      100";
 
     xmlHttp=GetXmlHttpObject()
