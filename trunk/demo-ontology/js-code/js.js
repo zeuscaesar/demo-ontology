@@ -35,33 +35,47 @@ function stateChanged() {
    }
 }
 function divChanged() {
-   if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
-     var output="";
-     var indice=150;
-     //ricevuta la stringa di risposta contente i risultati della query separati dal carattere "|",
-     //la splitto e memorizzo i singoli risultati nella variabile var data
-     var data = xmlHttp.responseText.split('|');
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
+    var output="";
+    var indice=150;
 
-     //ricopio i risultati ottenuti all'interno di una variabile var vett,
-     //eliminando l'ultimo che in realtà a causa della costruzione della stringa di risposta
-     //corrisponde ad una stringa vuota
-     var vett = new Array();
-     var sosv=new Array();//sum on single vector
-     for (i=0; i<data.length-1; i++)
-         vett[i] = data[i].split(',');
-     //prelevo il massimo tra tutti i valori contenuti nei vari risultati della query
-     //e lo salvo nella variabile var max
-     var max=1;
-     for(i=0; i<vett.length; i++)
-        {
-        sosv[i]=0;
-        for (j=0; j<vett[i].length; j++)
-            {
-            var q=parseInt(vett[i][j]);
-            sosv[i]+=q;
-            if((q-max)>0){max=q;}
-            }
+    //ricevuta la stringa di risposta contente i risultati della query separati dal carattere "|",
+    //la splitto e memorizzo i singoli risultati nella variabile var data
+    var data = xmlHttp.responseText.split('|');
+
+    //ricopio i risultati ottenuti all'interno di una variabile vett,
+    //eliminando l'ultimo che in realtà a causa della costruzione della stringa di risposta
+    //corrisponde ad una stringa vuota
+    var vett = new Array();
+    for (i=0; i<data.length-1; i++)
+        vett[i] = data[i].split(',');
+
+    //definisco tre variabili tot_istanze_singole, tot_per_eta, totale_popolaz
+    //di tipo array che utilizzerò per contenere rispettivamente
+    //il totale di persone per ogni categoria di popolazione restituita dalla query,
+    //il totale di persone dell'intera popolazione suddivise per età,
+    // e il totale di persone dell'intera popolazione
+    var tot_istanze_singole = new Array();
+    var tot_per_eta = new Array();
+    for (i=0; i<=100; i++)
+        tot_per_eta[i]=0;
+    var totale_popolaz=0;
+
+    //prelevo il massimo tra tutti i valori contenuti nei vari risultati della query
+    //e lo salvo nella variabile max, e mentre leggo i valori
+    //incremento le variabili tot_istanze_singole, tot_per_eta e totale_popolaz
+    var max=1;
+    for(i=0; i<vett.length; i++) {
+        tot_istanze_singole[i] = 0;
+        for (j=0; j<vett[i].length; j++) {
+            var q = parseInt(vett[i][j]);
+            tot_istanze_singole[i] += q;
+            tot_per_eta[j] += q;
+            totale_popolaz += q;
+            if((q-max)>0)
+                max=q;
         }
+    }
 
      //calcolo il fattore di normalizzazione
      var norm=indice/max;
@@ -91,62 +105,97 @@ function divChanged() {
               }
 
      //grafico la totalità della popolazione
-     for(i = 0; i < sum.length; i++)
-            {
-            h=sum[i];
-            //if(max<h){max=h;}
-            w=3;
-            output=output+"<img src='blank.gif' alt='"+i+" anni -> "+h+" abitanti' title='"+i+" anni -> "+h+" abitanti' class='barra2' style='height: " + (norm*h) + "px; width: " + w + "px;'/>";
-            }
-    var year=document.forms['frm'].elements['year'].options[document.forms['frm'].elements['year'].options.selectedIndex].value;
-    var town=document.forms['frm'].elements['town'].options[document.forms['frm'].elements['town'].options.selectedIndex].value;
-    var sex=document.forms['frm'].elements['sex'].options[document.forms['frm'].elements['sex'].options.selectedIndex].value;
-    var Unmarried=document.forms['frm'].elements['Unmarried'].checked;
-    var Married=document.forms['frm'].elements['Married'].checked;
-    var Widowed=document.forms['frm'].elements['Widowed'].checked;
-    var Divorced=document.forms['frm'].elements['Divorced'].checked;
-    var prov=document.forms['frm'].elements['prov'].options[document.forms['frm'].elements['prov'].options.selectedIndex].value;
-    var stringsosv="";
+    for(i = 0; i < sum.length; i++) {
+        h=sum[i];
+        //if(max<h){max=h;}
+        w=3;
+        output=output+"<img src='blank.gif' alt='"+i+" anni -> "+h+" abitanti' title='"+i+" anni -> "+h+" abitanti' class='barra2' style='height: " + (norm*h) + "px; width: " + w + "px;'/>";
+    }
 
-    var table= "<table id="+"result><tr>";
-    var counter=0;
-    if(Divorced){counter++;}
-    if(Married){counter++;}
-    if(Unmarried){counter++;}
-    if(Widowed){counter++;}
-    
-     table+="<th  colspan='1'  style='background-color:white;border: 0px'></th>";
+    var year = document.forms['frm'].elements['year'].options[document.forms['frm'].elements['year'].options.selectedIndex].value;
+    var town = document.forms['frm'].elements['town'].options[document.forms['frm'].elements['town'].options.selectedIndex].value;
+    var sex = document.forms['frm'].elements['sex'].options[document.forms['frm'].elements['sex'].options.selectedIndex].value;
+    var Unmarried = document.forms['frm'].elements['Unmarried'].checked;
+    var Married = document.forms['frm'].elements['Married'].checked;
+    var Widowed = document.forms['frm'].elements['Widowed'].checked;
+    var Divorced = document.forms['frm'].elements['Divorced'].checked;
+    var prov = document.forms['frm'].elements['prov'].options[document.forms['frm'].elements['prov'].options.selectedIndex].value;
+
+    var table = "<table id='result'><tr>";
+    var counter = 0;
+    if (!(Divorced||Married||Unmarried||Widowed)) {
+        Divorced = true;
+        Married = true;
+        Unmarried = true;
+        Widowed = true;
+    }
+    if (Divorced)
+        counter++;
+    if (Married)
+        counter++;
+    if (Unmarried)
+        counter++;
+    if (Widowed)
+        counter++;
+
+     table+="<th style='background-color:white;border:0px'></th>";
     if(sex!="Both"){
-        table+="<th  colspan="+(counter)+">"+sex+"</th></tr><tr><th>Age</th>"
-        if(Divorced){table+="<th>Divorced"+"</th>";}
-        if(Married){table+="<th>Married"+"</th>";}
-        if(Unmarried){table+="<th>Unmarried"+"</th>";}
-        if(Widowed){table+="<th>Widowed"+"</th>";}
+        table += "<th colspan="+counter+">"+sex+"</th>";
+        table += "</tr><tr><th>Age</th>";
+        if (Divorced)
+            table += "<th>Divorced</th>";
+        if (Married)
+            table += "<th>Married</th>";
+        if (Unmarried)
+            table += "<th>Unmarried</th>";
+        if (Widowed)
+            table += "<th>Widowed</th>";
     }
-    else{
-        table+="<th  colspan="+counter+">Female</th><th  colspan="+counter+">Male</th></tr><tr>";
-        if(Divorced){table+="<th>Divorced"+"</th>";}
-        if(Married){table+="<th>Married"+"</th>";}
-        if(Unmarried){table+="<th>Unmarried"+"</th>";}
-        if(Widowed){table+="<th>Widowed"+"</th>";}
-        if(Divorced){table+="<th>Divorced"+"</th>";}
-        if(Married){table+="<th>Married"+"</th>";}
-        if(Unmarried){table+="<th>Unmarried"+"</th>";}
-        if(Widowed){table+="<th>Widowed"+"</th>";}
+    else {
+        table += "<th  colspan="+counter+">Female</th><th colspan="+counter+">Male</th></tr><tr><th>Age</th>";
+        if (Divorced)
+            table += "<th>Divorced</th>";
+        if (Married)
+            table += "<th>Married</th>";
+        if (Unmarried)
+            table += "<th>Unmarried</th>";
+        if (Widowed)
+            table += "<th>Widowed</th>";
+        if (Divorced)
+            table += "<th>Divorced</th>";
+        if (Married)
+            table += "<th>Married</th>";
+        if (Unmarried)
+            table += "<th>Unmarried</th>";
+        if (Widowed)
+            table += "<th>Widowed</th>";
     }
-    table+="<th>Total</th></tr><tr>";
-     var maxv=0;
-     for(i=0;i<sosv.length;i++){
-            maxv+=sosv[i];
-            table+="<td>"+sosv[i]+"</td>";
+    table += "<th>Total</th></tr>";
+    var tot_popolazione = 0;
+    for (j=0; j<100; j++) {
+        table += "<tr>";
+        table += "<td>"+j+"</td>";
+        for(i=0; i<tot_istanze_singole.length; i++) {
+            table += "<td>"+vett[i][j]+"</td>";
+        }
+        table += "<td>"+tot_per_eta[j]+"</td>";
+        table += "</tr>";
     }
-    table+="<td>"+maxv+"</td>";
-    table+="</tr></table>";
+    table += "<tr>";
+    table += "<td>100+</td>";
+    for(i=0; i<vett.length; i++)
+        table += "<td>"+vett[i][100]+"</td>";
 
-//<tr><td>prima cella</td><td>seconda cella</td></tr><tr><td>terza cella</td><td>quarta cella</td></tr></table>";
+    table += "<td>"+tot_popolazione+"</td>";
+    table += "</tr>";
+    table += "<td>TOTAL</td>";
+    for (i=0; i<tot_istanze_singole.length; i++)
+        table += "<td>"+tot_istanze_singole[i]+"</td>";
+    table += "<td>"+totale_popolaz+"</td>";
+    table += "</tr></table>";
   
-      document.getElementById("pdiv").innerHTML=table;
-      document.getElementById("divdata").innerHTML=output;
+   document.getElementById("pdiv").innerHTML=table;
+   document.getElementById("divdata").innerHTML=output;
    }
 }
 function yearChanged() {
