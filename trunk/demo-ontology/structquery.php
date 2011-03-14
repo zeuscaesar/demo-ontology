@@ -144,26 +144,11 @@ $requestString = $sesame_url.'/repositories/demography'.$query;
                 $xml=simplexml_load_string($response_body);
                 //echo $response_body;
                 //$address = new SimpleXMLElement($response_body);
-                //INIZIO VERSIONE FUNZIONANTE
-//                foreach($xml->results->result as $item){
-//                    $value=$item->binding->literal;
-//                    echo $value."|";
-//                    }
-                //FINE VERSIONE FUNZIONANTE
-
-                // Creo un array contenente i nomi delle variabili restituite dalla query
-                $arr = array();
-                foreach($xml->head->variable->attributes as $name => $val)
-                    //appendo all'array il nome letto
-                    $arr[] = $val;
-                }
                 foreach($xml->results->result as $item){
-                    foreach ($item->binding as $ $val) {
-
-                    }
-                    $value = $item->binding;
+                    $value=$item->binding->literal;
                     echo $value."|";
                     }
+                }
 //echo '<div>'.$year.'  '.$prov.' '.$town.' '.$sex.' Married:'.$Married.' Unmarried:'.$Unmarried.' Divorced:'.$Divorced.' Widowed:'.$Widowed.'</div>'
 
 /* 
