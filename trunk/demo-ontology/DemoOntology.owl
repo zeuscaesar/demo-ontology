@@ -405,7 +405,8 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;Aci_Castello">
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
-        <extends rdf:datatype="&rdfs;Literal">8,65</extends>
+        <isLocated rdf:datatype="&rdfs;Literal">15.1466519,37.5555615</isLocated>
+        <extends rdf:datatype="&rdfs;Literal">8.65</extends>
         <hasName rdf:datatype="&rdfs;Literal">Aci Castello</hasName>
         <hasPopulation rdf:resource="&DemoOntology;AciCastelloFD2009"/>
         <hasPopulation rdf:resource="&DemoOntology;AciCastelloFD2010"/>
@@ -431,7 +432,8 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;Acireale">
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
-        <extends rdf:datatype="&rdfs;Literal">39,96</extends>
+        <isLocated rdf:datatype="&rdfs;Literal">15.1658745,37.6128242</isLocated>
+        <extends rdf:datatype="&rdfs;Literal">39.96</extends>
         <hasName rdf:datatype="&rdfs;Literal">Acireale</hasName>
         <hasPopulation rdf:resource="&DemoOntology;AcirealeFD2009"/>
         <hasPopulation rdf:resource="&DemoOntology;AcirealeFD2010"/>
@@ -633,7 +635,8 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;Brolo">
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
-        <extends rdf:datatype="&rdfs;Literal">7,86</extends>
+        <isLocated rdf:datatype="&rdfs;Literal">14.8266827,38.1565716</isLocated>
+        <extends rdf:datatype="&rdfs;Literal">7.86</extends>
         <hasName rdf:datatype="&rdfs;Literal">Brolo</hasName>
         <hasPopulation rdf:resource="&DemoOntology;BroloFD2009"/>
         <hasPopulation rdf:resource="&DemoOntology;BroloFD2010"/>
@@ -835,7 +838,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;CT">
         <rdf:type rdf:resource="&DemoOntology;Province"/>
-        <extends rdf:datatype="&rdfs;Literal">3552,20</extends>
+        <extends rdf:datatype="&rdfs;Literal">3552.20</extends>
         <hasName rdf:datatype="&rdfs;Literal">Catania</hasName>
         <hasMunicipality rdf:resource="&DemoOntology;Aci_Castello"/>
         <hasMunicipality rdf:resource="&DemoOntology;Acireale"/>
@@ -856,7 +859,8 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;Falcone">
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
-        <extends rdf:datatype="&rdfs;Literal">9,32</extends>
+        <isLocated rdf:datatype="&rdfs;Literal">15.0801258,38.1180757</isLocated>
+        <extends rdf:datatype="&rdfs;Literal">9.32</extends>
         <hasName rdf:datatype="&rdfs;Literal">Falcone</hasName>
         <hasPopulation rdf:resource="&DemoOntology;FalconeFD2009"/>
         <hasPopulation rdf:resource="&DemoOntology;FalconeFD2010"/>
@@ -1058,7 +1062,8 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;Lainate">
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
-        <extends rdf:datatype="&rdfs;Literal">12,93</extends>
+        <extends rdf:datatype="&rdfs;Literal">12.93</extends>
+        <isLocated rdf:datatype="&rdfs;Literal">9.0288777,45.5705109</isLocated>
         <hasName rdf:datatype="&rdfs;Literal">Lainate</hasName>
         <hasPopulation rdf:resource="&DemoOntology;LainateFD2009"/>
         <hasPopulation rdf:resource="&DemoOntology;LainateFD2010"/>
@@ -1260,7 +1265,8 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;Letojanni">
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
-        <extends rdf:datatype="&rdfs;Literal">6,78</extends>
+        <isLocated rdf:datatype="&rdfs;Literal">15.3056929,37.8794545</isLocated>
+        <extends rdf:datatype="&rdfs;Literal">6.78</extends>
         <hasName rdf:datatype="&rdfs;Literal">Letojanni</hasName>
         <hasPopulation rdf:resource="&DemoOntology;LetojanniFD2009"/>
         <hasPopulation rdf:resource="&DemoOntology;LetojanniFD2010"/>
@@ -1462,7 +1468,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;ME">
         <rdf:type rdf:resource="&DemoOntology;Province"/>
-        <extends rdf:datatype="&rdfs;Literal">3247,34</extends>
+        <extends rdf:datatype="&rdfs;Literal">3247.34</extends>
         <hasName rdf:datatype="&rdfs;Literal">Messina</hasName>
         <hasMunicipality rdf:resource="&DemoOntology;Brolo"/>
         <hasMunicipality rdf:resource="&DemoOntology;Falcone"/>
@@ -1477,7 +1483,7 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;MI">
         <rdf:type rdf:resource="&DemoOntology;Province"/>
-        <extends rdf:datatype="&rdfs;Literal">1578,90</extends>
+        <extends rdf:datatype="&rdfs;Literal">1578.90</extends>
         <hasName rdf:datatype="&rdfs;Literal">Milano</hasName>
         <hasMunicipality rdf:resource="&DemoOntology;Lainate"/>
         <hasMunicipality rdf:resource="&DemoOntology;Rho"/>
@@ -1502,7 +1508,8 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;Mineo">
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
-        <extends rdf:datatype="&rdfs;Literal">244,52</extends>
+        <isLocated rdf:datatype="&rdfs;Literal">14.6910605,37.2663579</isLocated>
+        <extends rdf:datatype="&rdfs;Literal">244.52</extends>
         <hasName rdf:datatype="&rdfs;Literal">Mineo</hasName>
         <hasPopulation rdf:resource="&DemoOntology;MineoFD2009"/>
         <hasPopulation rdf:resource="&DemoOntology;MineoFD2010"/>
@@ -1704,7 +1711,8 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;Oliveri">
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
-        <extends rdf:datatype="&rdfs;Literal">10,29</extends>
+        <extends rdf:datatype="&rdfs;Literal">10.29</extends>
+        <isLocated rdf:datatype="&rdfs;Literal">15.0616115,38.1246397</isLocated>
         <hasName rdf:datatype="&rdfs;Literal">Oliveri</hasName>
         <hasPopulation rdf:resource="&DemoOntology;OliveriFD2009"/>
         <hasPopulation rdf:resource="&DemoOntology;OliveriFD2010"/>
@@ -1906,7 +1914,8 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;Rho">
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
-        <extends rdf:datatype="&rdfs;Literal">22,32</extends>
+        <extends rdf:datatype="&rdfs;Literal">22.32</extends>
+        <isLocated rdf:datatype="&rdfs;Literal">9.0381249,45.5297831</isLocated>
         <hasName rdf:datatype="&rdfs;Literal">Rho</hasName>
         <hasPopulation rdf:resource="&DemoOntology;RhoFD2009"/>
         <hasPopulation rdf:resource="&DemoOntology;RhoFD2010"/>
@@ -2108,7 +2117,8 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;Segrate">
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
-        <extends rdf:datatype="&rdfs;Literal">17,44</extends>
+        <extends rdf:datatype="&rdfs;Literal">17.44</extends>
+        <isLocated rdf:datatype="&rdfs;Literal">9.2916939,45.5011454</isLocated>
         <hasName rdf:datatype="&rdfs;Literal">Segrate</hasName>
         <hasPopulation rdf:resource="&DemoOntology;SegrateFD2009"/>
         <hasPopulation rdf:resource="&DemoOntology;SegrateFD2010"/>
@@ -2310,7 +2320,8 @@ Supervisor: prof. ing. Alberto Faro and ing. Concetto Spampinato</rdfs:isDefined
 
     <owl:NamedIndividual rdf:about="&DemoOntology;Taormina">
         <rdf:type rdf:resource="&DemoOntology;Municipality"/>
-        <extends rdf:datatype="&rdfs;Literal">13,16</extends>
+        <extends rdf:datatype="&rdfs;Literal">13.16</extends>
+        <isLocated rdf:datatype="&rdfs;Literal">15.2879163,37.8530665</isLocated>
         <hasName rdf:datatype="&rdfs;Literal">Taormina</hasName>
         <hasPopulation rdf:resource="&DemoOntology;TaorminaFD2009"/>
         <hasPopulation rdf:resource="&DemoOntology;TaorminaFD2010"/>
