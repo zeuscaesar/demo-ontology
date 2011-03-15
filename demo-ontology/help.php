@@ -31,13 +31,13 @@
 	<!-- end #header -->
 	<div id="menu">
 		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="search.html">Simple Search</a></li>
-			<li><a href="geosearch.html">Geo Search</a></li>
-                        <li><a href="growth.html">Growth</a></li>
-			<li><a href="freequery.html">Free Query</a></li>
-			<li><a href="help.html">Help</a></li>
-			<li><a href="about.html">About</a></li>
+			<li><a href="index.php">Home</a></li>
+                        <li><a href="search.php">Simple Search</a></li>
+                        <li><a href="geosearch.php">Geo Search</a></li>
+                        <li><a href="growth.php">Growth</a></li>
+                        <li><a href="freequery.php">Free Query</a></li>
+                        <li><a href="help.php">Help</a></li>
+                        <li><a href="about.php">About</a></li>
 		</ul>
 	</div>
 	<!-- end #menu -->

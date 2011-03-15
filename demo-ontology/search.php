@@ -8,8 +8,8 @@
 <meta name="copyright" content="Luciano De Franco, Giuseppe Alessandro, Carlo Leonardi"/>
 <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Demography Ontology - Simple Search</title>
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
-<title>Demography Ontology - Free Query</title>
 <script type="text/javascript" src="js-code/js-graph.js"></script>
 
 </head>
@@ -33,13 +33,13 @@
 	<!-- end #header -->
 	<div id="menu">
 		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="search.html">Simple Search</a></li>
-			<li><a href="geosearch.html">Geo Search</a></li>
-                        <li><a href="growth.html">Growth</a></li>
-			<li><a href="freequery.html">Free Query</a></li>
-			<li><a href="help.html">Help</a></li>
-			<li><a href="about.html">About</a></li>
+                                <li><a href="index.php">Home</a></li>
+                                <li><a href="search.php">Simple Search</a></li>
+                                <li><a href="geosearch.php">Geo Search</a></li>
+                                <li><a href="growth.php">Growth</a></li>
+                                <li><a href="freequery.php">Free Query</a></li>
+                                <li><a href="help.php">Help</a></li>
+                                <li><a href="about.php">About</a></li>
 		</ul>
 	</div>
 	<!-- end #menu -->
