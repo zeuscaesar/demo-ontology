@@ -10,6 +10,7 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 <title>Demography Ontology - Free Query</title>
+<script type="text/javascript" src="js-code/js.js"></script>
 <script type="text/javascript" src="js-code/js-graph.js"></script>
 
 </head>
