@@ -23,8 +23,8 @@ include_once ('query.php');
                 //echo "Risposta ricevuta correttamente<br/><br>";
                 //echo $response_body."<br/><br/>";
                 $xml=simplexml_load_string($response_body);
-                echo '<div>scrivo qui</div>';
-                echo '<div>'.$response_body.'</div>';
+                //echo '<div>scrivo qui</div>';
+                //echo '<div>'.$response_body.'</div>';
                 //$address = new SimpleXMLElement($response_body);
                 foreach($xml->results->result as $item){
                 $value=$item->binding->literal;
