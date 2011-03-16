@@ -89,8 +89,10 @@ where {
                                                 <option value="0">--All Year--</option>
                                                 <?php
                                                     include_once ( 'HTTP/Request.php' );
+                                                     include_once ('query.php');
                                                     $sesame_url = "http://localhost:8080/openrdf-sesame";
-                                                    $query ='?queryLn=SPARQL&query=PREFIX%20DemoOntology:<http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl%23>%0Aselect%20distinct%20%3Fx%0Awhere{%0A%3Fy%20DemoOntology:livingInTheYear%20%3Fx%0A}';
+                                                    $query='select distinct ?x where{?y DemoOntology:livingInTheYear ?x.}ORDER BY ?x';
+                                                    $query=openRDF($query);
                                                     $requestString = $sesame_url.'/repositories/demography'.$query;
                                                     $req =& new HTTP_Request($requestString);
                                                     //echo $requestString;
