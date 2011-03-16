@@ -18,7 +18,7 @@ include_once ('query.php');
                 ?mun DemoOntology:hasName ?name.
                 ');
                 if($year!='0'){
-                  $query= concatRDF($query,'?pop DemoOntology:livingInTheYear "'.$year.'"^^rdfs:Literal.');
+                  $query= concatRDF($query,'?pop DemoOntology:livingInTheYear "'.$year.'"^^xsd:int.');
                 }
                 $query= closeRDF($query);
                 echo $query;
