@@ -88,7 +88,7 @@
                                                     include_once ( 'HTTP/Request.php' );
                                                     include_once ('query.php');
                                                     $sesame_url = "http://localhost:8080/openrdf-sesame";
-                                                    $query='select distinct ?x where{?y DemoOntology:livingInTheYear ?x.}';
+                                                    $query='select distinct ?x where{?y DemoOntology:livingInTheYear ?x.}ORDER BY ?x';
                                                     $query=openRDF($query);
                                                     $requestString = $sesame_url.'/repositories/demography'.$query;
                                                     $req =& new HTTP_Request($requestString);
@@ -106,10 +106,10 @@
                                                         //echo $response_body."<br/><br/>";
                                                         $xml=simplexml_load_string($response_body);
                                                         $address = new SimpleXMLElement($response_body);
+                                                        $array = array();
                                                         foreach($xml->results->result as $item){
                                                         $value=$item->binding->literal;
-                                                        echo '<option value="'.$value.'">'.$value.'</option>';
-                                                        }
+                                                        echo '<option value="'.$value.'">'.$value.'</option>';}
                                                        }
                                                    ?>
                                           </select><br/>

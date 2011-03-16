@@ -12,7 +12,7 @@ include_once ('query.php');
                 ?prov rdf:type DemoOntology:Province.
                 ?prov DemoOntology:hasMunicipality ?mun.
                 ?mun DemoOntology:hasPopulation ?pop.
-                ?pop DemoOntology:livingInTheYear "'.$year.'"^^rdfs:Literal.
+                ?pop DemoOntology:livingInTheYear "'.$year.'"^^xsd:int.
                 ?prov DemoOntology:hasName ?name.
                 ');}
                 else{

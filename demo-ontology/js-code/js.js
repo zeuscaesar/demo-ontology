@@ -8,7 +8,7 @@ function loadProv(str) {
    }
    var url="provloader.php"
    url=url+"?year="+str
-   url=url+"&sid="+Math.random()
+   //url=url+"&sid="+Math.random()
    xmlHttp.onreadystatechange=yearChanged
    xmlHttp.open("GET",url,true)
    xmlHttp.send(null)

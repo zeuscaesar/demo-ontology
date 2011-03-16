@@ -22,7 +22,7 @@ if($prov!='0'){
                 ?mun rdf:type DemoOntology:Municipality.
                 ?mun DemoOntology:hasName "'.$town.'"^^rdfs:Literal.
                 ?mun DemoOntology:hasPopulation ?pop.
-                ?pop DemoOntology:livingInTheYear "'.$year.'"^^rdfs:Literal.
+                ?pop DemoOntology:livingInTheYear "'.$year.'"^^xsd:int.
                 ?pop DemoOntology:numbers ?num.');
      }
      if($town!='0' && $year=='0'){   
@@ -43,7 +43,7 @@ if($prov!='0'){
                 ?prov DemoOntology:hasMunicipality ?mun.
                 ?mun DemoOntology:hasName "'.$town.'"^^rdfs:Literal.
                 ?mun DemoOntology:hasPopulation ?pop.
-                ?pop DemoOntology:livingInTheYear "'.$year.'"^^rdfs:Literal.
+                ?pop DemoOntology:livingInTheYear "'.$year.'"^^xsd:int.
                 ?pop DemoOntology:numbers ?num.');
      }
 }
@@ -65,7 +65,7 @@ if($prov=='0'){
                 ?prov DemoOntology:hasMunicipality ?mun.
                 ?mun rdf:type DemoOntology:Municipality.
                 ?mun DemoOntology:hasPopulation ?pop.
-                ?pop DemoOntology:livingInTheYear "'.$year.'"^^rdfs:Literal.
+                ?pop DemoOntology:livingInTheYear "'.$year.'"^^xsd:int.
                 ?pop DemoOntology:numbers ?num.');}
 
     }
