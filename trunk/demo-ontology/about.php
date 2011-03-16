@@ -45,11 +45,16 @@
 		<div id="content">
 			
 			<div class="post">
-				<h2 class="title"><a href="#">Giuseppe Alessandro</a></h2>
+				<h2 class="title"><a name="agip">Giuseppe Alessandro</a></h2>
 				<p class="meta">Updated on March 15, 2011</p>
-				<div class="entry">
-				
-					<p>Praesent ac lectus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus augue. Fusce eget tellus ultrices ligula volutpat adipiscing. Aenean ligula lectus, vehicula in, dictum a, fermentum nec, felis. Nunc ac turpis in leo posuere imperdiet.</p>
+                                <div class="bio">
+				<img src="images/foto-agip.jpg" alt="" width="69" height="79" class="left">
+					<p class="bio">
+Giuseppe Alessandro was born in Patti, Sicily (Italy) on November 20, 1984. He received the laurea degree in Computer Engineering from the Faculty of Engineering - University of Catania, in 2009, with a thesis entitled "Optimization of x264 with Intel Parallel Studio".
+
+
+Currently attending the master's degree course at the same faculty.</p>
+                                        </img>
 
                         <p>
                             <strong>Web-site: </strong><a href="#"></a>
@@ -73,13 +78,18 @@
 				</div>
 			</div>
 			<div class="post">
-				<h2 class="title"><a href="#">Luciano De Franco</a></h2>
+				<h2 class="title"><a name="luciano">Luciano De Franco</a></h2>
 				<p class="meta">Updated on March 15, 2011</p>
-				<div class="entry">
-					
-					<p>Praesent ac lectus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus augue. Fusce eget tellus ultrices ligula volutpat adipiscing. Aenean ligula lectus, vehicula in, dictum a, fermentum nec, felis. Nunc ac turpis in leo posuere imperdiet.</p>
-                                        <p>
-                            <strong>Web-site: </strong><a href="http://lucianodefranco.altervista.org/">luciano.defranco@gmail.com</a>
+				<div class="bio">
+					<img src="images/foto-luciano.jpg" alt="" width="69" height="79" class="left">
+					<p class="bio">
+Luciano De Franco was born in Catania, Sicily (Italy) on July 31, 1983. He received the laurea degree (110/110 cum laude) in Computer Engineering from the Faculty of Engineering - University of Catania, in 2009, with a thesis entitled "Optimization of Lame MP3 with Intel Parallel Studio".
+In May 2009 he was elected Representative in the Council's Degree in Computer Engineering.
+
+Currently attending the master's degree course at the same faculty and works as an IT Consultant and Software Developer</p>
+                                        </img>
+                        <p>
+                            <strong>Web-site: </strong><a href="http://lucianodefranco.altervista.org/">http://lucianodefranco.altervista.org/</a>
                             <br/>
                             <strong>E-mail: </strong><a href="mailto:luciano.defranco@gmail.com">luciano.defranco@gmail.com</a>
                         </p>
@@ -93,17 +103,22 @@
                         <p>
                         	<strong>Facebook: </strong><a href="http://www.facebook.com/lucianodefranco">http://www.facebook.com/lucianodefranco</a>
                                 <br/>
-                                <strong>LinkedIN: </strong><a href="http://it.linkedin.com/pub/luciano-de-franco/18/99b/599">http://it.linkedin.com/pub/luciano-de-franco/18/99b/599</a>
+                                <strong>LinkedIN: </strong><a href="http://it.linkedin.com/in/lucianodefranco">http://it.linkedin.com/in/lucianodefranco</a>
                                 <br/>
                         </p>
 				</div>
                         </div>
                         <div class="post">
-				<h2 class="title"><a href="#">Carlo Leonardi</a></h2>
+				<h2 class="title"><a name="carlo">Carlo Leonardi</a></h2>
 				<p class="meta">Updated on March 15, 2011</p>
-				<div class="entry">
-					
-					<p>Praesent ac lectus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus augue. Fusce eget tellus ultrices ligula volutpat adipiscing. Aenean ligula lectus, vehicula in, dictum a, fermentum nec, felis. Nunc ac turpis in leo posuere imperdiet.</p>
+				<div class="bio">
+					<img src="images/foto-carlo.jpg" alt="" width="69" height="79" class="left">
+					<p class="bio">
+Carlo Leonardi was born in Catania, Sicily (Italy) on December 02, 1983. He received the laurea degree in Computer Engineering from the Faculty of Engineering - University of Catania, in 2009, with a thesis entitled "Optimization of XVID with Intel Parallel Studio".
+
+
+Currently attending the master's degree course at the same faculty and works as a Professional Rugby Player at San Gregorio Rugby.</p>
+                                        </img>
                                         <p>
                             <strong>Web-site: </strong><a href="#"></a>
                             <br/>
@@ -119,7 +134,7 @@
                         <p>
                         	<strong>Facebook: </strong><a href="http://www.facebook.com/carlo.leonardi">http://www.facebook.com/carlo.leonardi</a>
                                 <br/>
-                                <strong>LinkedIN: </strong><a href="#"></a>
+                                <strong>LinkedIN: </strong><a href="http://it.linkedin.com/in/carloleonardi">http://it.linkedin.com/in/carloleonardi</a>
                                 <br/>
                         </p>
 				</div>
@@ -132,9 +147,9 @@
 				<li>
 					<h2>Developers</h2>
 					<ul>
-						<li><a href="#">Giueseppe Alessandro</a> </li>
-						<li><a href="#">Luciano De Franco</a> </li>
-						<li><a href="#">Carlo Leonardi</a> </li>
+						<li><a href="#giuseppe">Giueseppe Alessandro</a> </li>
+						<li><a href="#luciano">Luciano De Franco</a> </li>
+						<li><a href="#carlo">Carlo Leonardi</a> </li>
 						
 					</ul>
 				</li>

@@ -394,3 +394,21 @@ td
     text-align:center;
     color:black;
 }
+
+img.left {
+float: left;
+margin: 5px 20px 0 0;
+}
+
+div.bio{
+/*  padding: 10px 0 20px 0;*/
+/*	text-align: justify;*/
+ display: block;
+
+}
+p.bio {
+margin: 0;
+padding: 0;
+display: block;
+margin: 1em 0px;
+}
