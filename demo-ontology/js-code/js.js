@@ -13,6 +13,19 @@ function loadProv(str) {
    xmlHttp.open("GET",url,true)
    xmlHttp.send(null)
 }
+function loadtoyear(str) {
+   xmlHttp=GetXmlHttpObject()
+   if (xmlHttp==null) {
+      alert ("Browser does not support HTTP Request")
+      return
+   }
+   var url="yearloader.php"
+   url=url+"?year="+str
+   url=url+"&sid="+Math.random()
+   xmlHttp.onreadystatechange=toyearChanged
+   xmlHttp.open("GET",url,true)
+   xmlHttp.send(null)
+}
 
 function loadTowns(str) {
    xmlHttp=GetXmlHttpObject()
@@ -201,6 +214,10 @@ function divChanged() {
 function yearChanged() {
    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
       document.getElementById("prov").innerHTML=xmlHttp.responseText
+}
+function toyearChanged() {
+   if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
+      document.getElementById("toyear").innerHTML=xmlHttp.responseText
 }
 }
 function queryChanged() {

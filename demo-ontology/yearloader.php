@@ -5,10 +5,10 @@ echo "<option value='0'>--All Province--</option>\n";
 include_once ( 'HTTP/Request.php' );
 include_once ('query.php');
                 $sesame_url = "http://localhost:8080/openrdf-sesame";
-      
-                $query=openRDF('select distinct ?x where{?y DemoOntology:livingInTheYear ?x.');
-                $filter='(?x>='.$year.')';
-                $query=closeRDF($query);
+                //FILTER (x? >='.$year.'
+                $query='select distinct ?x where{?y DemoOntology:livingInTheYear ?x.}ORDER by ?x';
+                $query=openRDF($query);
+                //$query=closeRDF($query);
                 echo $query;
                 $requestString = $sesame_url.'/repositories/demography'.$query;
                 $req =& new HTTP_Request($requestString);
