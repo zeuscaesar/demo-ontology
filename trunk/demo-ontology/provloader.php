@@ -5,6 +5,7 @@ echo "<option value='0'>--All Province--</option>\n";
 include_once ( 'HTTP/Request.php' );
 include_once ('query.php');
                 $sesame_url = "http://localhost:8080/openrdf-sesame";
+                
                 if($year!='0'){
                 $query=openRDF('
                 select distinct ?name
