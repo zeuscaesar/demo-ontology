@@ -1,6 +1,7 @@
 var xmlHttp
 
 function loadProv(str) {
+   
    xmlHttp=GetXmlHttpObject()
    if (xmlHttp==null) {
       alert ("Browser does not support HTTP Request")
@@ -9,6 +10,7 @@ function loadProv(str) {
    var url="provloader.php"
    url=url+"?year="+str
    //url=url+"&sid="+Math.random()
+   
    xmlHttp.onreadystatechange=yearChanged
    xmlHttp.open("GET",url,true)
    xmlHttp.send(null)
@@ -214,6 +216,7 @@ function divChanged() {
 function yearChanged() {
    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
       document.getElementById("prov").innerHTML=xmlHttp.responseText
+}
 }
 function toyearChanged() {
    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {

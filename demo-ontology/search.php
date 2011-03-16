@@ -81,7 +81,7 @@
                                     <label id="lb">
                                         <form name="frm" method="post"> <!--action='submit.php'>-->
 
-                                        <span>Year: </span><select name="year" id="year" class="select" onChange="loadProv(this.value)">
+                                        <span>Year: </span><select name="year" id="year" class="select" onChange="loadProv(this.value)"> <!--alert(this.value)">-->
                                                 <option value="sel">-- Selection --</option>
                                                 <option value="0">--All Year--</option>
                                                 <?php
@@ -90,6 +90,7 @@
                                                     $sesame_url = "http://localhost:8080/openrdf-sesame";
                                                     $query='select distinct ?x where{?y DemoOntology:livingInTheYear ?x.}ORDER BY ?x';
                                                     $query=openRDF($query);
+                                                    //$query ='?queryLn=SPARQL&query=PREFIX%20DemoOntology:<http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl%23>%0Aselect%20distinct%20%3Fx%0Awhere{%0A%3Fy%20DemoOntology:livingInTheYear%20%3Fx%0A}';
                                                     $requestString = $sesame_url.'/repositories/demography'.$query;
                                                     $req =& new HTTP_Request($requestString);
                                                     //echo $requestString;
@@ -106,7 +107,6 @@
                                                         //echo $response_body."<br/><br/>";
                                                         $xml=simplexml_load_string($response_body);
                                                         $address = new SimpleXMLElement($response_body);
-                                                        $array = array();
                                                         foreach($xml->results->result as $item){
                                                         $value=$item->binding->literal;
                                                         echo '<option value="'.$value.'">'.$value.'</option>';}
