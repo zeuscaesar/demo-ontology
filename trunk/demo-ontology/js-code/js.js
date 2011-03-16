@@ -203,6 +203,11 @@ function yearChanged() {
       document.getElementById("prov").innerHTML=xmlHttp.responseText
 }
 }
+function queryChanged() {
+   if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
+      document.getElementById("strprova").innerHTML=xmlHttp.responseText
+}
+}
 function GetXmlHttpObject() {
    var xmlHttp=null;
    try {
@@ -248,5 +253,21 @@ function prova(){
    xmlHttp.open("GET",url,true)
    xmlHttp.send(null)
 }
+function query(){
+    var area=document.forms['textform'].elements['area'].value;
+     xmlHttp=GetXmlHttpObject()
+   if (xmlHttp==null) {
+      alert ("Browser does not support HTTP Request")
+      return
+   }
+   var url="queryloader.php"
+   //url=url+"?area="+area
+   url=url+"?area="+escape(area);  //Modified by AGiP
+   //url=url+"&sid="+Math.random()
+   xmlHttp.onreadystatechange=queryChanged
+   xmlHttp.open("GET",url,true)
+   xmlHttp.send(null)
 
+    
+}
 
