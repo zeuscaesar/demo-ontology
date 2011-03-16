@@ -4,7 +4,7 @@ $area=$_GET["area"];
 include_once ( 'HTTP/Request.php' );
 include_once ('query.php');
                 $sesame_url = "http://localhost:8080/openrdf-sesame";
-                echo $area;
+                //echo $area;
                 $query=writeRDF($area);
                 $requestString = $sesame_url.'/repositories/demography'.$query;
                 $req =& new HTTP_Request($requestString);
