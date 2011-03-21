@@ -42,7 +42,7 @@ function loadYearByMun(str) {
    xmlHttp.send(null)
 }
 
-function loadTowns(str) {
+function loadTowns(str) {//non lo utilizziamo
    xmlHttp=GetXmlHttpObject()
    if (xmlHttp==null) {
       alert ("Browser does not support HTTP Request")
@@ -56,7 +56,7 @@ function loadTowns(str) {
    xmlHttp.open("GET",url,true)
    xmlHttp.send(null)
 }
-function loadTownswy(str) {
+function loadTownswy(str) {//wy=without years
    xmlHttp=GetXmlHttpObject()
    if (xmlHttp==null) {
       alert ("Browser does not support HTTP Request")
@@ -262,6 +262,12 @@ function queryChanged() {
       document.getElementById("strprova").innerHTML=xmlHttp.responseText
     }
 }
+function stampdivdata() {//temporaneo
+   if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
+      document.getElementById("divdata").innerHTML=xmlHttp.responseText
+      
+    }
+}
 function GetXmlHttpObject() {
    var xmlHttp=null;
    try {
@@ -323,7 +329,7 @@ function growthing(){
     //document.getElementById('titolo').innerHTML=s;
     //document.getElementById('divdata').innerHTML="pippo";
     //document.getElementById('pdiv').innerHTML=table;
-    document.getElementById('number').innerHTML="0      10      20      30      40      50      60      70      80      90      100";
+    //document.getElementById('number').innerHTML="0      10      20      30      40      50      60      70      80      90      100";
 
     xmlHttp=GetXmlHttpObject()
    if (xmlHttp==null) {
@@ -334,9 +340,10 @@ function growthing(){
    document.getElementById("divdata").innerHTML=xmlHttp.responseText
    url=url+"?fromyear="+fromyear+"&toyear="+toyear+"&prov="+prov+"&town="+town+"&sex="+sex+"&Unmarried="+Unmarried+"&Married="+Married+"&Widowed="+Widowed+"&Divorced="+Divorced;
    //url=url+"&sid="+Math.random()
-   xmlHttp.onreadystatechange=divgrowthChanged()
+   xmlHttp.onreadystatechange=divgrowthChanged
    xmlHttp.open("GET",url,true)
    xmlHttp.send(null)
+  
 }
 function query(){
     var area=document.forms['textform'].elements['area'].value;
@@ -398,8 +405,9 @@ function divgrowthChanged() {
         pop_in_the_years[i%years] = 0;
         //sommo la popolazione del singolo vettore iterando su tutte le età
         //e ne salvo il totale nella variabile sum
-        for (j=0; j<vett[i].length; j++)
+        for (j=0; j<vett[i].length; j++){
             sum += parseInt(vett[i][j]);
+        }
         pop_in_the_years[i%years] += sum;
     }
 
@@ -417,8 +425,8 @@ function divgrowthChanged() {
      //grafico la popolazione complessiva per anno
     for(i = 0; i < pop_in_the_years.length; i++) {
         h=pop_in_the_years[i];
-        w=3;
-        output=output+"<img src='blank.gif' alt='anno "+(fromyear + i)+" -> "+h+" abitanti' title='anno "+(fromyear + i)+" -> "+h+" abitanti' class='barra2' style='height: " + (norm*h) + "px; width: " + w + "px;'/>";
+        w=30;
+        output=output+"<img src='blank.gif' alt='anno "+((parseInt(fromyear))+(parseInt(i)))+" -> "+parseInt(h)+" abitanti' title='anno "+((parseInt(fromyear))+(parseInt(i)))+" -> "+parseInt(h)+" abitanti' class='barra2' style='height: " + (norm*h) + "px; width: " + w + "px;'/>";
     }
 
 //    var table = "<table id='result'><tr>";

@@ -42,4 +42,11 @@ function writeRDF($query){
     $query=str_replace("\n","%0A", $query);
     return "?".$pre.$query;
 }
+function reverseSymbol($query){
+    $query=str_replace("%23","#",  $query);
+    $query=str_replace( "%20"," ", $query);
+    $query=str_replace( "%3F","?", $query);
+    $query=str_replace("%0A","\n", $query);
+    return $query;
+}
 ?>
