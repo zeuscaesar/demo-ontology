@@ -356,3 +356,145 @@ function query(){
     
 }
 
+function divgrowthChanged() {
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
+
+    var fromyear=document.forms['frm'].elements['fromyear'].options[document.forms['frm'].elements['fromyear'].options.selectedIndex].value;
+    var toyear=document.forms['frm'].elements['toyear'].options[document.forms['frm'].elements['toyear'].options.selectedIndex].value;
+    var prov=document.forms['frm'].elements['prov'].options[document.forms['frm'].elements['prov'].options.selectedIndex].value;
+    var town=document.forms['frm'].elements['town'].options[document.forms['frm'].elements['town'].options.selectedIndex].value;
+    var sex=document.forms['frm'].elements['sex'].options[document.forms['frm'].elements['sex'].options.selectedIndex].value;
+    var Unmarried=document.forms['frm'].elements['Unmarried'].checked;
+    var Married=document.forms['frm'].elements['Married'].checked;
+    var Widowed=document.forms['frm'].elements['Widowed'].checked;
+    var Divorced=document.forms['frm'].elements['Divorced'].checked;
+
+    var output="";
+    var indice=150;
+
+    //ricevuta la stringa di risposta contente i risultati della query separati dal carattere "|",
+    //la splitto e memorizzo i singoli risultati nella variabile var data
+    var data = xmlHttp.responseText.split('|');
+
+    //ricopio i risultati ottenuti all'interno di una variabile vett,
+    //eliminando l'ultimo che in realtà a causa della costruzione della stringa di risposta
+    //corrisponde ad una stringa vuota
+    var vett = new Array();
+    for (i=0; i<data.length-1; i++)
+        vett[i] = data[i].split(',');
+
+    //creo una variabile relativa al numero di anni da graficare
+    var years = toyear - fromyear + 1;
+
+    //definisco un array che conterrà la popolazione totale nei vari anni
+    var pop_in_the_years = new Array();
+
+    //definisco una variabile che mi indica quanti vettori di popolazione mi vengono restituiti per ogni anno
+    var vett_number_per_year = vett.length/years;
+
+    //riempio l'array della popolazione totale
+    for (i=0; i<vett.length; i++) {
+        var sum = 0;
+        pop_in_the_years[i%years] = 0;
+        //sommo la popolazione del singolo vettore iterando su tutte le età
+        //e ne salvo il totale nella variabile sum
+        for (j=0; j<vett[i].length; j++)
+            sum += parseInt(vett[i][j]);
+        pop_in_the_years[i%years] += sum;
+    }
+
+    //prelevo il massimo tra tutti i valori contenuti nell'array risultante
+    var max=1;
+    for(i=0; i<pop_in_the_years.length; i++) {
+        var q = parseInt(pop_in_the_years[i]);
+        if((q-max)>0)
+            max=q;
+    }
+
+     //calcolo il fattore di normalizzazione
+     var norm=indice/max;
+
+     //grafico la popolazione complessiva per anno
+    for(i = 0; i < pop_in_the_years.length; i++) {
+        h=pop_in_the_years[i];
+        w=3;
+        output=output+"<img src='blank.gif' alt='anno "+(fromyear + i)+" -> "+h+" abitanti' title='anno "+(fromyear + i)+" -> "+h+" abitanti' class='barra2' style='height: " + (norm*h) + "px; width: " + w + "px;'/>";
+    }
+
+//    var table = "<table id='result'><tr>";
+//    var counter = 0;
+//    if (!(Divorced||Married||Unmarried||Widowed)) {
+//        Divorced = true;
+//        Married = true;
+//        Unmarried = true;
+//        Widowed = true;
+//    }
+//    if (Divorced)
+//        counter++;
+//    if (Married)
+//        counter++;
+//    if (Unmarried)
+//        counter++;
+//    if (Widowed)
+//        counter++;
+//
+//     table+="<th style='background-color:white;border:0px'></th>";
+//    if(sex!="Both"){
+//        table += "<th colspan="+counter+">"+sex+"</th>";
+//        table += "</tr><tr><th>Age</th>";
+//        if (Divorced)
+//            table += "<th>Divorced</th>";
+//        if (Married)
+//            table += "<th>Married</th>";
+//        if (Unmarried)
+//            table += "<th>Unmarried</th>";
+//        if (Widowed)
+//            table += "<th>Widowed</th>";
+//    }
+//    else {
+//        table += "<th  colspan="+counter+">Female</th><th colspan="+counter+">Male</th></tr><tr><th>Age</th>";
+//        if (Divorced)
+//            table += "<th>Divorced</th>";
+//        if (Married)
+//            table += "<th>Married</th>";
+//        if (Unmarried)
+//            table += "<th>Unmarried</th>";
+//        if (Widowed)
+//            table += "<th>Widowed</th>";
+//        if (Divorced)
+//            table += "<th>Divorced</th>";
+//        if (Married)
+//            table += "<th>Married</th>";
+//        if (Unmarried)
+//            table += "<th>Unmarried</th>";
+//        if (Widowed)
+//            table += "<th>Widowed</th>";
+//    }
+//    table += "<th>Total</th></tr>";
+//    var tot_popolazione = 0;
+//    for (j=0; j<100; j++) {
+//        table += "<tr>";
+//        table += "<td>"+j+"</td>";
+//        for(i=0; i<tot_istanze_singole.length; i++) {
+//            table += "<td>"+vett[i][j]+"</td>";
+//        }
+//        table += "<td>"+tot_per_eta[j]+"</td>";
+//        table += "</tr>";
+//    }
+//    table += "<tr>";
+//    table += "<td>100+</td>";
+//    for(i=0; i<vett.length; i++)
+//        table += "<td>"+vett[i][100]+"</td>";
+//
+//    table += "<td>"+tot_popolazione+"</td>";
+//    table += "</tr>";
+//    table += "<td>TOTAL</td>";
+//    for (i=0; i<tot_istanze_singole.length; i++)
+//        table += "<td>"+tot_istanze_singole[i]+"</td>";
+//    table += "<td>"+totale_popolaz+"</td>";
+//    table += "</tr></table>";
+//
+//   document.getElementById("pdiv").innerHTML=table;
+   document.getElementById("divdata").innerHTML=output;
+   }
+}
