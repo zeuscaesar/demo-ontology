@@ -1,6 +1,6 @@
 <?php
 $prov=$_GET["prov"];
-$year=$_GET["year"];
+//$year=$_GET["year"];
 echo $prov;
 echo "<option value='0'>-- All  Town --</option>\n";
 
@@ -14,13 +14,11 @@ include_once ('query.php');
                 ?prov DemoOntology:hasName "'.$prov.'"^^rdfs:Literal.
                 ?prov DemoOntology:hasMunicipality ?mun.
                 ?mun DemoOntology:hasPopulation ?pop.
-                
-                ?mun DemoOntology:hasName ?name.
-                ');
-                if($year!='0'){
-                  $query= concatRDF($query,'?pop DemoOntology:livingInTheYear "'.$year.'"^^xsd:int.');
-                }
-                $query= closeRDF($query);
+                ?mun DemoOntology:hasName ?name.}');
+//                if($year!='0'){
+//                  $query= concatRDF($query,'?pop DemoOntology:livingInTheYear "'.$year.'"^^xsd:int.');
+//                }
+                //$query= closeRDF($query);
                 echo $query;
                 $requestString = $sesame_url.'/repositories/demography'.$query;
                 $req =& new HTTP_Request($requestString);

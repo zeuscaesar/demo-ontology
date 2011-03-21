@@ -80,14 +80,14 @@
 				<li>
                                     <label id="lb">
                                         <form name="frm" method="post"> <!--action='submit.php'>-->
-                                        <span>From Year: </span><select name="fromyear" id="fromyear" class="select" onChange="loadtoyear(this.value)">
-                                                <option value="sel">-- Selection --</option>
-                                                
-                                                <?php
+                                        
+                                        <span>Province: </span><select name="prov" class="select" id="prov" onChange="loadTowns(this.value)">
+                                           <option value="0">--    All    --</option>
+                                           <?php
                                                     include_once ( 'HTTP/Request.php' );
                                                     include_once ('query.php');
                                                     $sesame_url = "http://localhost:8080/openrdf-sesame";
-                                                    $query='select distinct ?x where{?y DemoOntology:livingInTheYear ?x.}ORDER by ?x';
+                                                    $query='select distinct ?x where{?y rdf:type DemoOntology:Province. ?y DemoOntology:hasName ?x.}ORDER by ?x';
                                                     $query=openRDF($query);
                                                     $requestString = $sesame_url.'/repositories/demography'.$query;
                                                     $req =& new HTTP_Request($requestString);
@@ -111,13 +111,6 @@
                                                         }
                                                        }
                                                    ?>
-                                          </select><br/>
-                                        <span>To Year: </span><select name="toyear" id="toyear" class="select" onChange="loadProv(this.value)">
-                                                <option value="sel">-- Selection --</option>
-                                               
-                                          </select><br/>
-                                        <span>Province: </span><select name="prov" class="select" id="prov" onChange="loadTowns(this.value)">
-                                           <option value="0">--    All    --</option>
                                         </select><br/>
                                         <span>Municipality: </span><select name="town" class="select" id="town">
                                                 <option value="0">--  All Town --</option>
@@ -127,6 +120,15 @@
                                                 <option value="Both">Both</option>
                                                 <option value="Male">Male</option>
                                                 <option value="Female">Female</option>
+                                          </select><br/>
+                                        <span>From Year: </span><select name="fromyear" id="fromyear" class="select" onChange="loadtoyear(this.value)">
+                                                <option value="sel">-- Selection --</option>
+
+
+                                          </select><br/>
+                                        <span>To Year: </span><select name="toyear" id="toyear" class="select" onChange="loadProv(this.value)">
+                                                <option value="sel">-- Selection --</option>
+
                                           </select><br/>
                                         <span>Marital Status: </span><br/>
                                         <input  type="checkbox" name="Unmarried" id="Unmarried">Unmarried</input>    <input  type="checkbox" name="Married" id="Married">Married</input><br/>
