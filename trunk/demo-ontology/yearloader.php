@@ -5,7 +5,7 @@ include_once ( 'HTTP/Request.php' );
 include_once ('query.php');
                 $sesame_url = "http://localhost:8080/openrdf-sesame";
                 //FILTER (x? >='.$year.'
-                $query='select distinct ?x where{?y DemoOntology:livingInTheYear ?x. FILTER(?x>='.$year.')}';
+                $query='select distinct ?x where{?y DemoOntology:livingInTheYear ?x. FILTER(?x>='.$year.')}ORDER by ?x';
                 $query=openRDF($query);
                 //$query=closeRDF($query);
                 echo $query;

@@ -76,6 +76,7 @@ function stateChanged() {
       document.getElementById("town").innerHTML=xmlHttp.responseText
    }
 }
+
 function divChanged() {
     if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
     var output="";
@@ -303,6 +304,37 @@ function prova(){
    url=url+"?year="+year+"&prov="+prov+"&town="+town+"&sex="+sex+"&Unmarried="+Unmarried+"&Married="+Married+"&Widowed="+Widowed+"&Divorced="+Divorced;
    //url=url+"&sid="+Math.random()
    xmlHttp.onreadystatechange=divChanged
+   xmlHttp.open("GET",url,true)
+   xmlHttp.send(null)
+}
+function growthing(){
+    var fromyear=document.forms['frm'].elements['fromyear'].options[document.forms['frm'].elements['fromyear'].options.selectedIndex].value;
+    var toyear=document.forms['frm'].elements['toyear'].options[document.forms['frm'].elements['toyear'].options.selectedIndex].value;
+    var prov=document.forms['frm'].elements['prov'].options[document.forms['frm'].elements['prov'].options.selectedIndex].value;
+    var town=document.forms['frm'].elements['town'].options[document.forms['frm'].elements['town'].options.selectedIndex].value;
+    var sex=document.forms['frm'].elements['sex'].options[document.forms['frm'].elements['sex'].options.selectedIndex].value;
+    var Unmarried=document.forms['frm'].elements['Unmarried'].checked;
+    var Married=document.forms['frm'].elements['Married'].checked;
+    var Widowed=document.forms['frm'].elements['Widowed'].checked;
+    var Divorced=document.forms['frm'].elements['Divorced'].checked;
+
+      //alert(s2);
+    // var table= "<table border='0.5'><tr><td>prima cella</td><td>seconda cella</td></tr><tr><td>terza cella</td><td>quarta cella</td></tr></table>";
+    //document.getElementById('titolo').innerHTML=s;
+    //document.getElementById('divdata').innerHTML="pippo";
+    //document.getElementById('pdiv').innerHTML=table;
+    document.getElementById('number').innerHTML="0      10      20      30      40      50      60      70      80      90      100";
+
+    xmlHttp=GetXmlHttpObject()
+   if (xmlHttp==null) {
+      alert ("Browser does not support HTTP Request")
+      return
+   }
+   var url="structquerygrowth.php"
+   document.getElementById("divdata").innerHTML=xmlHttp.responseText
+   url=url+"?fromyear="+fromyear+"&toyear="+toyear+"&prov="+prov+"&town="+town+"&sex="+sex+"&Unmarried="+Unmarried+"&Married="+Married+"&Widowed="+Widowed+"&Divorced="+Divorced;
+   //url=url+"&sid="+Math.random()
+   xmlHttp.onreadystatechange=divgrowthChanged()
    xmlHttp.open("GET",url,true)
    xmlHttp.send(null)
 }
