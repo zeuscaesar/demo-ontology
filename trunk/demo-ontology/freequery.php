@@ -47,7 +47,7 @@
 	<div id="page">
 		<div id="content">
 			<div class="post" >
-				<h2 class="title"><a href="#">Demography Ontology </a></h2>
+				
                                 <form name="textform"  action="query()">
                                 <div align="center">
                                 Edit your query<br/>
@@ -80,93 +80,11 @@ where {
 		<!-- end #content -->
 		<div id="sidebar">
 			<ul>
-				<li>
-                                    <label id="lb">
-                                        <form name="frm" method="post"> <!--action='submit.php'>-->
-
-                                        <span>Year: </span><select name="year" id="year" class="select" onChange="loadProv(this.value)">
-                                                <option value="sel">-- Selection --</option>
-                                                <option value="0">--All Year--</option>
-                                                <?php
-                                                    include_once ( 'HTTP/Request.php' );
-                                                     include_once ('query.php');
-                                                    $sesame_url = "http://localhost:8080/openrdf-sesame";
-                                                    $query='select distinct ?x where{?y DemoOntology:livingInTheYear ?x.}ORDER BY ?x';
-                                                    $query=openRDF($query);
-                                                    $requestString = $sesame_url.'/repositories/demography'.$query;
-                                                    $req =& new HTTP_Request($requestString);
-                                                    //echo $requestString;
-                                                    $req->setMethod(HTTP_REQUEST_METHOD_GET);
-                                                    $req->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
-                                                    $req->sendRequest();
-                                                    $response_code = $req->getResponseCode();
-                                                    if($response_code!=200)
-                                                            echo "Errore di codice ".$response_code;
-                                                    else
-                                                        {
-                                                        $response_body = $req->getResponseBody();
-                                                        //echo "Risposta ricevuta correttamente<br/><br>";
-                                                        //echo $response_body."<br/><br/>";
-                                                        $xml=simplexml_load_string($response_body);
-                                                        $address = new SimpleXMLElement($response_body);
-                                                        foreach($xml->results->result as $item){
-                                                        $value=$item->binding->literal;
-                                                        echo '<option value="'.$value.'">'.$value.'</option>';
-                                                        }
-                                                       }
-                                                   ?>
-                                          </select><br/>
-                                        <span>Province: </span><select name="prov" class="select" id="prov" onChange="loadTowns(this.value)">
-                                           <option value="0">--    All    --</option>
-                                        </select><br/>
-                                        <span>Municipality: </span><select name="town" class="select" id="town">
-                                                <option value="0">--  All Town --</option>
-                                          </select><br/>
-                                        <span>Sex: </span><select name="sex" class="select" id="sex">
-
-                                                <option value="Both">Both</option>
-                                                <option value="Male">Male</option>
-                                                <option value="Female">Female</option>
-                                          </select><br/>
-                                        <span>Marital Status: </span><br/>
-                                        <input  type="checkbox" name="Unmarried" id="Unmarried">Unmarried</input>    <input  type="checkbox" name="Married" id="Married">Married</input><br/>
-                                        <input  type="checkbox" name="Divorced" id="Divorced">Divorced</input>     <input  type="checkbox" name="Widowed" id="Widowed">Widowed</input><br/>
-
-                                        </form>
-                                        <button id="try" onClick="prova()"> Start Query </button>
-                                    </label>
-					<h2>Aliquam tempus</h2>
-					<p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper urna ornare, orci in consectetuer hendrerit.</p>
-				</li>
-				<li>
-					<h2>Categories</h2>
-					<ul>
-						<li><a href="#">Uncategorized</a> (3) </li>
-						<li><a href="#">Lorem Ipsum</a> (42) </li>
-						<li><a href="#">Urna Congue Rutrum</a> (28) </li>
-						<li><a href="#">Augue Praesent</a> (55) </li>
-						<li><a href="#">Vivamus Fermentum</a> (13) </li>
-					</ul>
-				</li>
-				<li>
-					<h2>Blogroll</h2>
-					<ul>
-						<li><a href="#">Uncategorized</a> (3) </li>
-						<li><a href="#">Lorem Ipsum</a> (42) </li>
-						<li><a href="#">Urna Congue Rutrum</a> (28) </li>
-						<li><a href="#">Augue Praesent</a> (55) </li>
-						<li><a href="#">Vivamus Fermentum</a> (13) </li>
-					</ul>
-				</li>
-				<li>
-					<h2>Archives</h2>
-					<ul>
-						<li><a href="#">December 2007</a>&nbsp;(29)</li>
-						<li><a href="#">November 2007</a>&nbsp;(30)</li>
-						<li><a href="#">October 2007</a>&nbsp;(31)</li>
-						<li><a href="#">September 2007</a>&nbsp;(30)</li>
-					</ul>
-				</li>
+                            <li>
+				<h2>Help</h2>
+					<p>Edit the query and click <em>Start Query</em> button.</p>
+                            </li>
+				
 			</ul>
 		</div>
 		<!-- end #sidebar -->
