@@ -23,7 +23,7 @@ function loadtoyear(str) {
    }
    var url="yearloader.php"
    url=url+"?year="+str
-   url=url+"&sid="+Math.random()
+   //url=url+"&sid="+Math.random()
    xmlHttp.onreadystatechange=toyearChanged
    xmlHttp.open("GET",url,true)
    xmlHttp.send(null)
@@ -37,8 +37,8 @@ function loadTowns(str) {
    }
    var url="townloader.php"
    var year=document.forms['frm'].elements['year'].options[document.forms['frm'].elements['year'].options.selectedIndex].value;
-   url=url+"?prov="+str+"&year="+year
-   url=url+"&sid="+Math.random()
+   url=url+"?prov="+str //+"&year="+year
+   //url=url+"&sid="+Math.random()
    xmlHttp.onreadystatechange=stateChanged
    xmlHttp.open("GET",url,true)
    xmlHttp.send(null)
