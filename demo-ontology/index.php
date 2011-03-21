@@ -45,67 +45,42 @@
 		<div id="content">
 			<div class="post">
 				<h1 class="title"><a href="#">Welcome to Demography Ontology </a></h1>
-				<p class="meta">Posted by <a href="#">Someone</a> on March 10, 2011
-					&nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">Full article</a></p>
+				<p class="meta">Updated on March 21, 2011</p>
+					
 				<div class="entry">
-					<p>This is <strong>Demography Ontology</strong>, a project developed at the Computer Science and Telecomunication department of the University of Catania.</p>
-					<p>This project develops a php front end that allows you to query an OWL demography ontology.</p>
+					<p>This is the front-end of <strong>Demography Ontology</strong>, a project developed at the Computer Science and Telecomunication department of the University of Catania.</p>
+                                        <p>For more information about this Project and about the Ontology, see the <em>Documentation</em>.
+                                         To see the source code, look under <em>Resources</em> on this page.
+                                         To use the front-end and query the <em>Demograpy Ontology</em>, select the menu items above.
+                                         If you need a user guide select the entry <a href="help.php">help</a>.
+                                         For more information about the authors, select <a href="about.php">about</a>.</p>
 				</div>
 			</div>
-			<div class="post">
-				<h2 class="title"><a href="#">Lorem ipsum sed aliquam</a></h2>
-				<p class="meta">Posted by <a href="#">Someone</a> on March 8, 2008
-					&nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">Full article</a></p>
-				<div class="entry">
-					<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Phasellus <a href="#">dapibus semper urna</a>. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Phasellus pellentesque. Mauris quam enim, molestie in, rhoncus ut, lobortis a, est.</p>
-					<p>Praesent ac lectus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus augue. Fusce eget tellus ultrices ligula volutpat adipiscing. Aenean ligula lectus, vehicula in, dictum a, fermentum nec, felis. Nunc ac turpis in leo posuere imperdiet.</p>
-				</div>
-			</div>
-			<div class="post">
-				<h2 class="title"><a href="#">Phasellus pellentesque turpis </a></h2>
-				<p class="meta">Posted by <a href="#">Someone</a> on March 8, 2008
-					&nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">Full article</a></p>
-				<div class="entry">
-					<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Phasellus pellentesque. Mauris quam enim molestie  rhoncus lobortis a, est.</p>
-				</div>
-			</div>
+			
+			
 		</div>
 		<!-- end #content -->
 		<div id="sidebar">
 			<ul>
+				
 				<li>
-					<h2>Aliquam tempus</h2>
-					<p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper urna ornare, orci in consectetuer hendrerit.</p>
-				</li>
-				<li>
-					<h2>Categories</h2>
+					<h2>Documentation</h2>
 					<ul>
-						<li><a href="#">Uncategorized</a> (3) </li>
-						<li><a href="#">Lorem Ipsum</a> (42) </li>
-						<li><a href="#">Urna Congue Rutrum</a> (28) </li>
-						<li><a href="#">Augue Praesent</a> (55) </li>
-						<li><a href="#">Vivamus Fermentum</a> (13) </li>
+						<li><a href="#">Abstract</a> </li>
+						<li><a href="#">Keywords</a> </li>
+						<li><a href="#">Introduction</a> </li>
+						<li><a href="#">Augue Praesent</a> </li>
+						<li><a href="#">Vivamus Fermentum</a> </li>
 					</ul>
 				</li>
 				<li>
-					<h2>Blogroll</h2>
+					<h2>Resources</h2>
 					<ul>
-						<li><a href="#">Uncategorized</a> (3) </li>
-						<li><a href="#">Lorem Ipsum</a> (42) </li>
-						<li><a href="#">Urna Congue Rutrum</a> (28) </li>
-						<li><a href="#">Augue Praesent</a> (55) </li>
-						<li><a href="#">Vivamus Fermentum</a> (13) </li>
-					</ul>
+						<li><a href="#">Download documentation</a> </li>
+						<li><a href="http://code.google.com/p/demo-ontology/">Source code</a> </li>
+				</ul>
 				</li>
-				<li>
-					<h2>Archives</h2>
-					<ul>
-						<li><a href="#">December 2007</a>&nbsp;(29)</li>
-						<li><a href="#">November 2007</a>&nbsp;(30)</li>
-						<li><a href="#">October 2007</a>&nbsp;(31)</li>
-						<li><a href="#">September 2007</a>&nbsp;(30)</li>
-					</ul>
-				</li>
+				
 			</ul>
 		</div>
 		<!-- end #sidebar -->
