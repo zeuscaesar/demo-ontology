@@ -1,11 +1,11 @@
 <?php
-$year=$_GET["year"];
+$mun=$_GET["mun"];
 echo $year;
 include_once ( 'HTTP/Request.php' );
 include_once ('query.php');
                 $sesame_url = "http://localhost:8080/openrdf-sesame";
                 //FILTER (x? >='.$year.'
-                $query='select distinct ?x where{?y DemoOntology:livingInTheYear ?x. FILTER(?x>='.$year.')}';
+                $query='select distinct ?x where{?y rdf:type DemoOntology:Municipality. ?y DemoOntology:hasName "'.$mun.'"^^rdfs:Literal. ?y DemoOntology:hasPopulation ?pop. ?pop DemoOntology:livingInTheYear ?x.}';
                 $query=openRDF($query);
                 //$query=closeRDF($query);
                 echo $query;
@@ -26,10 +26,12 @@ include_once ('query.php');
                 //echo $response_body."<br/><br/>";
                 $xml=simplexml_load_string($response_body);
                 echo $response_body;
+                
                 //$address = new SimpleXMLElement($response_body);
                 foreach($xml->results->result as $item)
                     {
                     $value=$item->binding->literal;
+
                     echo '<option value="'.$value.'">'.$value.'</option>';
                     }
                 }

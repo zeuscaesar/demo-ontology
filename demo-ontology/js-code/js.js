@@ -28,6 +28,19 @@ function loadtoyear(str) {
    xmlHttp.open("GET",url,true)
    xmlHttp.send(null)
 }
+function loadYearByMun(str) {
+   xmlHttp=GetXmlHttpObject()
+   if (xmlHttp==null) {
+      alert ("Browser does not support HTTP Request")
+      return
+   }
+   var url="yearloaderbymun.php"
+   url=url+"?mun="+str
+   //url=url+"&sid="+Math.random()
+   xmlHttp.onreadystatechange=toMunChangedLoadYear
+   xmlHttp.open("GET",url,true)
+   xmlHttp.send(null)
+}
 
 function loadTowns(str) {
    xmlHttp=GetXmlHttpObject()
@@ -37,6 +50,20 @@ function loadTowns(str) {
    }
    var url="townloader.php"
    var year=document.forms['frm'].elements['year'].options[document.forms['frm'].elements['year'].options.selectedIndex].value;
+   url=url+"?prov="+str //+"&year="+year
+   //url=url+"&sid="+Math.random()
+   xmlHttp.onreadystatechange=stateChanged
+   xmlHttp.open("GET",url,true)
+   xmlHttp.send(null)
+}
+function loadTownswy(str) {
+   xmlHttp=GetXmlHttpObject()
+   if (xmlHttp==null) {
+      alert ("Browser does not support HTTP Request")
+      return
+   }
+   var url="townloader.php"
+   //var year=document.forms['frm'].elements['year'].options[document.forms['frm'].elements['year'].options.selectedIndex].value;
    url=url+"?prov="+str //+"&year="+year
    //url=url+"&sid="+Math.random()
    xmlHttp.onreadystatechange=stateChanged
@@ -216,17 +243,23 @@ function divChanged() {
 function yearChanged() {
    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
       document.getElementById("prov").innerHTML=xmlHttp.responseText
-}
+    }
 }
 function toyearChanged() {
    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
       document.getElementById("toyear").innerHTML=xmlHttp.responseText
+    }
 }
+function toMunChangedLoadYear() {
+   if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
+      document.getElementById("fromyear").innerHTML=xmlHttp.responseText
+      document.getElementById("toyear").innerHTML=xmlHttp.responseText
+    }
 }
 function queryChanged() {
    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
       document.getElementById("strprova").innerHTML=xmlHttp.responseText
-}
+    }
 }
 function GetXmlHttpObject() {
    var xmlHttp=null;
