@@ -6,6 +6,7 @@
     $sesame_url = "http://localhost:8080/openrdf-sesame";
     $query=writeRDF($area);
     $requestString = $sesame_url.'/repositories/demography'.$query;
+    $requestString = str_replace("\\", "", $requestString);
     $req =& new HTTP_Request($requestString);
     $req->setMethod(HTTP_REQUEST_METHOD_GET);
                 $req->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
