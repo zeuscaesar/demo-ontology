@@ -135,7 +135,7 @@
                                         <input  type="checkbox" name="Divorced" id="Divorced">Divorced</input>     <input  type="checkbox" name="Widowed" id="Widowed">Widowed</input><br/>
 
                                         </form>
-                                        <button id="try" onClick="divgrowthChanged()"> Start Query </button>
+                                        <button id="try" onClick="growthing()"> Start Query </button>
                                     </label>
 					<h2>Aliquam tempus</h2>
 					<p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper urna ornare, orci in consectetuer hendrerit.</p>
