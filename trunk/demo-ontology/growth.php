@@ -81,7 +81,7 @@
                                     <label id="lb">
                                         <form name="frm" method="post"> <!--action='submit.php'>-->
                                         
-                                        <span>Province: </span><select name="prov" class="select" id="prov" onChange="loadTowns(this.value)">
+                                        <span>Province: </span><select name="prov" class="select" id="prov" onChange="loadTownswy(this.value)">
                                            <option value="0">--    All    --</option>
                                            <?php
                                                     include_once ( 'HTTP/Request.php' );
@@ -112,7 +112,7 @@
                                                        }
                                                    ?>
                                         </select><br/>
-                                        <span>Municipality: </span><select name="town" class="select" id="town">
+                                        <span>Municipality: </span><select name="town" class="select" id="town" onChange="loadYearByMun(this.value)" >
                                                 <option value="0">--  All Town --</option>
                                           </select><br/>
                                         <span>Sex: </span><select name="sex" class="select" id="sex">
@@ -126,7 +126,7 @@
 
 
                                           </select><br/>
-                                        <span>To Year: </span><select name="toyear" id="toyear" class="select" onChange="loadProv(this.value)">
+                                        <span>To Year: </span><select name="toyear" id="toyear" class="select">
                                                 <option value="sel">-- Selection --</option>
 
                                           </select><br/>
