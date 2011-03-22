@@ -154,8 +154,7 @@ function infobuild(pop_string) {
         }
     }
 
-    for (i=0; i<sum.length; i++)
-        info_string += sum[i]+" ";
+    info_string += tablebuild(sum);
     return info_string;
 
 }
@@ -183,4 +182,21 @@ function createMarker(name, latlng, info) {
         });
 //    debug += "Ho aggiunto un listener al marker di "+name+"; esco dal metodo di creazione del marker.<br/>";
     return marker;
+}
+
+function tablebuild(sum_array) {
+
+    var table = "<table id='result'>";
+    var total_female = sum_array[0]+sum_array[1]+sum_array[2]+sum_array[3];
+    var total_male = sum_array[4]+sum_array[5]+sum_array[6]+sum_array[7];
+    var total = total_female+total_male;
+    table += "<tr><th style='background-color:white;border:0px'></th><th>Female</th><th>Male</th><th>Total</th></tr>";
+    table += "<tr><th>Divorced</th><td>"+sum_array[0]+"</td><td>"+sum_array[4]+"</td><td>"+(parseInt(sum_array[0])+parseInt(sum_array[4]))+"</td></tr>";
+    table += "<tr><th>Married</th><td>"+sum_array[1]+"</td><td>"+sum_array[5]+"</td><td>"+(parseInt(sum_array[1])+parseInt(sum_array[5]))+"</td></tr>";
+    table += "<tr><th>Unmarried</th><td>"+sum_array[2]+"</td><td>"+sum_array[6]+"</td><td>"+(parseInt(sum_array[2])+parseInt(sum_array[6]))+"</td></tr>";
+    table += "<tr><th>Widowed</th><td>"+sum_array[3]+"</td><td>"+sum_array[7]+"</td><td>"+(parseInt(sum_array[3])+parseInt(sum_array[7]))+"</td></tr>";
+    table += "<tr><th>All</th><td>"+total_female+"</td><td>"+total_male+"</td><td>"+total+"</td></tr>";
+    table += "</table>";
+
+    return table;
 }
