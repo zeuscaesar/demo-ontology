@@ -434,7 +434,7 @@ function divgrowthChanged() {
     for(i=0; i<pop_in_the_years.length; i++) {
         h=pop_in_the_years[i];
         w=30;
-        output=output+"<img src='blank.gif' alt='anno "+(fromyear+i)+" -> "+h+" abitanti' title='anno "+(fromyear+i)+" -> "+h+" abitanti' class='barra2' style='height: " + (norm*h) + "px; width: " + w + "px;'/>";
+        output=output+"<img src='blank.gif' alt='anno "+(parseInt(fromyear)+parseInt(i))+" -> "+h+" abitanti' title='anno "+(parseInt(fromyear)+parseInt(i))+" -> "+h+" abitanti' class='barra2' style='height: " + (norm*h) + "px; width: " + w + "px;'/>";
     }
 
 //    var table = "<table id='result'><tr>";
