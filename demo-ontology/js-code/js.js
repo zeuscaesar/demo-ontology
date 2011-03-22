@@ -380,7 +380,7 @@ function divgrowthChanged() {
     var indice=150;
 
     //ricevuta la stringa di risposta contente i risultati della query separati dal carattere "|",
-    //la splitto e memorizzo i singoli risultati nella variabile var data
+    //la splitto e memorizzo i singoli risultati nella variabile data
     var data = xmlHttp.responseText.split('|');
 
     //ricopio i risultati ottenuti all'interno di una variabile vett,
@@ -393,21 +393,29 @@ function divgrowthChanged() {
     //creo una variabile relativa al numero di anni da graficare
     var years = toyear - fromyear + 1;
 
-    //definisco un array che conterrà la popolazione totale nei vari anni
+    //definisco e inizializzo un array che conterrà la popolazione totale nei vari anni
     var pop_in_the_years = new Array();
+    for (i=0; i<years; i++) {
+        pop_in_the_years[i]=0;
+    }
 
     //definisco una variabile che mi indica quanti vettori di popolazione mi vengono restituiti per ogni anno
     var vett_number_per_year = vett.length/years;
 
+    //variabile usata per il debug
+    var debug = "";
+
     //riempio l'array della popolazione totale
     for (i=0; i<vett.length; i++) {
         var sum = 0;
-        pop_in_the_years[i%years] = 0;
-        //sommo la popolazione del singolo vettore iterando su tutte le età
+        //sommo in numero di abitanti di ogni vettore di popolazione iterando su tutte le età
         //e ne salvo il totale nella variabile sum
-        for (j=0; j<vett[i].length; j++){
+        for (j=0; j<vett[i].length; j++) {
             sum += parseInt(vett[i][j]);
         }
+        debug += "sum = " + sum + " || i = " + i + "|| i%years = "+ (i%years)+"<br/>";
+        //incremento della quantità sum la componente dell'array pop_in_the_years
+        //relativa alla popolazione contata
         pop_in_the_years[i%years] += sum;
     }
 
@@ -423,10 +431,10 @@ function divgrowthChanged() {
      var norm=indice/max;
 
      //grafico la popolazione complessiva per anno
-    for(i = 0; i < pop_in_the_years.length; i++) {
+    for(i=0; i<pop_in_the_years.length; i++) {
         h=pop_in_the_years[i];
         w=30;
-        output=output+"<img src='blank.gif' alt='anno "+((parseInt(fromyear))+(parseInt(i)))+" -> "+parseInt(h)+" abitanti' title='anno "+((parseInt(fromyear))+(parseInt(i)))+" -> "+parseInt(h)+" abitanti' class='barra2' style='height: " + (norm*h) + "px; width: " + w + "px;'/>";
+        output=output+"<img src='blank.gif' alt='anno "+(fromyear+i)+" -> "+h+" abitanti' title='anno "+(fromyear+i)+" -> "+h+" abitanti' class='barra2' style='height: " + (norm*h) + "px; width: " + w + "px;'/>";
     }
 
 //    var table = "<table id='result'><tr>";

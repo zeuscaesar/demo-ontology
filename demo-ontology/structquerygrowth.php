@@ -136,7 +136,7 @@ $requestString = $sesame_url.'/repositories/demography'.$query;
                 $xml=simplexml_load_string($response_body);
                 //echo $response_body;
                 //$address = new SimpleXMLElement($response_body);
-                echo reverseSymbol($query);
+                //echo reverseSymbol($query);
                 foreach($xml->results->result as $item){
                     $value=$item->binding->literal;
                     echo $value."|";
