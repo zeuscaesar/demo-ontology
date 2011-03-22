@@ -56,6 +56,7 @@ function loadTowns(str) {//non lo utilizziamo
    xmlHttp.open("GET",url,true)
    xmlHttp.send(null)
 }
+
 function loadTownswy(str) {//wy=without years
    xmlHttp=GetXmlHttpObject()
    if (xmlHttp==null) {
@@ -63,8 +64,9 @@ function loadTownswy(str) {//wy=without years
       return
    }
    var url="townloader.php"
+   var year="sel"
    //var year=document.forms['frm'].elements['year'].options[document.forms['frm'].elements['year'].options.selectedIndex].value;
-   url=url+"?prov="+str //+"&year="+year
+   url=url+"?prov="+str+"&year="+year
    //url=url+"&sid="+Math.random()
    xmlHttp.onreadystatechange=stateChanged
    xmlHttp.open("GET",url,true)
