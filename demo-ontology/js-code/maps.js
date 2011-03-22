@@ -60,9 +60,9 @@ function GetXmlHttpObject() {
    return xmlHttp;
 }
 function showMap(){
-//    var year=document.forms['frm'].elements['year'].options[document.forms['frm'].elements['year'].options.selectedIndex].value;
+    var year=document.forms['frm'].elements['year'].options[document.forms['frm'].elements['year'].options.selectedIndex].value;
     var prov=document.forms['frm'].elements['prov'].options[document.forms['frm'].elements['prov'].options.selectedIndex].value;
-//    var town=document.forms['frm'].elements['town'].options[document.forms['frm'].elements['town'].options.selectedIndex].value;
+    var town=document.forms['frm'].elements['town'].options[document.forms['frm'].elements['town'].options.selectedIndex].value;
 //    var sex=document.forms['frm'].elements['sex'].options[document.forms['frm'].elements['sex'].options.selectedIndex].value;
 //    var Unmarried=document.forms['frm'].elements['Unmarried'].checked;
 //    var Married=document.forms['frm'].elements['Married'].checked;
@@ -76,12 +76,13 @@ function showMap(){
    }
    var url="geoquery.php"
    //url=url+"?year="+year+"&prov="+prov+"&town="+town+"&sex="+sex+"&Unmarried="+Unmarried+"&Married="+Married+"&Widowed="+Widowed+"&Divorced="+Divorced;
-   url=url+"?prov="+prov+"&town="+town;
+   url=url+"?year="+year+"&prov="+prov+"&town="+town;
    xmlHttp.onreadystatechange=changeMapOK;
    xmlHttp.open("GET",url,true)
    xmlHttp.send(null)
 }
 
+//questa funzione inizializza la googlemap visualizzando l'Italia centrata su Roma
 function initialize() {
     geocoder = new google.maps.Geocoder();
     var myLatlng = new google.maps.LatLng(41.8954656, 12.4823243);
@@ -101,45 +102,62 @@ function clearOverlays() {
     }
 }
 
-function geocode() {
-    clearOverlays(); //richiama la funzione per cancellare eventuali precedenti markers
-    var ind1 = document.getElementById("comuni").value;
-    var ind2 = " ,IT";
-    var address = ind1 + ind2; // se cercassimo solo "Roma" potremmo rischiare di trovare una citta' con nome simile, pertanto aggiungo anche ,IT
-    geocoder.geocode({
-        'address': address,
-        'partialmatch': true },
-        geocodeResult);
-    var link = "generazione_xml.php?comune=";
-    downloadUrl(link+ind1, function(data) { // trasmetto a generazione_xml con GET il nome del comune di cui voglio estrarre i markers
-        var markers = data.documentElement.getElementsByTagName("marker");
-        for (var i = 0; i < markers.length; i++) {
-            var latlng = new google.maps.LatLng(parseFloat(markers[i].getAttribute("lat")),
-            parseFloat(markers[i].getAttribute("lng")));
-            var marker = createMarker(markers[i].getAttribute("name"), latlng);
-       }
-     });
-}
 
 function changeMapOK() {
     var prov=document.forms['frm'].elements['prov'].options[document.forms['frm'].elements['prov'].options.selectedIndex].value;
     if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
+        document.getElementById('divpredata').innerHTML = "STRINGA DI DEBUG<br/>"+xmlHttp.responseText+"<br/>FINE STRINGA DI DEBUG";
         var results = xmlHttp.responseText.split('|');
-        var municipalities_and_coord = new Array();
+        var municipalities_data = new Array();
         clearOverlays();
         geocoder.geocode({
             'address': prov+', IT',
-            'partialmatch': true },
+            'partialmatch': true},
             geocodeResult);
-        for (i=0; i<results.length-1; i++) {
-            municipalities_and_coord[i] = results[i].split(',');
-            var name = municipalities_and_coord[i][0];
-            var lat = parseFloat(municipalities_and_coord[i][2]);
-            var lng = parseFloat(municipalities_and_coord[i][1]);
+        for (var i=0; i<results.length-1; i++) {
+            var pos = i;
+            municipalities_data[i] = results[i].split('#');
+            var name = municipalities_data[pos][0];
+            var lat = parseFloat(municipalities_data[i][1].split(',')[1]);
+            var lng = parseFloat(municipalities_data[i][1].split(',')[0]);
             var latlng = new google.maps.LatLng(lat,lng);
-            createMarker(name,latlng);
+            var info = "";
+            //info = "Informazioni sulla popolazione";
+            info = infobuild(municipalities_data[i][2]);
+            createMarker(name,latlng, info);
         }
     }
+}
+
+function infobuild(pop_string) {
+
+    //definisco una variabile info_string di tipo stringa che conterrà l'informazione
+    //da visualizzare nel fumetto sulla mappa
+    var info_string="";
+
+    //salvo nell'array components le varie componenti della popolazione, ancora sotto forma di stringa
+    var components = new Array();
+    components = pop_string.split(':');
+
+    //creo un array people e lo riempio con le componenti della popolazione sotto forma di array di interi
+    var people = new Array();
+    for (i=0; i<components.length; i++)
+        people[i] = components[i].split(',');
+
+    //creo e inizializzo array sum per tenere conto del numero totale di persone
+    //per ogni componente della popolazione
+    var sum = new Array();
+    for (i=0; i<people.length; i++) {
+        sum[i] = 0;
+        for (j=0; j<people[i].length; j++) {
+            sum[i] += parseInt(people[i][j])
+        }
+    }
+
+    for (i=0; i<sum.length; i++)
+        info_string += sum[i]+" ";
+    return info_string;
+
 }
 
 function geocodeResult(results, status) {
@@ -152,7 +170,7 @@ function geocodeResult(results, status) {
 }
 
 
-function createMarker(name, latlng) {
+function createMarker(name, latlng, info) {
     var marker = new google.maps.Marker({position:latlng, map:map});
 //    debug += "Ho creato il marker di "+name+".<br/>";
     markersArray.push(marker);
@@ -160,8 +178,7 @@ function createMarker(name, latlng) {
     google.maps.event.addListener(marker, "click", function() {
         if (infowindow)
             infowindow.close();
-        var content = "<div>PROVA</div>";
-        infowindow = new google.maps.InfoWindow({content: name+content});
+        infowindow = new google.maps.InfoWindow({content: name+"<br/>"+info});
         infowindow.open(map, marker);
         });
 //    debug += "Ho aggiunto un listener al marker di "+name+"; esco dal metodo di creazione del marker.<br/>";
