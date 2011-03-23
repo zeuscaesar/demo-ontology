@@ -35,17 +35,31 @@ if($prov!='0'){
                 ?pop DemoOntology:numbers ?num.');
      }
 
-     else{
+     if ($town=='0') {
                 $query=openRDF(
                 'select distinct ?num
                 where{
                 ?prov rdf:type DemoOntology:Province.
                 ?prov DemoOntology:hasMunicipality ?mun.
-                ?mun DemoOntology:hasName "'.$town.'"^^rdfs:Literal.
+                ?prov DemoOntology:hasName "'.$prov.'"^^rdfs:Literal.
                 ?mun DemoOntology:hasPopulation ?pop.
                 ?pop DemoOntology:livingInTheYear "'.$year.'"^^xsd:int.
                 ?pop DemoOntology:numbers ?num.');
      }
+/////////////////// *** VERSIONE DI CARLO *** ////////////////////////////
+//     else{
+//                $query=openRDF(
+//                $query=openRDF(
+//                'select distinct ?num
+//                where{
+//                ?prov rdf:type DemoOntology:Province.
+//                ?prov DemoOntology:hasMunicipality ?mun.
+//                ?mun DemoOntology:hasName "'.$town.'"^^rdfs:Literal.
+//                ?mun DemoOntology:hasPopulation ?pop.
+//                ?pop DemoOntology:livingInTheYear "'.$year.'"^^xsd:int.
+//                ?pop DemoOntology:numbers ?num.');
+//    }
+/////////////////////////////////////////////////////////////////////////////
 }
 if($prov=='0'){
     if($year=='0'){
