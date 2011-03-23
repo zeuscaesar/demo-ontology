@@ -51,10 +51,10 @@
                                 
                                 <p id="pdiv" class="meta" >Posted by <a href="#">Someone</a> on March 10, 2008
 					&nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">Full article</a></p>
-				<div id ="divdata" >
+                                <p id='number'></p>
+                                <div id ="divdata" >
                                   
                                 </div>
-                                 <p id='number'></p>
 			</div>
 			<div class="post">
 				<h2 class="title"><a href="#">Lorem ipsum sed aliquam</a></h2>
