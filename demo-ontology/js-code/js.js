@@ -84,16 +84,68 @@ function divChanged() {
     var output="";
     var indice=150;
 
+    var year = document.forms['frm'].elements['year'].options[document.forms['frm'].elements['year'].options.selectedIndex].value;
+    var town = document.forms['frm'].elements['town'].options[document.forms['frm'].elements['town'].options.selectedIndex].value;
+    var sex = document.forms['frm'].elements['sex'].options[document.forms['frm'].elements['sex'].options.selectedIndex].value;
+    var Unmarried = document.forms['frm'].elements['Unmarried'].checked;
+    var Married = document.forms['frm'].elements['Married'].checked;
+    var Widowed = document.forms['frm'].elements['Widowed'].checked;
+    var Divorced = document.forms['frm'].elements['Divorced'].checked;
+    var prov = document.forms['frm'].elements['prov'].options[document.forms['frm'].elements['prov'].options.selectedIndex].value;
+
+    //definisco una variabile che mi conta quanti diversi stati civili
+    //mi vengono restituiti e devo graficare per ogni sesso
+    var counter = 0;
+    if (!(Divorced||Married||Unmarried||Widowed)) {
+        Divorced = true;
+        Married = true;
+        Unmarried = true;
+        Widowed = true;
+    }
+    if (Divorced)
+        counter++;
+    if (Married)
+        counter++;
+    if (Unmarried)
+        counter++;
+    if (Widowed)
+        counter++;
+
+    var totalCounter = (sex=="Both"? counter*2 : counter);
     //ricevuta la stringa di risposta contente i risultati della query separati dal carattere "|",
     //la splitto e memorizzo i singoli risultati nella variabile var data
     var data = xmlHttp.responseText.split('|');
 
-    //ricopio i risultati ottenuti all'interno di una variabile vett,
-    //eliminando l'ultimo che in realtà a causa della costruzione della stringa di risposta
-    //corrisponde ad una stringa vuota
+    //definisco una variabile vett che conterrà i risultati della query
+    //sotto forma di vettori di interi per ogni categoria di popolazione
     var vett = new Array();
-    for (i=0; i<data.length-1; i++)
-        vett[i] = data[i].split(',');
+    if (town!=0) {
+        //ricopio all'interno di vett i risultati ottenuti,
+        //eliminando l'ultimo che in realtà a causa della costruzione della stringa di risposta
+        //corrisponde ad una stringa vuota
+        for (i=0; i<data.length-1; i++)
+            vett[i] = data[i].split(',');
+    }
+    //se town==0, allora devo sommare i dati delle singole città
+    else {
+        //definisco un array temp e vi ricopio all'interno i risultati ottenuti,
+        //eliminando l'ultimo che in realtà a causa della costruzione della stringa di risposta
+        //corrisponde ad una stringa vuota
+        var temp = new Array();
+        for (i=0; i<data.length-1; i++)
+            temp[i] = data[i].split(',');
+        //inizializzo con valori pari a 0 l'array vett
+        for (i=0; i<totalCounter; i++) {
+            vett[i]=new Array();
+            for (var j=0; j<temp[0].length; j++)
+                vett[i][j] = 0;
+        }
+        //per ogni valore di età letto in ogni componente di popolazione presente in temp,
+        //incremento la relativa componente di vett
+        for (i=0; i<temp.length; i++)
+            for (j=0; j<temp[i].length; j++)
+                vett[i%totalCounter][j]+= parseInt(temp[i][j]);
+    }
 
     //definisco tre variabili tot_istanze_singole, tot_per_eta, totale_popolaz
     //di tipo array che utilizzerò per contenere rispettivamente
@@ -157,33 +209,10 @@ function divChanged() {
         output=output+"<img src='blank.gif' alt='"+i+" anni -> "+h+" abitanti' title='"+i+" anni -> "+h+" abitanti' class='barra2' style='height: " + (norm*h) + "px; width: " + w + "px;'/>";
     }
 
-    var year = document.forms['frm'].elements['year'].options[document.forms['frm'].elements['year'].options.selectedIndex].value;
-    var town = document.forms['frm'].elements['town'].options[document.forms['frm'].elements['town'].options.selectedIndex].value;
-    var sex = document.forms['frm'].elements['sex'].options[document.forms['frm'].elements['sex'].options.selectedIndex].value;
-    var Unmarried = document.forms['frm'].elements['Unmarried'].checked;
-    var Married = document.forms['frm'].elements['Married'].checked;
-    var Widowed = document.forms['frm'].elements['Widowed'].checked;
-    var Divorced = document.forms['frm'].elements['Divorced'].checked;
-    var prov = document.forms['frm'].elements['prov'].options[document.forms['frm'].elements['prov'].options.selectedIndex].value;
 
     var table = "<table id='result'><tr>";
-    var counter = 0;
-    if (!(Divorced||Married||Unmarried||Widowed)) {
-        Divorced = true;
-        Married = true;
-        Unmarried = true;
-        Widowed = true;
-    }
-    if (Divorced)
-        counter++;
-    if (Married)
-        counter++;
-    if (Unmarried)
-        counter++;
-    if (Widowed)
-        counter++;
 
-     table+="<th style='background-color:white;border:0px'></th>";
+    table+="<th style='background-color:white;border:0px'></th>";
     if(sex!="Both"){
         table += "<th colspan="+counter+">"+sex+"</th>";
         table += "</tr><tr><th>Age</th>";
