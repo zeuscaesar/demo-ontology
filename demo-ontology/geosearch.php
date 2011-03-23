@@ -89,7 +89,7 @@
                                                 <?php
                                                     include_once ( 'HTTP/Request.php' );
                                                     $sesame_url = "http://localhost:8080/openrdf-sesame";
-                                                    $query ='?queryLn=SPARQL&query=PREFIX%20DemoOntology:<http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl%23>%0Aselect%20distinct%20%3Fx%0Awhere{%0A%3Fy%20DemoOntology:livingInTheYear%20%3Fx%0A}';
+                                                    $query ='?queryLn=SPARQL&query=PREFIX%20DemoOntology:<http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl%23>%0Aselect%20distinct%20%3Fx%0Awhere{%0A%3Fy%20DemoOntology:livingInTheYear%20%3Fx%0A}ORDER%20BY%20%3Fx';
                                                     $requestString = $sesame_url.'/repositories/demography'.$query;
                                                     $req =& new HTTP_Request($requestString);
                                                     //echo $requestString;
