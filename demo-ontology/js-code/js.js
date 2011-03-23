@@ -186,13 +186,13 @@ function divChanged() {
          for (i=0; i< vett.length; i++) {
             var value = parseInt(vett[i][j]);
             sum[j]+= value;
-                if((value-maxTot)>0)
-                maxTot=value;
+                if((sum[j]-maxTot)>0)
+                maxTot=sum[j];
          }
      }
 
      //calcolo il fattore di normalizzazione per il grafico della popolazione complessiva
-     var normTot=indice/maxTot;
+     var normTot=parseFloat(indice/maxTot);
 
 //     //se il risultato della query comprende più categorie di popolazione,
 //     //grafico prima le singole categorie
