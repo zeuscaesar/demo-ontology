@@ -77,6 +77,7 @@ function showMap(){
    var url="geoquery.php"
    //url=url+"?year="+year+"&prov="+prov+"&town="+town+"&sex="+sex+"&Unmarried="+Unmarried+"&Married="+Married+"&Widowed="+Widowed+"&Divorced="+Divorced;
    url=url+"?year="+year+"&prov="+prov+"&town="+town;
+   alert(town);
    xmlHttp.onreadystatechange=changeMapOK;
    xmlHttp.open("GET",url,true)
    xmlHttp.send(null)
