@@ -10,6 +10,8 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Demography Ontology - Home Page</title>
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="js-code/js.js"></script>
+<script type="text/javascript" src="js-code/js-doc.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -44,9 +46,10 @@
 	<div id="page">
 		<div id="content">
 			<div class="post">
-				<h1 class="title"><a href="#">Welcome to Demography Ontology </a></h1>
+                            <div id="title">
+				<h1 class="title" ><a href="#">Welcome to Demography Ontology </a></h1>
 				<p class="meta">Updated on March 21, 2011</p>
-					
+                            </div>
 				<div class="entry" id="doc">
 					<p>This is the front-end of <strong>Demography Ontology</strong>, a project developed at the Computer Science and Telecomunication department of the University of Catania.</p>
                                         <p>For more information about this Project and about the Ontology, see the <em>Documentation</em>.
@@ -66,9 +69,9 @@
 				<li>
 					<h2>Documentation</h2>
 					<ul>
-						<li><a href="#" onclick="modificaDiv()">Abstract</a> </li>
-						<li><a href="#">Keywords</a> </li>
-						<li><a href="#">Introduction</a> </li>
+						<li><a href="#" onclick="setDiv(1)">Abstract</a> </li>
+						<li><a href="#" onclick="setDiv(2)">Keywords</a> </li>
+						<li><a href="#" onclick="setDiv(3)">Introduction</a> </li>
 						<li><a href="#">Augue Praesent</a> </li>
 						<li><a href="#">Vivamus Fermentum</a> </li>
 					</ul>
