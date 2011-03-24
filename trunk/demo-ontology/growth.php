@@ -122,12 +122,66 @@
                                                 <option value="Female">Female</option>
                                           </select><br/>
                                         <span>From Year: </span><select name="fromyear" id="fromyear" class="select" onChange="loadtoyear(this.value)">
-                                                <option value="sel">-- Selection --</option>
-
+                                                
+                                                <?php
+                                                    include_once ( 'HTTP/Request.php' );
+                                                    include_once ('query.php');
+                                                    $sesame_url = "http://localhost:8080/openrdf-sesame";
+                                                    $query='select distinct ?x where{?y DemoOntology:livingInTheYear ?x}ORDER by ?x';
+                                                    $query=openRDF($query);
+                                                    $requestString = $sesame_url.'/repositories/demography'.$query;
+                                                    $req =& new HTTP_Request($requestString);
+                                                    //echo $requestString;
+                                                    $req->setMethod(HTTP_REQUEST_METHOD_GET);
+                                                    $req->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
+                                                    $req->sendRequest();
+                                                    $response_code = $req->getResponseCode();
+                                                    if($response_code!=200)
+                                                            echo "Errore di codice ".$response_code;
+                                                    else
+                                                        {
+                                                        $response_body = $req->getResponseBody();
+                                                        //echo "Risposta ricevuta correttamente<br/><br>";
+                                                        //echo $response_body."<br/><br/>";
+                                                        $xml=simplexml_load_string($response_body);
+                                                        $address = new SimpleXMLElement($response_body);
+                                                        foreach($xml->results->result as $item){
+                                                        $value=$item->binding->literal;
+                                                        echo '<option value="'.$value.'">'.$value.'</option>';
+                                                        }
+                                                       }
+                                                   ?>
 
                                           </select><br/>
                                         <span>To Year: </span><select name="toyear" id="toyear" class="select">
-                                                <option value="sel">-- Selection --</option>
+                                                <?php
+                                                    include_once ( 'HTTP/Request.php' );
+                                                    include_once ('query.php');
+                                                    $sesame_url = "http://localhost:8080/openrdf-sesame";
+                                                    $query='select distinct ?x where{?y DemoOntology:livingInTheYear ?x}ORDER by ?x';
+                                                    $query=openRDF($query);
+                                                    $requestString = $sesame_url.'/repositories/demography'.$query;
+                                                    $req =& new HTTP_Request($requestString);
+                                                    //echo $requestString;
+                                                    $req->setMethod(HTTP_REQUEST_METHOD_GET);
+                                                    $req->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
+                                                    $req->sendRequest();
+                                                    $response_code = $req->getResponseCode();
+                                                    if($response_code!=200)
+                                                            echo "Errore di codice ".$response_code;
+                                                    else
+                                                        {
+                                                        $response_body = $req->getResponseBody();
+                                                        //echo "Risposta ricevuta correttamente<br/><br>";
+                                                        //echo $response_body."<br/><br/>";
+                                                        $xml=simplexml_load_string($response_body);
+                                                        $address = new SimpleXMLElement($response_body);
+                                                        foreach($xml->results->result as $item){
+                                                        $value=$item->binding->literal;
+                                                        echo '<option value="'.$value.'">'.$value.'</option>';
+                                                        }
+                                                       }
+                                                   ?>
 
                                           </select><br/>
                                         <span>Marital Status: </span><br/>
