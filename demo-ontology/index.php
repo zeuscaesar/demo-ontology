@@ -47,7 +47,7 @@
 				<h1 class="title"><a href="#">Welcome to Demography Ontology </a></h1>
 				<p class="meta">Updated on March 21, 2011</p>
 					
-				<div class="entry">
+				<div class="entry" id="doc">
 					<p>This is the front-end of <strong>Demography Ontology</strong>, a project developed at the Computer Science and Telecomunication department of the University of Catania.</p>
                                         <p>For more information about this Project and about the Ontology, see the <em>Documentation</em>.
                                          To see the source code, look under <em>Resources</em> on this page.
@@ -66,7 +66,7 @@
 				<li>
 					<h2>Documentation</h2>
 					<ul>
-						<li><a href="#">Abstract</a> </li>
+						<li><a href="#" onclick="modificaDiv()">Abstract</a> </li>
 						<li><a href="#">Keywords</a> </li>
 						<li><a href="#">Introduction</a> </li>
 						<li><a href="#">Augue Praesent</a> </li>
