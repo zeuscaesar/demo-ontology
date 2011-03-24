@@ -306,6 +306,11 @@ function stampdivdata() {//temporaneo
       
     }
 }
+function modificaDiv() {
+        alert("ciao");
+      document.getElementById("doc").innerHTML="carlo e puppo";
+    }
+
 function GetXmlHttpObject() {
    var xmlHttp=null;
    try {
