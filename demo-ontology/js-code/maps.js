@@ -2,50 +2,50 @@ var xmlHttp;
 var infowindow;
 var map;
 var markersArray = [];
-var debug = "";
 
 function loadProv(str) {
-   xmlHttp=GetXmlHttpObject()
+   xmlHttp = GetXmlHttpObject();
    if (xmlHttp==null) {
-      alert ("Browser does not support HTTP Request")
-      return
+      alert ("Browser does not support HTTP Request");
+      return;
    }
-   var url="geoprovloader.php"
-   url=url+"?year="+str
-   url=url+"&sid="+Math.random()
-   xmlHttp.onreadystatechange=yearChanged
-   xmlHttp.open("GET",url,true)
-   xmlHttp.send(null)
+   var url = "geoprovloader.php";
+   url = url+"?year="+str;
+   url = url+"&sid="+Math.random();
+   xmlHttp.onreadystatechange = yearChanged;
+   xmlHttp.open("GET",url,true);
+   xmlHttp.send(null);
 }
 
 function loadTowns(str) {
-   xmlHttp=GetXmlHttpObject()
+   xmlHttp = GetXmlHttpObject();
    if (xmlHttp==null) {
-      alert ("Browser does not support HTTP Request")
-      return
+      alert ("Browser does not support HTTP Request");
+      return;
    }
-   var url="geotownloader.php"
-   var year=document.forms['frm'].elements['year'].options[document.forms['frm'].elements['year'].options.selectedIndex].value;
-   url=url+"?prov="+str+"&year="+year
-   url=url+"&sid="+Math.random()
-   xmlHttp.onreadystatechange=stateChanged
-   xmlHttp.open("GET",url,true)
-   xmlHttp.send(null)
+   var url = "geotownloader.php";
+   var year = document.forms['frm'].elements['year'].options[document.forms['frm'].elements['year'].options.selectedIndex].value;
+   url = url+"?prov="+str+"&year="+year;
+   url = url+"&sid="+Math.random();
+   xmlHttp.onreadystatechange = stateChanged;
+   xmlHttp.open("GET",url,true);
+   xmlHttp.send(null);
 }
 
 function stateChanged() {
-   if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
-      document.getElementById("town").innerHTML=xmlHttp.responseText
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
+        document.getElementById("town").innerHTML = xmlHttp.responseText;
    }
 }
 
 function yearChanged() {
-   if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
-      document.getElementById("prov").innerHTML=xmlHttp.responseText
+    if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
+        document.getElementById("prov").innerHTML = xmlHttp.responseText;
+    }
 }
-}
+
 function GetXmlHttpObject() {
-   var xmlHttp=null;
+   var xmlHttp = null;
    try {
       // Firefox, Opera 8.0+, Safari
       xmlHttp=new XMLHttpRequest();
@@ -59,29 +59,24 @@ function GetXmlHttpObject() {
    }
    return xmlHttp;
 }
-function showMap(){
-    var year=document.forms['frm'].elements['year'].options[document.forms['frm'].elements['year'].options.selectedIndex].value;
-    var prov=document.forms['frm'].elements['prov'].options[document.forms['frm'].elements['prov'].options.selectedIndex].value;
-    var town=document.forms['frm'].elements['town'].options[document.forms['frm'].elements['town'].options.selectedIndex].value;
-//    var sex=document.forms['frm'].elements['sex'].options[document.forms['frm'].elements['sex'].options.selectedIndex].value;
-//    var Unmarried=document.forms['frm'].elements['Unmarried'].checked;
-//    var Married=document.forms['frm'].elements['Married'].checked;
-//    var Widowed=document.forms['frm'].elements['Widowed'].checked;
-//    var Divorced=document.forms['frm'].elements['Divorced'].checked;
 
-    xmlHttp=GetXmlHttpObject()
+function showMap() {
+    var year = document.forms['frm'].elements['year'].options[document.forms['frm'].elements['year'].options.selectedIndex].value;
+    var prov = document.forms['frm'].elements['prov'].options[document.forms['frm'].elements['prov'].options.selectedIndex].value;
+    var town = document.forms['frm'].elements['town'].options[document.forms['frm'].elements['town'].options.selectedIndex].value;
+
+    xmlHttp = GetXmlHttpObject();
     if (xmlHttp==null) {
-        alert ("Browser does not support HTTP Request")
-        return
+        alert ("Browser does not support HTTP Request");
+        return;
    }
-   var url="geoquery.php"
-   url=url+"?year="+year+"&prov="+prov+"&town="+town;
+   var url = "geoquery.php";
+   url = url+"?year="+year+"&prov="+prov+"&town="+town;
    xmlHttp.onreadystatechange=changeMapOK;
-   xmlHttp.open("GET",url,true)
-   xmlHttp.send(null)
+   xmlHttp.open("GET",url,true);
+   xmlHttp.send(null);
 }
 
-//questa funzione inizializza la googlemap visualizzando l'Italia centrata su Roma
 function initialize() {
     geocoder = new google.maps.Geocoder();
     var myLatlng = new google.maps.LatLng(41.8954656, 12.4823243);
@@ -101,11 +96,9 @@ function clearOverlays() {
     }
 }
 
-
 function changeMapOK() {
-    var prov=document.forms['frm'].elements['prov'].options[document.forms['frm'].elements['prov'].options.selectedIndex].value;
+    var prov = document.forms['frm'].elements['prov'].options[document.forms['frm'].elements['prov'].options.selectedIndex].value;
     if (xmlHttp.readyState==4 || xmlHttp.readyState=="complete") {
-        document.getElementById('divpredata').innerHTML = "STRINGA DI DEBUG<br/>"+xmlHttp.responseText+"<br/>FINE STRINGA DI DEBUG";
         var results = xmlHttp.responseText.split('|');
         var municipalities_data = new Array();
         clearOverlays();
@@ -121,7 +114,6 @@ function changeMapOK() {
             var lng = parseFloat(municipalities_data[i][1].split(',')[0]);
             var latlng = new google.maps.LatLng(lat,lng);
             var info = "";
-            //info = "Informazioni sulla popolazione";
             info = infobuild(municipalities_data[i][2]);
             createMarker(name,latlng, info);
         }
@@ -167,19 +159,15 @@ function geocodeResult(results, status) {
         alert("Geocode was not successful for the following reason: " + status);
 }
 
-
 function createMarker(name, latlng, info) {
     var marker = new google.maps.Marker({position:latlng, map:map});
-//    debug += "Ho creato il marker di "+name+".<br/>";
     markersArray.push(marker);
-//    debug += "Ho inserito il marker di "+name+" nel vettore.<br/>";
     google.maps.event.addListener(marker, "click", function() {
         if (infowindow)
             infowindow.close();
         infowindow = new google.maps.InfoWindow({content: "<div class='municipality'>"+name+"</div>"+info});
         infowindow.open(map, marker);
         });
-//    debug += "Ho aggiunto un listener al marker di "+name+"; esco dal metodo di creazione del marker.<br/>";
     return marker;
 }
 

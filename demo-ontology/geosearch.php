@@ -47,12 +47,7 @@
 	<div id="page">
 		<div id="content">
 			<div class="post" >
-				<h2 class="title"><a href="#">Demography Ontology </a></h2>
-
-                                <p id="pdiv" class="meta" >Posted by <a href="#">Someone</a> on March 10, 2008
-					&nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">Full article</a></p>
-                                            <div id="map_canvas" style="width:100%; height:400px; margin-top:3em;"></div>
-                                 <p id='number'></p>
+                                <div id="map_canvas" style="width:100%; height:400px;"></div>
 			</div>
 		</div>
 		<!-- end #content -->
@@ -60,7 +55,7 @@
 			<ul>
 				<li>
                                     <label id="lb">
-                                        <form name="frm" method="post"> <!--action='submit.php'>-->
+                                        <form name="frm" method="post">
 
                                         <span>Year: </span><select name="year" id="year" class="select" onChange="loadProv(this.value)">
                                                 <?php
@@ -79,14 +74,12 @@
                                                     else {
                                                         $year_responseBody = $year_req->getResponseBody();
                                                         $year_xml=simplexml_load_string($year_responseBody);
-                                                        //$address = new SimpleXMLElement($year_responseBody);
                                                         foreach($year_xml->results->result as $year_item) {
                                                            $year_value=$year_item->binding->literal;
                                                            echo '<option value="'.$year_value.'">'.$year_value.'</option>';
                                                         }
                                                         $selected_year = $year_xml->results->result->binding->literal;
                                                     }
-
                                                     echo "</select><br/>";
                                                     echo '<span>Province: </span><select name="prov" class="select" id="prov" onChange="loadTowns(this.value)">';
                                                     $prov_query = openRDF('
@@ -94,6 +87,9 @@
                                                         where{
                                                         ?prov rdf:type DemoOntology:Province.
                                                         ?prov DemoOntology:hasName ?name.
+                                                        ?prov DemoOntology:hasMunicipality ?mun.
+                                                        ?mun DemoOntology:hasPopulation ?pop.
+                                                        ?pop DemoOntology:livingInTheYear "'.$selected_year.'"^^xsd:int.
                                                     ');
                                                     $prov_query = closeRDF($prov_query);
                                                     $prov_requestString = $sesame_url.'/repositories/demography'.$prov_query;
@@ -103,25 +99,20 @@
                                                     $prov_req->sendRequest();
                                                     $prov_responseCode = $prov_req->getResponseCode();
                                                     if($prov_responseCode!=200)
-                                                        //echo "Errore di codice ".$prov_responseCode;
-                                                        echo '<option value="Errore">Errore</option>';
+                                                        echo "Errore di codice ".$prov_responseCode;
                                                     else {
                                                         $prov_responseBody = $prov_req->getResponseBody();
                                                         $prov_xml=simplexml_load_string($prov_responseBody);
-                                                        //echo $response_body;
                                                         foreach($prov_xml->results->result as $prov_item){
                                                             $prov_value=$prov_item->binding->literal;
                                                             echo '<option value="'.$prov_value.'">'.$prov_value.'</option>';
                                                         }
                                                         $selected_prov = $prov_xml->results->result->binding->literal;
                                                     }
-
                                                     echo "</select><br/>";
                                                     echo '<span>Municipality: </span><select name="town" class="select" id="town">';
-
-                                                echo "<option value='0'>--    All    --</option>\n";
-
-                                                    $query2 = openRDF('
+                                                    echo "<option value='0'>--    All    --</option>\n";
+                                                    $town_query = openRDF('
                                                         select distinct ?townname
                                                         where{
                                                         ?prov rdf:type DemoOntology:Province.
@@ -130,27 +121,27 @@
                                                         ?mun DemoOntology:hasPopulation ?pop.
                                                         ?mun DemoOntology:hasName ?townname.
                                                     ');
-                                                    $query2 = closeRDF($query2);
-                                                    $requestString2 = $sesame_url.'/repositories/demography'.$query2;
-                                                    $req2 =& new HTTP_Request($requestString2);
-                                                    $req2->setMethod(HTTP_REQUEST_METHOD_GET);
-                                                    $req2->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
-                                                    $req2->sendRequest();
-                                                    $response_code2 = $req2->getResponseCode();
-                                                    if($response_code2!=200)
-                                                        echo "Errore di codice ".$response_code2;
+                                                    $town_query = closeRDF($town_query);
+                                                    $town_requestString = $sesame_url.'/repositories/demography'.$town_query;
+                                                    $town_req =& new HTTP_Request($town_requestString);
+                                                    $town_req->setMethod(HTTP_REQUEST_METHOD_GET);
+                                                    $town_req->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
+                                                    $town_req->sendRequest();
+                                                    $town_responseCode = $town_req->getResponseCode();
+                                                    if($town_responseCode!=200)
+                                                        echo "Errore di codice ".$town_responseCode;
                                                     else {
-                                                        $response_body2 = $req2->getResponseBody();
-                                                        $xml2=simplexml_load_string($response_body2);
-                                                        foreach($xml2->results->result as $item){
-                                                            $value2=$item->binding->literal;
-                                                            echo '<option value="'.$value2.'">'.$value2.'</option>';
+                                                        $town_responseBody = $town_req->getResponseBody();
+                                                        $town_xml = simplexml_load_string($town_responseBody);
+                                                        foreach($town_xml->results->result as $town_item){
+                                                            $town_value = $town_item->binding->literal;
+                                                            echo '<option value="'.$town_value.'">'.$town_value.'</option>';
                                                         }
                                                     }
-                                            ?>
+                                                ?>
                                           </select><br/>
                                         </form>
-                                        <button id="try" onClick="showMap()"> Start Query </button>
+                                        <button id="try" onClick="showMap()">Show</button>
                                     </label>
 					<h2>Aliquam tempus</h2>
 					<p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper urna ornare, orci in consectetuer hendrerit.</p>
