@@ -1,14 +1,12 @@
 <?php
-    $year=$_GET["year"];
-    $prov=$_GET["prov"];
-    $town=$_GET["town"];
-//    $town=str_replace(" ", "%20", $town);
-//    $prov=str_replace(" ", "%20", $prov);
-    $union=false;
-    include_once ( 'HTTP/Request.php' );
-    include_once ('query.php');
+
+    $year = $_GET["year"];
+    $prov = $_GET["prov"];
+    $town = $_GET["town"];
+    include_once('HTTP/Request.php');
+    include_once('query.php');
     $sesame_url = "http://localhost:8080/openrdf-sesame";
-    if ($town=='0') {
+    if ($town=='0')
         $query=openRDF('
             select ?townName ?coordinates ?pop ?numbers
             where {
@@ -20,8 +18,7 @@
             ?pop DemoOntology:numbers ?numbers.
             ?pop DemoOntology:livingInTheYear "'.$year.'"^^xsd:int.
         ');
-    }
-    else {
+    else
         $query=openRDF('
             select ?coordinates ?pop ?numbers
             where {
@@ -33,16 +30,15 @@
             ?pop DemoOntology:numbers ?numbers.
             ?pop DemoOntology:livingInTheYear "'.$year.'"^^xsd:int.
         ');
-    }
-    $query=closeRDF($query);
+    $query = closeRDF($query);
     $requestString = $sesame_url.'/repositories/demography'.$query;
     $req =& new HTTP_Request($requestString);
     $req->setMethod(HTTP_REQUEST_METHOD_GET);
     $req->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
     $req->sendRequest();
-    $response_code = $req->getResponseCode();
-    if($response_code!=200)
-        echo "Error code ".$response_code." Query:".$query;
+    $responseCode = $req->getResponseCode();
+    if($responseCode!=200)
+        echo "Error code ".$responseCode;
     else {
         $response_body = $req->getResponseBody();
         $xml=simplexml_load_string($response_body);

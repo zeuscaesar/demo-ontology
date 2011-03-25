@@ -51,29 +51,8 @@
 
                                 <p id="pdiv" class="meta" >Posted by <a href="#">Someone</a> on March 10, 2008
 					&nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">Full article</a></p>
-                                        <div id ="div_di_prova" >
-                                            <div id="divpredata">DIV predata</div>
                                             <div id="map_canvas" style="width:100%; height:400px; margin-top:3em;"></div>
-                                            <div id="divdata">Div divdata</div>
-                                        </div>
                                  <p id='number'></p>
-			</div>
-			<div class="post">
-				<h2 class="title"><a href="#">Lorem ipsum sed aliquam</a></h2>
-				<p class="meta">Posted by <a href="#">Someone</a> on March 8, 2008
-					&nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">Full article</a></p>
-				<div class="entry">
-					<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Phasellus <a href="#">dapibus semper urna</a>. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Phasellus pellentesque. Mauris quam enim, molestie in, rhoncus ut, lobortis a, est.</p>
-					<p>Praesent ac lectus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus augue. Fusce eget tellus ultrices ligula volutpat adipiscing. Aenean ligula lectus, vehicula in, dictum a, fermentum nec, felis. Nunc ac turpis in leo posuere imperdiet.</p>
-				</div>
-			</div>
-			<div class="post">
-				<h2 class="title"><a href="#">Phasellus pellentesque turpis </a></h2>
-				<p class="meta">Posted by <a href="#">Someone</a> on March 8, 2008
-					&nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">Full article</a></p>
-				<div class="entry">
-					<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Phasellus pellentesque. Mauris quam enim molestie  rhoncus lobortis a, est.</p>
-				</div>
 			</div>
 		</div>
 		<!-- end #content -->
@@ -84,43 +63,93 @@
                                         <form name="frm" method="post"> <!--action='submit.php'>-->
 
                                         <span>Year: </span><select name="year" id="year" class="select" onChange="loadProv(this.value)">
-                                                <option value="sel">-- Selection --</option>
-                                                <option value="0">--All Year--</option>
                                                 <?php
-                                                    include_once ( 'HTTP/Request.php' );
+                                                    include_once ('HTTP/Request.php');
+                                                    include_once ('query.php');
                                                     $sesame_url = "http://localhost:8080/openrdf-sesame";
-                                                    $query ='?queryLn=SPARQL&query=PREFIX%20DemoOntology:<http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl%23>%0Aselect%20distinct%20%3Fx%0Awhere{%0A%3Fy%20DemoOntology:livingInTheYear%20%3Fx%0A}ORDER%20BY%20%3Fx';
-                                                    $requestString = $sesame_url.'/repositories/demography'.$query;
-                                                    $req =& new HTTP_Request($requestString);
-                                                    //echo $requestString;
-                                                    $req->setMethod(HTTP_REQUEST_METHOD_GET);
-                                                    $req->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
-                                                    $req->sendRequest();
-                                                    $response_code = $req->getResponseCode();
-                                                    if($response_code!=200)
-                                                            echo "Errore di codice ".$response_code;
-                                                    else
-                                                        {
-                                                        $response_body = $req->getResponseBody();
-                                                        //echo "Risposta ricevuta correttamente<br/><br>";
-                                                        //echo $response_body."<br/><br/>";
-                                                        $xml=simplexml_load_string($response_body);
-                                                        $address = new SimpleXMLElement($response_body);
-                                                        foreach($xml->results->result as $item){
-                                                        $value=$item->binding->literal;
-                                                        echo '<option value="'.$value.'">'.$value.'</option>';
+                                                    $year_query ='?queryLn=SPARQL&query=PREFIX%20DemoOntology:<http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl%23>%0Aselect%20distinct%20%3Fx%0Awhere{%0A%3Fy%20DemoOntology:livingInTheYear%20%3Fx%0A}ORDER%20BY%20%3Fx';
+                                                    $year_requestString = $sesame_url.'/repositories/demography'.$year_query;
+                                                    $year_req =& new HTTP_Request($year_requestString);
+                                                    $year_req->setMethod(HTTP_REQUEST_METHOD_GET);
+                                                    $year_req->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
+                                                    $year_req->sendRequest();
+                                                    $year_responseCode = $year_req->getResponseCode();
+                                                    if($year_responseCode!=200)
+                                                       echo "Errore di codice ".$year_responseCode;
+                                                    else {
+                                                        $year_responseBody = $year_req->getResponseBody();
+                                                        $year_xml=simplexml_load_string($year_responseBody);
+                                                        //$address = new SimpleXMLElement($year_responseBody);
+                                                        foreach($year_xml->results->result as $year_item) {
+                                                           $year_value=$year_item->binding->literal;
+                                                           echo '<option value="'.$year_value.'">'.$year_value.'</option>';
                                                         }
-                                                       }
-                                                   ?>
-                                          </select><br/>
-                                        <span>Province: </span><select name="prov" class="select" id="prov" onChange="loadTowns(this.value)">
-                                           <option value="0">--    All    --</option>
-                                        </select><br/>
-                                        <span>Municipality: </span><select name="town" class="select" id="town">
-                                                <option value="0">--  All Town --</option>
+                                                        $selected_year = $year_xml->results->result->binding->literal;
+                                                    }
+
+                                                    echo "</select><br/>";
+                                                    echo '<span>Province: </span><select name="prov" class="select" id="prov" onChange="loadTowns(this.value)">';
+                                                    $prov_query = openRDF('
+                                                        select distinct ?name
+                                                        where{
+                                                        ?prov rdf:type DemoOntology:Province.
+                                                        ?prov DemoOntology:hasName ?name.
+                                                    ');
+                                                    $prov_query = closeRDF($prov_query);
+                                                    $prov_requestString = $sesame_url.'/repositories/demography'.$prov_query;
+                                                    $prov_req =& new HTTP_Request($prov_requestString);
+                                                    $prov_req->setMethod(HTTP_REQUEST_METHOD_GET);
+                                                    $prov_req->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
+                                                    $prov_req->sendRequest();
+                                                    $prov_responseCode = $prov_req->getResponseCode();
+                                                    if($prov_responseCode!=200)
+                                                        //echo "Errore di codice ".$prov_responseCode;
+                                                        echo '<option value="Errore">Errore</option>';
+                                                    else {
+                                                        $prov_responseBody = $prov_req->getResponseBody();
+                                                        $prov_xml=simplexml_load_string($prov_responseBody);
+                                                        //echo $response_body;
+                                                        foreach($prov_xml->results->result as $prov_item){
+                                                            $prov_value=$prov_item->binding->literal;
+                                                            echo '<option value="'.$prov_value.'">'.$prov_value.'</option>';
+                                                        }
+                                                        $selected_prov = $prov_xml->results->result->binding->literal;
+                                                    }
+
+                                                    echo "</select><br/>";
+                                                    echo '<span>Municipality: </span><select name="town" class="select" id="town">';
+
+                                                echo "<option value='0'>--    All    --</option>\n";
+
+                                                    $query2 = openRDF('
+                                                        select distinct ?townname
+                                                        where{
+                                                        ?prov rdf:type DemoOntology:Province.
+                                                        ?prov DemoOntology:hasName "'.$selected_prov.'"^^rdfs:Literal.
+                                                        ?prov DemoOntology:hasMunicipality ?mun.
+                                                        ?mun DemoOntology:hasPopulation ?pop.
+                                                        ?mun DemoOntology:hasName ?townname.
+                                                    ');
+                                                    $query2 = closeRDF($query2);
+                                                    $requestString2 = $sesame_url.'/repositories/demography'.$query2;
+                                                    $req2 =& new HTTP_Request($requestString2);
+                                                    $req2->setMethod(HTTP_REQUEST_METHOD_GET);
+                                                    $req2->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
+                                                    $req2->sendRequest();
+                                                    $response_code2 = $req2->getResponseCode();
+                                                    if($response_code2!=200)
+                                                        echo "Errore di codice ".$response_code2;
+                                                    else {
+                                                        $response_body2 = $req2->getResponseBody();
+                                                        $xml2=simplexml_load_string($response_body2);
+                                                        foreach($xml2->results->result as $item){
+                                                            $value2=$item->binding->literal;
+                                                            echo '<option value="'.$value2.'">'.$value2.'</option>';
+                                                        }
+                                                    }
+                                            ?>
                                           </select><br/>
                                         </form>
-                                        <!--<button id="try" onClick="showMap()"> Start Query </button>-->
                                         <button id="try" onClick="showMap()"> Start Query </button>
                                     </label>
 					<h2>Aliquam tempus</h2>
