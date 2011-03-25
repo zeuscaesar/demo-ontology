@@ -10,7 +10,7 @@ function loadProv(str) {
       alert ("Browser does not support HTTP Request")
       return
    }
-   var url="provloader.php"
+   var url="geoprovloader.php"
    url=url+"?year="+str
    url=url+"&sid="+Math.random()
    xmlHttp.onreadystatechange=yearChanged
@@ -24,7 +24,7 @@ function loadTowns(str) {
       alert ("Browser does not support HTTP Request")
       return
    }
-   var url="townloader.php"
+   var url="geotownloader.php"
    var year=document.forms['frm'].elements['year'].options[document.forms['frm'].elements['year'].options.selectedIndex].value;
    url=url+"?prov="+str+"&year="+year
    url=url+"&sid="+Math.random()
@@ -75,9 +75,7 @@ function showMap(){
         return
    }
    var url="geoquery.php"
-   //url=url+"?year="+year+"&prov="+prov+"&town="+town+"&sex="+sex+"&Unmarried="+Unmarried+"&Married="+Married+"&Widowed="+Widowed+"&Divorced="+Divorced;
    url=url+"?year="+year+"&prov="+prov+"&town="+town;
-   alert(town);
    xmlHttp.onreadystatechange=changeMapOK;
    xmlHttp.open("GET",url,true)
    xmlHttp.send(null)
@@ -178,7 +176,7 @@ function createMarker(name, latlng, info) {
     google.maps.event.addListener(marker, "click", function() {
         if (infowindow)
             infowindow.close();
-        infowindow = new google.maps.InfoWindow({content: name+"<br/>"+info});
+        infowindow = new google.maps.InfoWindow({content: "<div class='municipality'>"+name+"</div>"+info});
         infowindow.open(map, marker);
         });
 //    debug += "Ho aggiunto un listener al marker di "+name+"; esco dal metodo di creazione del marker.<br/>";
@@ -187,16 +185,16 @@ function createMarker(name, latlng, info) {
 
 function tablebuild(sum_array) {
 
-    var table = "<table id='result'>";
+    var table = "<table id='result' class='geoquerytable'>";
     var total_female = sum_array[0]+sum_array[1]+sum_array[2]+sum_array[3];
     var total_male = sum_array[4]+sum_array[5]+sum_array[6]+sum_array[7];
     var total = total_female+total_male;
-    table += "<tr><th style='background-color:white;border:0px'></th><th>Female</th><th>Male</th><th>Total</th></tr>";
-    table += "<tr><th>Divorced</th><td>"+sum_array[0]+"</td><td>"+sum_array[4]+"</td><td>"+(parseInt(sum_array[0])+parseInt(sum_array[4]))+"</td></tr>";
-    table += "<tr><th>Married</th><td>"+sum_array[1]+"</td><td>"+sum_array[5]+"</td><td>"+(parseInt(sum_array[1])+parseInt(sum_array[5]))+"</td></tr>";
-    table += "<tr><th>Unmarried</th><td>"+sum_array[2]+"</td><td>"+sum_array[6]+"</td><td>"+(parseInt(sum_array[2])+parseInt(sum_array[6]))+"</td></tr>";
-    table += "<tr><th>Widowed</th><td>"+sum_array[3]+"</td><td>"+sum_array[7]+"</td><td>"+(parseInt(sum_array[3])+parseInt(sum_array[7]))+"</td></tr>";
-    table += "<tr><th>All</th><td>"+total_female+"</td><td>"+total_male+"</td><td>"+total+"</td></tr>";
+    table += "<tr class='sex'><th style='background-color:white;border:0px'></th><th class='female'>Female</th><th class='male'>Male</th><th class='bothsex'>Total</th></tr>";
+    table += "<tr class='divorced'><th>Divorced</th><td class='female'>"+sum_array[0]+"</td><td class='male'>"+sum_array[4]+"</td><td class='bothsex'>"+(parseInt(sum_array[0])+parseInt(sum_array[4]))+"</td></tr>";
+    table += "<tr class='married'><th>Married</th><td class='female'>"+sum_array[1]+"</td><td class='male'>"+sum_array[5]+"</td><td class='bothsex'>"+(parseInt(sum_array[1])+parseInt(sum_array[5]))+"</td></tr>";
+    table += "<tr class='unmarried'><th>Unmarried</th><td class='female'>"+sum_array[2]+"</td><td class='male'>"+sum_array[6]+"</td><td class='bothsex'>"+(parseInt(sum_array[2])+parseInt(sum_array[6]))+"</td></tr>";
+    table += "<tr class='widowed'><th>Widowed</th><td class='female'>"+sum_array[3]+"</td><td class='male'>"+sum_array[7]+"</td><td class='bothsex'>"+(parseInt(sum_array[3])+parseInt(sum_array[7]))+"</td></tr>";
+    table += "<tr class='allmaritalstatus'><th>All</th><td class='female'>"+total_female+"</td><td class='male'>"+total_male+"</td><td class='bothsex'>"+total+"</td></tr>";
     table += "</table>";
 
     return table;
