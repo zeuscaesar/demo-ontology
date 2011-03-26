@@ -10,6 +10,7 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <title>Demography Ontology - Home Page</title>
 <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+<script type="text/javascript" src="js-code/js-help.js"></script>
 </head>
 <body>
 <div id="wrapper">
@@ -44,14 +45,14 @@
 	<div id="page">
 		<div id="content">
 			
-			<div class="post">
+			<div class="post" id="post">
 				<h2 class="title"><a href="#">Simple Search</a></h2>
-                                    <p class="meta">Updated on March 21, 2011</p>
-				<div class="entry">
-					<p>This function allows you to perform a search based on key descriptive fields.</p>
-                                        <p>...</p>
+                                    <p class="meta"></p>
 				
-				</div>
+					<p>This function allows you to perform a search based on key descriptive fields.</p>
+                                        <p>Inserire contenuto...</p>
+				
+				
 			</div>
 			
 		</div>
@@ -62,10 +63,10 @@
 				<li>
 					<h2>Functions</h2>
 					<ul>
-						<li><a href="#">Simple Search</a></li>
-						<li><a href="#">Geo Search</a></li>
-						<li><a href="#">Growth</a></li>
-						<li><a href="#">Free Query</a></li>
+						<li><a href="#" onclick="setDiv(1)">Simple Search</a></li>
+						<li><a href="#" onclick="setDiv(2)">Geo Search</a></li>
+						<li><a href="#" onclick="setDiv(3)">Growth</a></li>
+						<li><a href="#" onclick="setDiv(4)">Free Query</a></li>
 					</ul>
 				</li>
 				
