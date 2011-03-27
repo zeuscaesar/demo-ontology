@@ -1,6 +1,6 @@
 
 var simplesearch="<h3  class=\"title\">Simple Search</h3><p class=\"meta\"></p><p>This function allows you to perform a search based on key descriptive fields.</p><p>Inserire contenuto...</p>";
-var geosearch="<h3  class=\"title\">Geo Search</h3><p class=\"meta\"></p><p>Inserire contenuto</p>";
+var geosearch="<h3  class=\"title\">Geo Search</h3><p class=\"meta\"></p><p>Markerplaces for the selected municipalities are shown on a Google map. By clicking them, a window contening a summary of the municipal demographic information appears.</p>";
 var growth="<h3  class=\"title\">Growth Search</h3><p class=\"meta\"></p><p>Inserire contenuto</p>";
 var freequery="<h3  class=\"title\">Free Query</h3><p class=\"meta\"></p><p>Inserire contenuto</p>";
 
