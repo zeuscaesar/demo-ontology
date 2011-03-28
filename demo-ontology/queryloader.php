@@ -63,7 +63,7 @@
                 $tbody = $tbody."</tr>";
             }
         //stampo la tabella
-        echo "<table class='queryresults'>".$theader.$tbody."</table>";
+        echo "<table class='center'>".$theader.$tbody."</table>";
     }
 ////////////////////////////////////////////////////////////////////////////////
 //        $theader = "";
