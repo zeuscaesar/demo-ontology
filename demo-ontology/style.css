@@ -416,16 +416,16 @@ th.male{
     background-color:lightblue;
 }
 th.married{
-    background-color:deepskyblue;
+    background-color:#B2B2B2;
 }
 th.unmarried{
-    background-color:lightgreen;
+    background-color:#B2B2B2;
 }
 th.divorced{
-    background-color:mediumorchid;
+    background-color:#B2B2B2;
 }
 th.widowed{
-    background-color:gainsboro;
+    background-color:#B2B2B2;
 }
 th.female{
     background-color:lightpink;
@@ -440,9 +440,10 @@ td#totalf{
     background-color:lightpink;
 }
 
-table{
+table.center{
     width:90%; margin-left:5%; margin-right:5%;
 }
+
 
 img.left {
 float: left;
