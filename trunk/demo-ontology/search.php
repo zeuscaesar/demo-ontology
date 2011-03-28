@@ -116,7 +116,7 @@
                                         <button id="try" onClick="prova()"> Start Query </button>
                                     </label>
 					<h2>Help</h2>
-					<p>This page allows you to query the SESAME repository to get information about population living in a given year in a given geographical area (a specific municipality, or a province, or the whole Italian territory), according to the selected sex and marital status. After having filled the form on the left side of the page, by clicking the "Start Query" button a graphic and a table appear: they show the result of user’s query. The graphic shows the total amount of people which forms the population partitioned by age. The table shows the amount of people which forms the population partitioned by age, sex and marital status.</p>
+					<p>This page allows you to query the SESAME repository to get information about population living in a given year in a given geographical area (a specific municipality, or a province, or the whole Italian territory), according to the selected sex and marital status. After having filled the form on the left side of the page, by clicking the "Start Query" button a graphic and a table appear: they show the result of user's query. The graphic shows the total amount of people which forms the population partitioned by age. The table shows the amount of people which forms the population partitioned by age, sex and marital status.</p>
 				</li>
 			</ul>
 		</div>
