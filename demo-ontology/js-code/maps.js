@@ -178,11 +178,11 @@ function tablebuild(sum_array) {
     var total_male = sum_array[4]+sum_array[5]+sum_array[6]+sum_array[7];
     var total = total_female+total_male;
     table += "<tr class='sex'><th style='background-color:white;border:0px'></th><th class='female'>Female</th><th class='male'>Male</th><th class='bothsex'>Total</th></tr>";
-    table += "<tr class='divorced'><th>Divorced</th><td class='female'>"+sum_array[0]+"</td><td class='male'>"+sum_array[4]+"</td><td class='bothsex'>"+(parseInt(sum_array[0])+parseInt(sum_array[4]))+"</td></tr>";
-    table += "<tr class='married'><th>Married</th><td class='female'>"+sum_array[1]+"</td><td class='male'>"+sum_array[5]+"</td><td class='bothsex'>"+(parseInt(sum_array[1])+parseInt(sum_array[5]))+"</td></tr>";
-    table += "<tr class='unmarried'><th>Unmarried</th><td class='female'>"+sum_array[2]+"</td><td class='male'>"+sum_array[6]+"</td><td class='bothsex'>"+(parseInt(sum_array[2])+parseInt(sum_array[6]))+"</td></tr>";
-    table += "<tr class='widowed'><th>Widowed</th><td class='female'>"+sum_array[3]+"</td><td class='male'>"+sum_array[7]+"</td><td class='bothsex'>"+(parseInt(sum_array[3])+parseInt(sum_array[7]))+"</td></tr>";
-    table += "<tr class='allmaritalstatus'><th>All</th><td class='female'>"+total_female+"</td><td class='male'>"+total_male+"</td><td class='bothsex'>"+total+"</td></tr>";
+    table += "<tr><th class='divorced'>Divorced</th><td class='female'>"+sum_array[0]+"</td><td class='male'>"+sum_array[4]+"</td><td class='bothsex'>"+(parseInt(sum_array[0])+parseInt(sum_array[4]))+"</td></tr>";
+    table += "<tr><th class='married'>Married</th><td class='female'>"+sum_array[1]+"</td><td class='male'>"+sum_array[5]+"</td><td class='bothsex'>"+(parseInt(sum_array[1])+parseInt(sum_array[5]))+"</td></tr>";
+    table += "<tr><th class='unmarried'>Unmarried</th><td class='female'>"+sum_array[2]+"</td><td class='male'>"+sum_array[6]+"</td><td class='bothsex'>"+(parseInt(sum_array[2])+parseInt(sum_array[6]))+"</td></tr>";
+    table += "<tr><th class='widowed'>Widowed</th><td class='female'>"+sum_array[3]+"</td><td class='male'>"+sum_array[7]+"</td><td class='bothsex'>"+(parseInt(sum_array[3])+parseInt(sum_array[7]))+"</td></tr>";
+    table += "<tr><th class='allmaritalstatus'>All</th><td class='female' id='totalf'>"+total_female+"</td><td class='male' id='totalm'>"+total_male+"</td><td class='bothsex' id='total'>"+total+"</td></tr>";
     table += "</table>";
 
     return table;
