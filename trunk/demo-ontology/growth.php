@@ -53,7 +53,7 @@
 				<div id ="divdata" >
                                 Edit your growth.
                                 </div>
-                                 <p id='number'></p>
+                                 <p id='number2'></p>
 			</div>
 			
 		</div>

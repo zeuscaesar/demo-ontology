@@ -369,7 +369,14 @@ function growthing(){
     //document.getElementById('titolo').innerHTML=s;
     //document.getElementById('divdata').innerHTML="pippo";
     //document.getElementById('pdiv').innerHTML=table;
-    //document.getElementById('number').innerHTML="0      10      20      30      40      50      60      70      80      90      100";
+    var diff=toyear-fromyear
+    var numofyear=diff+1;
+    var string=""
+    for(var i=fromyear;i<=toyear;i++){
+        string+=i
+        string+=" "
+    }
+    document.getElementById('number2').innerHTML=string//"0      10      20      30      40      50      60      70      80      90      100";
 
     xmlHttp=GetXmlHttpObject()
    if (xmlHttp==null) {
