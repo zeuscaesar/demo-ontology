@@ -79,7 +79,7 @@
 				<li>
 					<h2>Resources</h2>
 					<ul>
-						<li><a href="#">Download documentation</a> </li>
+						<li><a href="population-ontology-doc.pdf">Download documentation</a> </li>
 						<li><a href="http://code.google.com/p/demo-ontology/">Source code</a> </li>
 				</ul>
 				</li>
