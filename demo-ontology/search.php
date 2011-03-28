@@ -67,40 +67,70 @@
 
                                         <span>Year: </span><select name="year" id="year" class="select" onChange="loadProv(this.value)"> <!--alert(this.value)">-->
                                                 <?php
-                                                    include_once ( 'HTTP/Request.php' );
+                                                    include_once ('HTTP/Request.php');
                                                     include_once ('query.php');
                                                     $sesame_url = "http://localhost:8080/openrdf-sesame";
-                                                    $query='select distinct ?x where{?y DemoOntology:livingInTheYear ?x.}ORDER BY ?x';
-                                                    $query=openRDF($query);
-                                                    //$query ='?queryLn=SPARQL&query=PREFIX%20DemoOntology:<http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl%23>%0Aselect%20distinct%20%3Fx%0Awhere{%0A%3Fy%20DemoOntology:livingInTheYear%20%3Fx%0A}';
-                                                    $requestString = $sesame_url.'/repositories/demography'.$query;
-                                                    $req =& new HTTP_Request($requestString);
-                                                    //echo $requestString;
-                                                    $req->setMethod(HTTP_REQUEST_METHOD_GET);
-                                                    $req->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
-                                                    $req->sendRequest();
-                                                    $response_code = $req->getResponseCode();
-                                                    if($response_code!=200)
-                                                            echo "Errore di codice ".$response_code;
-                                                    else
-                                                        {
-                                                        $response_body = $req->getResponseBody();
-                                                        //echo "Risposta ricevuta correttamente<br/><br>";
-                                                        //echo $response_body."<br/><br/>";
-                                                        $xml=simplexml_load_string($response_body);
-                                                        $address = new SimpleXMLElement($response_body);
-                                                        foreach($xml->results->result as $item){
-                                                        $value=$item->binding->literal;
-                                                        echo '<option value="'.$value.'">'.$value.'</option>';}
-                                                       }
-                                                   ?>
-                                          </select><br/>
-                                        <span>Province: </span><select name="prov" class="select" id="prov" onChange="loadTowns(this.value)">
-                                           <option value="0">--  All --</option>
-                                        </select><br/>
-                                        <span>Municipality: </span><select name="town" class="select" id="town">
-                                                <option value="0">--  All --</option>
-                                          </select><br/>
+                                                    $year_query ='?queryLn=SPARQL&query=PREFIX%20DemoOntology:<http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl%23>%0Aselect%20distinct%20%3Fx%0Awhere{%0A%3Fy%20DemoOntology:livingInTheYear%20%3Fx%0A}ORDER%20BY%20DESC(%3Fx)';
+                                                    $year_requestString = $sesame_url.'/repositories/demography'.$year_query;
+                                                    $year_req =& new HTTP_Request($year_requestString);
+                                                    $year_req->setMethod(HTTP_REQUEST_METHOD_GET);
+                                                    $year_req->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
+                                                    $year_req->sendRequest();
+                                                    $year_responseCode = $year_req->getResponseCode();
+                                                    if($year_responseCode!=200)
+                                                       echo "Errore di codice ".$year_responseCode;
+                                                    else {
+                                                        $year_responseBody = $year_req->getResponseBody();
+                                                        $year_xml=simplexml_load_string($year_responseBody);
+                                                        foreach($year_xml->results->result as $year_item) {
+                                                           $year_value=$year_item->binding->literal;
+                                                           echo '<option value="'.$year_value.'">'.$year_value.'</option>';
+                                                        }
+                                                        $selected_year = $year_xml->results->result->binding->literal;
+                                                    }
+                                                    echo "</select><br/>";
+                                                    echo '<span>Province: </span><select name="prov" class="select" id="prov" onChange="loadTowns(this.value)">';
+                                                    $prov_query = openRDF('select distinct ?name where {?prov rdf:type DemoOntology:Province. ?prov DemoOntology:hasName ?name. ?prov DemoOntology:hasMunicipality ?mun. ?mun DemoOntology:hasPopulation ?pop. ?pop DemoOntology:livingInTheYear "'.$selected_year.'"^^xsd:int.');
+                                                    $prov_query = closeRDF($prov_query);
+                                                    $prov_requestString = $sesame_url.'/repositories/demography'.$prov_query;
+                                                    $prov_req =& new HTTP_Request($prov_requestString);
+                                                    $prov_req->setMethod(HTTP_REQUEST_METHOD_GET);
+                                                    $prov_req->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
+                                                    $prov_req->sendRequest();
+                                                    $prov_responseCode = $prov_req->getResponseCode();
+                                                    if($prov_responseCode!=200)
+                                                        echo "Errore di codice ".$prov_responseCode;
+                                                    else {
+                                                        $prov_responseBody = $prov_req->getResponseBody();
+                                                        $prov_xml=simplexml_load_string($prov_responseBody);
+                                                        foreach($prov_xml->results->result as $prov_item){
+                                                            $prov_value=$prov_item->binding->literal;
+                                                            echo '<option value="'.$prov_value.'">'.$prov_value.'</option>';
+                                                        }
+                                                        $selected_prov = $prov_xml->results->result->binding->literal;
+                                                    }
+                                                    echo "</select><br/>";
+                                                    echo '<span>Municipality: </span><select name="town" class="select" id="town">';
+                                                    echo "<option value='0'>--    All    --</option>\n";
+                                                    $town_query = openRDF('select distinct ?townname where{?prov rdf:type DemoOntology:Province. ?prov DemoOntology:hasName "'.$selected_prov.'"^^rdfs:Literal. ?prov DemoOntology:hasMunicipality ?mun. ?mun DemoOntology:hasPopulation ?pop. ?mun DemoOntology:hasName ?townname.');
+                                                    $town_query = closeRDF($town_query);
+                                                    $town_requestString = $sesame_url.'/repositories/demography'.$town_query;
+                                                    $town_req =& new HTTP_Request($town_requestString);
+                                                    $town_req->setMethod(HTTP_REQUEST_METHOD_GET);
+                                                    $town_req->addHeader("Accept", "application/sparql-results+xml, */*;q=0.5");
+                                                    $town_req->sendRequest();
+                                                    $town_responseCode = $town_req->getResponseCode();
+                                                    if($town_responseCode!=200)
+                                                        echo "Errore di codice ".$town_responseCode;
+                                                    else {
+                                                        $town_responseBody = $town_req->getResponseBody();
+                                                        $town_xml = simplexml_load_string($town_responseBody);
+                                                        foreach($town_xml->results->result as $town_item){
+                                                            $town_value = $town_item->binding->literal;
+                                                            echo '<option value="'.$town_value.'">'.$town_value.'</option>';
+                                                        }
+                                                    }
+                                                ?>                                          </select><br/>
                                         <span>Sex: </span><select name="sex" class="select" id="sex">
 
                                                 <option value="Both">Both</option>

@@ -66,7 +66,7 @@
                                                     include_once ('HTTP/Request.php');
                                                     include_once ('query.php');
                                                     $sesame_url = "http://localhost:8080/openrdf-sesame";
-                                                    $year_query ='?queryLn=SPARQL&query=PREFIX%20DemoOntology:<http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl%23>%0Aselect%20distinct%20%3Fx%0Awhere{%0A%3Fy%20DemoOntology:livingInTheYear%20%3Fx%0A}ORDER%20BY%20%3Fx';
+                                                    $year_query ='?queryLn=SPARQL&query=PREFIX%20DemoOntology:<http://demo-ontology.googlecode.com/svn/trunk/demo-ontology/DemoOntology.owl%23>%0Aselect%20distinct%20%3Fx%0Awhere{%0A%3Fy%20DemoOntology:livingInTheYear%20%3Fx%0A}ORDER%20BY%20DESC(%3Fx)';
                                                     $year_requestString = $sesame_url.'/repositories/demography'.$year_query;
                                                     $year_req =& new HTTP_Request($year_requestString);
                                                     $year_req->setMethod(HTTP_REQUEST_METHOD_GET);
@@ -86,15 +86,7 @@
                                                     }
                                                     echo "</select><br/>";
                                                     echo '<span>Province: </span><select name="prov" class="select" id="prov" onChange="loadTowns(this.value)">';
-                                                    $prov_query = openRDF('
-                                                        select distinct ?name
-                                                        where{
-                                                        ?prov rdf:type DemoOntology:Province.
-                                                        ?prov DemoOntology:hasName ?name.
-                                                        ?prov DemoOntology:hasMunicipality ?mun.
-                                                        ?mun DemoOntology:hasPopulation ?pop.
-                                                        ?pop DemoOntology:livingInTheYear "'.$selected_year.'"^^xsd:int.
-                                                    ');
+                                                    $prov_query = openRDF('select distinct ?name where{?prov rdf:type DemoOntology:Province. ?prov DemoOntology:hasName ?name. ?prov DemoOntology:hasMunicipality ?mun. ?mun DemoOntology:hasPopulation ?pop. ?pop DemoOntology:livingInTheYear "'.$selected_year.'"^^xsd:int.');
                                                     $prov_query = closeRDF($prov_query);
                                                     $prov_requestString = $sesame_url.'/repositories/demography'.$prov_query;
                                                     $prov_req =& new HTTP_Request($prov_requestString);
@@ -116,15 +108,7 @@
                                                     echo "</select><br/>";
                                                     echo '<span>Municipality: </span><select name="town" class="select" id="town">';
                                                     echo "<option value='0'>--    All    --</option>\n";
-                                                    $town_query = openRDF('
-                                                        select distinct ?townname
-                                                        where{
-                                                        ?prov rdf:type DemoOntology:Province.
-                                                        ?prov DemoOntology:hasName "'.$selected_prov.'"^^rdfs:Literal.
-                                                        ?prov DemoOntology:hasMunicipality ?mun.
-                                                        ?mun DemoOntology:hasPopulation ?pop.
-                                                        ?mun DemoOntology:hasName ?townname.
-                                                    ');
+                                                    $town_query = openRDF('select distinct ?townname where{?prov rdf:type DemoOntology:Province. ?prov DemoOntology:hasName "'.$selected_prov.'"^^rdfs:Literal. ?prov DemoOntology:hasMunicipality ?mun. ?mun DemoOntology:hasPopulation ?pop. ?mun DemoOntology:hasName ?townname.');
                                                     $town_query = closeRDF($town_query);
                                                     $town_requestString = $sesame_url.'/repositories/demography'.$town_query;
                                                     $town_req =& new HTTP_Request($town_requestString);
