@@ -72,8 +72,8 @@
 						<li><a href="#" onclick="setDiv(1)">Abstract</a> </li>
 						<li><a href="#" onclick="setDiv(2)">Keywords</a> </li>
 						<li><a href="#" onclick="setDiv(3)">Introduction</a> </li>
-						<li><a href="#">Augue Praesent</a> </li>
-						<li><a href="#">Vivamus Fermentum</a> </li>
+						<li><a href="#" onclick="setDiv(4)">Ontology</a> </li>
+						<li><a href="#" onclick="setDiv(5)">Front-End</a> </li>
 					</ul>
 				</li>
 				<li>
