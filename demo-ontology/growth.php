@@ -168,8 +168,8 @@
 
                                           </select><br/>
                                         <span>Marital Status: </span><br/>
-                                        <input  type="checkbox" name="Unmarried" id="Unmarried">Unmarried</input>    <input  type="checkbox" name="Married" id="Married">Married</input><br/>
-                                        <input  type="checkbox" name="Divorced" id="Divorced">Divorced</input>     <input  type="checkbox" name="Widowed" id="Widowed">Widowed</input><br/>
+                                        <input  type="checkbox" checked="true" name="Unmarried" id="Unmarried">Unmarried</input>    <input  type="checkbox" checked="true" name="Married" id="Married">Married</input><br/>
+                                        <input  type="checkbox" checked="true" name="Divorced" id="Divorced">Divorced</input>     <input  type="checkbox" checked="true" name="Widowed" id="Widowed">Widowed</input><br/>
 
                                         </form>
                                         <button id="try" onClick="growthing()"> Start Query </button>
