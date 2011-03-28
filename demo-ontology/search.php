@@ -66,7 +66,6 @@
                                         <form name="frm" method="post"> <!--action='submit.php'>-->
 
                                         <span>Year: </span><select name="year" id="year" class="select" onChange="loadProv(this.value)"> <!--alert(this.value)">-->
-                                                <option value="sel">-- Selection --</option>
                                                 <?php
                                                     include_once ( 'HTTP/Request.php' );
                                                     include_once ('query.php');
@@ -97,10 +96,10 @@
                                                    ?>
                                           </select><br/>
                                         <span>Province: </span><select name="prov" class="select" id="prov" onChange="loadTowns(this.value)">
-                                           <option value="0">--    All    --</option>
+                                           <option value="0">--  All --</option>
                                         </select><br/>
                                         <span>Municipality: </span><select name="town" class="select" id="town">
-                                                <option value="0">--  All Town --</option>
+                                                <option value="0">--  All --</option>
                                           </select><br/>
                                         <span>Sex: </span><select name="sex" class="select" id="sex">
 

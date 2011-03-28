@@ -2,7 +2,7 @@
 $prov=$_GET["prov"];
 $year=$_GET["year"];
 echo $prov;
-echo "<option value='0'>-- All  Town --</option>\n";
+echo "<option value='0'>-- All --</option>\n";
 
 include_once ( 'HTTP/Request.php' );
 include_once ('query.php');
