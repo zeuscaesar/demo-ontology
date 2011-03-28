@@ -65,7 +65,7 @@
                                     <label id="lb">
                                         <form name="frm" method="post"> <!--action='submit.php'>-->
 
-                                        <span>Year: </span><select name="year" id="year" class="select" onChange="loadProv(this.value)"> <!--alert(this.value)">-->
+                                        <span>Year: </span><select name="year" id="year" class="select"> <!--alert(this.value)">-->
                                                 <?php
                                                     include_once ('HTTP/Request.php');
                                                     include_once ('query.php');
