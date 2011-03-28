@@ -316,6 +316,10 @@ a:hover {
     font-size: 0.7em;
     word-spacing: 5.2em;
 }
+#number2 {
+    font-size: 1em;
+    word-spacing: 5.2em;
+}
 
 .G
 {
@@ -383,7 +387,7 @@ table
 border-collapse:collapse;
 }
 th{
-    background-color:red;
+    background-color:#ff776b;
     color:white;
     text-align:center;
     border: 1px solid black;
@@ -393,6 +397,46 @@ td
     border: 1px solid black;
     text-align:center;
     color:black;
+}
+td.female{
+    background-color:mistyrose;
+}
+td.male{
+    background-color:azure;
+}
+td.bothsex{
+    background-color:#ff9999;
+
+}
+th.female{
+    background-color:lightpink;
+}
+th.male{
+    background-color:lightblue;
+}
+th.married{
+    background-color:deepskyblue;
+}
+th.unmarried{
+    background-color:lightgreen;
+}
+th.divorced{
+    background-color:mediumorchid;
+}
+th.widowed{
+    background-color:gainsboro;
+}
+th.female{
+    background-color:lightpink;
+}
+td#total{
+    background-color:#ff776b;
+}
+td#totalm{
+    background-color:#ff776b;
+}
+td#totalf{
+    background-color:lightpink;
 }
 
 img.left {
