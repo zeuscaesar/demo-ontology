@@ -1,7 +1,7 @@
 <?php
 $year=$_GET["year"];
 echo $year;
-echo "<option value='0'>--All Province--</option>\n";
+echo "<option value='0'>-- All --</option>\n";
 include_once ( 'HTTP/Request.php' );
 include_once ('query.php');
                 $sesame_url = "http://localhost:8080/openrdf-sesame";

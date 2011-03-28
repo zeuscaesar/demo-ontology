@@ -96,7 +96,7 @@
                                                    ?>
                                         </select><br/>
                                         <span>Municipality: </span><select name="town" class="select" id="town" >
-                                                <option value="0">--  All Town --</option>
+                                                <option value="0">--  All  --</option>
                                           </select><br/>
                                         <span>Sex: </span><select name="sex" class="select" id="sex">
 
