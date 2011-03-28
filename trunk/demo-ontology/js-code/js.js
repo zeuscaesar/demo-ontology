@@ -217,7 +217,7 @@ function divChanged() {
         output=output+"<img src='blank.gif' alt='"+i+" anni -> "+h+" abitanti' title='"+i+" anni -> "+h+" abitanti' class='barra2' style='height: " + (normTot*h) + "px; width: " + w + "px;'/>";
     }
 
-    var table = "<table id='result'><tr>";
+    var table = "<table class='center' id='result'><tr>";
 
     table+="<th style='background-color:white;border:0px'></th>";
     if(sex!="Both"){
