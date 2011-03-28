@@ -47,32 +47,15 @@
 	<div id="page">
 		<div id="content">
 			<div class="post" >
-				<h2 class="title"><a href="#">Demography Ontology </a></h2>
+				<h2 class="title"><a href="#">Growth </a></h2>
                                 
-                                <p id="pdiv" class="meta" >Posted by <a href="#">Someone</a> on March 10, 2008
-					&nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">Full article</a></p>
+                                <p id="pdiv" class="meta" ></p>
 				<div id ="divdata" >
-                                  
+                                Edit your growth.
                                 </div>
                                  <p id='number'></p>
 			</div>
-			<div class="post">
-				<h2 class="title"><a href="#">Lorem ipsum sed aliquam</a></h2>
-				<p class="meta">Posted by <a href="#">Someone</a> on March 8, 2008
-					&nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">Full article</a></p>
-				<div class="entry">
-					<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Phasellus <a href="#">dapibus semper urna</a>. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Phasellus pellentesque. Mauris quam enim, molestie in, rhoncus ut, lobortis a, est.</p>
-					<p>Praesent ac lectus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Vivamus augue. Fusce eget tellus ultrices ligula volutpat adipiscing. Aenean ligula lectus, vehicula in, dictum a, fermentum nec, felis. Nunc ac turpis in leo posuere imperdiet.</p>
-				</div>
-			</div>
-			<div class="post">
-				<h2 class="title"><a href="#">Phasellus pellentesque turpis </a></h2>
-				<p class="meta">Posted by <a href="#">Someone</a> on March 8, 2008
-					&nbsp;&bull;&nbsp; <a href="#" class="comments">Comments (64)</a> &nbsp;&bull;&nbsp; <a href="#" class="permalink">Full article</a></p>
-				<div class="entry">
-					<p>Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec metus placerat consectetuer. Donec ipsum. Proin imperdiet est. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros. Suspendisse lacus turpis, cursus egestas at sem. Phasellus pellentesque. Mauris quam enim molestie  rhoncus lobortis a, est.</p>
-				</div>
-			</div>
+			
 		</div>
 		<!-- end #content -->
 		<div id="sidebar">
@@ -112,7 +95,7 @@
                                                        }
                                                    ?>
                                         </select><br/>
-                                        <span>Municipality: </span><select name="town" class="select" id="town" onChange="loadYearByMun(this.value)" >
+                                        <span>Municipality: </span><select name="town" class="select" id="town" >
                                                 <option value="0">--  All Town --</option>
                                           </select><br/>
                                         <span>Sex: </span><select name="sex" class="select" id="sex">
@@ -191,38 +174,10 @@
                                         </form>
                                         <button id="try" onClick="growthing()"> Start Query </button>
                                     </label>
-					<h2>Aliquam tempus</h2>
-					<p>Mauris vitae nisl nec metus placerat perdiet est. Phasellus dapibus semper urna ornare, orci in consectetuer hendrerit.</p>
+					<h2>Help</h2>
+					<p>This page allows you to query the SESAME repository to get information about the growth of the population in a given municipality in a given period of time. After having filled the form on the left side of the page, , by clicking the “Start Query” button a graphic appears showing the total amount of population living in each year in the selected period.</p>
 				</li>
-				<li>
-					<h2>Categories</h2>
-					<ul>
-						<li><a href="#">Uncategorized</a> (3) </li>
-						<li><a href="#">Lorem Ipsum</a> (42) </li>
-						<li><a href="#">Urna Congue Rutrum</a> (28) </li>
-						<li><a href="#">Augue Praesent</a> (55) </li>
-						<li><a href="#">Vivamus Fermentum</a> (13) </li>
-					</ul>
-				</li>
-				<li>
-					<h2>Blogroll</h2>
-					<ul>
-						<li><a href="#">Uncategorized</a> (3) </li>
-						<li><a href="#">Lorem Ipsum</a> (42) </li>
-						<li><a href="#">Urna Congue Rutrum</a> (28) </li>
-						<li><a href="#">Augue Praesent</a> (55) </li>
-						<li><a href="#">Vivamus Fermentum</a> (13) </li>
-					</ul>
-				</li>
-				<li>
-					<h2>Archives</h2>
-					<ul>
-						<li><a href="#">December 2007</a>&nbsp;(29)</li>
-						<li><a href="#">November 2007</a>&nbsp;(30)</li>
-						<li><a href="#">October 2007</a>&nbsp;(31)</li>
-						<li><a href="#">September 2007</a>&nbsp;(30)</li>
-					</ul>
-				</li>
+				
 			</ul>
 		</div>
 		<!-- end #sidebar -->
