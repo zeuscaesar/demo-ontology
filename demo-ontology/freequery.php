@@ -52,7 +52,7 @@
                                 <div align="center">
                                 Edit your query<br/>
                                 
-                                <textarea cols="70" rows="20" name="area" wrap="soft">
+                                <textarea cols="70" rows="15" name="area" wrap="soft">
 PREFIX rdfs:<http://www.w3.org/2000/01/rdf-schema#>
 PREFIX xsd:<http://www.w3.org/2001/XMLSchema#>
 PREFIX owl:<http://www.w3.org/2002/07/owl#>
@@ -73,7 +73,7 @@ where {
                                 </div>
                                 <div id ="divdata" >
                                 </div>
-                                <p id='strprova'>number</p>
+                                <p id='strprova'></p>
 			</div>
 			
 		</div>
