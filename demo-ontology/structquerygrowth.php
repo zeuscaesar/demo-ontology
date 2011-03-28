@@ -33,8 +33,8 @@ if($prov!='0'){
                 'select distinct ?num
                 where{
                 ?prov rdf:type DemoOntology:Province.
+                ?prov DemoOntology:hasName "'.$prov.'"^^rdfs:Literal.
                 ?prov DemoOntology:hasMunicipality ?mun.
-                ?mun DemoOntology:hasName "'.$town.'"^^rdfs:Literal.
                 ?mun DemoOntology:hasPopulation ?pop.
                 {?pop DemoOntology:livingInTheYear "'.$fromyear.'"^^xsd:int.}');
      }
