@@ -47,7 +47,7 @@
 		<div id="content">
 			<div class="post">
                             <div id="title">
-				<h1 class="title" ><a href="#">Welcome to Demography Ontology </a></h1>
+				<h1 class="title" >Welcome to Demography Ontology</h1>
 				<p class="meta">Updated on March 21, 2011</p>
                             </div>
 				<div class="entry" id="doc">
